@@ -8,28 +8,18 @@
 
 import Foundation
 
-class DataManager {
-    private init(){}
-    static let shared = DataManager()
-    
-    var parser: XMLParser?
-    func getData(){
-        guard let safeParser = parser else { return }
-        safeParser.parse()
-    }
-}
-
 class ParserDelegate: NSObject, XMLParserDelegate {
     
     override init(){
         super.init()
     }
     
-    var currentString =  String()
-    var currentElement = String()
-    var object: [String: String] = [:]
-    var objArray: [[String: String]] = []
+    private var currentString =  String()
+    private var currentElement = String()
+    private var object: [String: String] = [:]
+    private var objArray: [[String: String]] = []
     var senators: [Senator] = []
+    var finishedParsing: Bool = false
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         if elementName != "member" {
@@ -62,6 +52,7 @@ class ParserDelegate: NSObject, XMLParserDelegate {
             tempArr.append(sen)
         }
         self.senators = tempArr
+        self.finishedParsing = true
     }
 }
 
