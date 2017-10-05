@@ -9,41 +9,37 @@
 import UIKit
 
 class StateCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
-
-    var parserDelegate: ParserDelegate!
-    var stateData = States.shared.states
+    
+    var stateData = States.states
     var selectedState: State!
     var filteredData: [String] = [] {
         didSet {
             print(filteredData.count)
-            self.collectionView?.reloadSections(IndexSet(integer:1))
+            self.collectionView?.reloadSections(IndexSet(integer: 1))
         }
     }
     
     var senatorStateMap: [String: [Senator]]!
-    var isFiltering: Bool = false
+    var isFiltering = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.parserDelegate = ParserDelegate()
         setUpCollectionView()
-        
     }
     
     // MARK: Helper Functions
     
-    func setUpCollectionView(){
+    private func setUpCollectionView(){
         self.collectionView?.delegate = self
         self.collectionView?.dataSource = self
         self.view.backgroundColor = UIColor.white
     }
     
-    func filterStatesForSearchText(_ searchText: String) {
+    private func filterStatesForSearchText(_ searchText: String) {
         self.filteredData = self.stateData.filter{$0.lowercased().hasPrefix(searchText.lowercased())}
     }
-
+    
 }
-
 
 
 extension StateCollectionViewController {
@@ -65,8 +61,6 @@ extension StateCollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
-        case 0:
-            return 0
         case 1:
             if isFiltering {
                 print("This is the filteredDataCount \(filteredData.count)")
@@ -97,17 +91,18 @@ extension StateCollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        if indexPath.section == 0 {
+        switch indexPath.section {
+        case 0:
             if (kind == UICollectionElementKindSectionHeader) {
                 let headerView:UICollectionReusableView =  collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "CollectionViewHeader", for: indexPath)
                 return headerView
             }
             return UICollectionReusableView()
-        } else {
-            let reusableView = UICollectionReusableView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-            return reusableView
+        default:
+            return UICollectionReusableView(frame: .zero)
         }
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         if section == 1 {
             return CGSize.zero
@@ -117,40 +112,31 @@ extension StateCollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.view.endEditing(true)
+        var stateString: String = String()
         switch isFiltering {
         case true:
-            let selectedState = self.filteredData[indexPath.row]
-            let title = States.shared.stateDictionary[selectedState] ?? selectedState
-            let senators = self.senatorStateMap[selectedState] ?? []
-            let state: State = State(abbreviation: selectedState, title: title, senators: senators)
-            print(state.title)
-            self.selectedState = state
+            stateString = self.filteredData[indexPath.row]
         default:
-            let selectedState = self.stateData[indexPath.row]
-            let state: State = State(abbreviation: selectedState, title: States.shared.stateDictionary[selectedState]!, senators: self.senatorStateMap[selectedState]!)
-            print(state.title)
-            self.selectedState = state
+            stateString = self.stateData[indexPath.row]
         }
+        let title = States.stateDictionary[stateString] ?? stateString
+        let senators = self.senatorStateMap[stateString] ?? []
+        let state: State = State(abbreviation: stateString, title: title, senators: senators)
+        print(state.title)
+        self.selectedState = state
         performSegue(withIdentifier: "goToStateProfile", sender: self.selectedState)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToStateProfile" {
-            let destinationvc = segue.destination as! StateProfileViewController
-            destinationvc.state = self.selectedState
-        }
+        let destinationvc = segue.destination as! StateProfileViewController
+        destinationvc.state = self.selectedState
     }
 }
 
 extension StateCollectionViewController {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        if searchText.characters.count == 0 {
-            self.isFiltering = false
-        } else {
-            self.isFiltering = true
-        }
+        isFiltering = (searchText.characters.count != 0)
         self.filteredData = self.stateData.filter{$0.lowercased().hasPrefix(searchText.lowercased())}
     }
     

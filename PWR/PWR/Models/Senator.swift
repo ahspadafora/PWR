@@ -8,37 +8,28 @@
 
 import Foundation
 
-class Senator {
+struct Senator {
     var firstName: String
     var lastName: String
     var party: String
     var state: String
     var address: String
     var phone: String
-    var website: Website?
-    
-    init(firstName: String, lastName: String, party: String, state: String, address: String, phone: String, website: Website?) {
-        self.firstName = firstName
-        self.lastName = lastName
-        self.party = party
-        self.state = state
-        self.address = address
-        self.phone = phone
-        self.website = website
-    }
-    
-    convenience init?(dict: [String: String]) {
+    var website: URL?
+}
+extension Senator {
+    init?(dict: [String: String]) {
         guard let fName = dict["first_name"] else { return nil }
         guard let lName = dict["last_name"] else { return nil }
         guard let state = dict["state"] else { return nil }
         guard let party = dict["party"] else { return nil }
         guard let phone = dict["phone"] else { return nil }
         guard let address = dict["address"] else { return nil }
-        guard let website = dict["website"] else { return nil }
+        guard let web = dict["website"] else { return nil }
         
-        self.init(firstName: fName, lastName: lName, party: party, state: state, address: address, phone: phone, website: nil)
-        self.website = Website(url: website, senator: self)
-     }
+        let website = URL(string: web)
+        self.init(firstName: fName, lastName: lName, party: party, state: state, address: address, phone: phone, website: website)
+    }
     
 }
 

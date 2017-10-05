@@ -10,8 +10,7 @@ import Foundation
 
 struct States {
     private init(){}
-    static let shared = States()
-    let stateDictionary: [String : String] = [
+    static let stateDictionary: [String : String] = [
         "AK" : "Alaska",
         "AL" : "Alabama",
         "AR" : "Arkansas",
@@ -67,7 +66,7 @@ struct States {
         "WV" : "West Virginia",
         "WY" : "Wyoming"]
     
-    let states = [ "AK",
+    static let states = [ "AK",
                                 "AL",
                                 "AR",
                                 "AZ",
