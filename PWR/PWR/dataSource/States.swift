@@ -9,7 +9,6 @@
 import Foundation
 
 struct States {
-    private init(){}
     static let stateDictionary: [String : String] = [
         "AK" : "Alaska",
         "AL" : "Alabama",

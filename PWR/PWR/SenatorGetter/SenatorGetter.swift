@@ -33,7 +33,6 @@ class SenatorGetter {
                 stateSenatorMap[senator.state] = [senator]
             }
         }
-        print(stateSenatorMap.count)
         return (senators, stateSenatorMap)
     }
 }
