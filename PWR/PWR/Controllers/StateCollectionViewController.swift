@@ -12,6 +12,7 @@ class StateCollectionViewController: UICollectionViewController, UICollectionVie
 
     var parserDelegate: ParserDelegate!
     var stateData = States.shared.states
+    var selectedState: State!
     var filteredData: [String] = [] {
         didSet {
             print(filteredData.count)
@@ -115,28 +116,41 @@ extension StateCollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.view.endEditing(true)
         switch isFiltering {
         case true:
             let selectedState = self.filteredData[indexPath.row]
-            let state: State = State(abbreviation: selectedState, title: States.shared.stateDictionary[selectedState]!, senators: self.senatorStateMap[selectedState]!)
+            let title = States.shared.stateDictionary[selectedState] ?? selectedState
+            let senators = self.senatorStateMap[selectedState] ?? []
+            let state: State = State(abbreviation: selectedState, title: title, senators: senators)
             print(state.title)
-            
+            self.selectedState = state
         default:
             let selectedState = self.stateData[indexPath.row]
             let state: State = State(abbreviation: selectedState, title: States.shared.stateDictionary[selectedState]!, senators: self.senatorStateMap[selectedState]!)
             print(state.title)
+            self.selectedState = state
+        }
+        performSegue(withIdentifier: "goToStateProfile", sender: self.selectedState)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToStateProfile" {
+            let destinationvc = segue.destination as! StateProfileViewController
+            destinationvc.state = self.selectedState
         }
     }
 }
 
 extension StateCollectionViewController {
     
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        self.isFiltering = true
-    }
-    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        self.isFiltering = true
+        
+        if searchText.characters.count == 0 {
+            self.isFiltering = false
+        } else {
+            self.isFiltering = true
+        }
         self.filteredData = self.stateData.filter{$0.lowercased().hasPrefix(searchText.lowercased())}
     }
     

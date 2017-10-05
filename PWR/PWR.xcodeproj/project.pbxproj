@@ -12,6 +12,8 @@
 		040BE11C1F85911800B672F8 /* States.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040BE11B1F85911800B672F8 /* States.swift */; };
 		040BE11E1F85918C00B672F8 /* StateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040BE11D1F85918C00B672F8 /* StateCollectionViewCell.swift */; };
 		040BE1201F85C25800B672F8 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040BE11F1F85C25800B672F8 /* State.swift */; };
+		040BE1221F85FB3900B672F8 /* StateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040BE1211F85FB3900B672F8 /* StateProfileViewController.swift */; };
+		040BE1241F85FD2500B672F8 /* PurpleNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040BE1231F85FD2500B672F8 /* PurpleNavigationBar.swift */; };
 		042667A31F848D930063FFE3 /* senators.xml in Resources */ = {isa = PBXBuildFile; fileRef = 041EA40A1F84807200423C22 /* senators.xml */; };
 		042667A51F848E0C0063FFE3 /* Senator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042667A41F848E0C0063FFE3 /* Senator.swift */; };
 		042667A71F848E750063FFE3 /* Website.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042667A61F848E750063FFE3 /* Website.swift */; };
@@ -48,6 +50,8 @@
 		040BE11B1F85911800B672F8 /* States.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = States.swift; sourceTree = "<group>"; };
 		040BE11D1F85918C00B672F8 /* StateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCollectionViewCell.swift; sourceTree = "<group>"; };
 		040BE11F1F85C25800B672F8 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		040BE1211F85FB3900B672F8 /* StateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StateProfileViewController.swift; path = PWR/Controllers/StateProfileViewController.swift; sourceTree = SOURCE_ROOT; };
+		040BE1231F85FD2500B672F8 /* PurpleNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleNavigationBar.swift; sourceTree = "<group>"; };
 		041EA40A1F84807200423C22 /* senators.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = senators.xml; sourceTree = "<group>"; };
 		042667A41F848E0C0063FFE3 /* Senator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Senator.swift; sourceTree = "<group>"; };
 		042667A61F848E750063FFE3 /* Website.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Website.swift; sourceTree = "<group>"; };
@@ -96,6 +100,7 @@
 			children = (
 				040BE1181F85888000B672F8 /* SearchBarCollectionReusableView.swift */,
 				040BE1161F85872B00B672F8 /* Main.storyboard */,
+				040BE1231F85FD2500B672F8 /* PurpleNavigationBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 		042667AB1F84AB4B0063FFE3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				040BE1211F85FB3900B672F8 /* StateProfileViewController.swift */,
 				04E8F1191F847F62002C299A /* StateCollectionViewController.swift */,
 				040BE11D1F85918C00B672F8 /* StateCollectionViewCell.swift */,
 			);
@@ -329,9 +335,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				040BE1221F85FB3900B672F8 /* StateProfileViewController.swift in Sources */,
 				040BE11E1F85918C00B672F8 /* StateCollectionViewCell.swift in Sources */,
 				042667A51F848E0C0063FFE3 /* Senator.swift in Sources */,
 				04E8F11A1F847F62002C299A /* StateCollectionViewController.swift in Sources */,
+				040BE1241F85FD2500B672F8 /* PurpleNavigationBar.swift in Sources */,
 				040BE11C1F85911800B672F8 /* States.swift in Sources */,
 				04E8F1181F847F62002C299A /* AppDelegate.swift in Sources */,
 				040BE1201F85C25800B672F8 /* State.swift in Sources */,
