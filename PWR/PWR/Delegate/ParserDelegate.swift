@@ -10,16 +10,12 @@ import Foundation
 
 class ParserDelegate: NSObject, XMLParserDelegate {
     
-    override init(){
-        super.init()
-    }
-    
     private var currentString =  String()
     private var currentElement = String()
     private var object: [String: String] = [:]
     private var objArray: [[String: String]] = []
     var senators: [Senator] = []
-    var finishedParsing: Bool = false
+    var finishedParsing = false
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         if elementName != "member" {
@@ -46,12 +42,7 @@ class ParserDelegate: NSObject, XMLParserDelegate {
     func parserDidEndDocument(_ parser: XMLParser) {
         print("finished parsing documnet")
         print(self.objArray.count)
-        var tempArr: [Senator] = []
-        for obj in objArray {
-            guard let sen = Senator(dict: obj) else { return }
-            tempArr.append(sen)
-        }
-        self.senators = tempArr
+        self.senators = objArray.flatMap{Senator.init(dict: $0)}
         self.finishedParsing = true
     }
 }
