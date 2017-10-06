@@ -17,9 +17,6 @@ class StateCollectionViewController: UICollectionViewController, UICollectionVie
         }
     }
     var selectedState: State!
-    
-    
-    //var senatorStateMap: [String: [Senator]]!
     var isFiltering = false
     
     override func viewDidLoad() {
@@ -36,7 +33,7 @@ class StateCollectionViewController: UICollectionViewController, UICollectionVie
     }
     
     func filterStatesForSearchText(_ searchText: String) {
-        self.filteredStates = self.states.filter{$0.title.lowercased().hasPrefix(searchText.lowercased())}
+        self.filteredStates = self.states.filter{$0.title.lowercased().hasPrefix(searchText.lowercased()) || $0.abbreviation.lowercased().hasPrefix(searchText.lowercased())}
     }
     
 }

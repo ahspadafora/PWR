@@ -115,12 +115,13 @@
 			path = Delegate;
 			sourceTree = "<group>";
 		};
-		040BE1281F86DFD200B672F8 /* SenatorGetter */ = {
+		040BE1281F86DFD200B672F8 /* Getters */ = {
 			isa = PBXGroup;
 			children = (
+				040BE1291F87096100B672F8 /* StateGetter.swift */,
 				040BE1251F86DF6000B672F8 /* SenatorGetter.swift */,
 			);
-			path = SenatorGetter;
+			path = Getters;
 			sourceTree = "<group>";
 		};
 		041EA40B1F84808800423C22 /* dataSource */ = {
@@ -185,9 +186,8 @@
 		04E8F1161F847F62002C299A /* PWR */ = {
 			isa = PBXGroup;
 			children = (
-				040BE1291F87096100B672F8 /* StateGetter.swift */,
 				040BE1271F86DFCB00B672F8 /* Delegate */,
-				040BE1281F86DFD200B672F8 /* SenatorGetter */,
+				040BE1281F86DFD200B672F8 /* Getters */,
 				040BE11A1F85891200B672F8 /* Views */,
 				041EA40B1F84808800423C22 /* dataSource */,
 				042667AB1F84AB4B0063FFE3 /* Controllers */,
