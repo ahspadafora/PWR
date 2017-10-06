@@ -15,6 +15,7 @@
 		040BE1221F85FB3900B672F8 /* StateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040BE1211F85FB3900B672F8 /* StateProfileViewController.swift */; };
 		040BE1241F85FD2500B672F8 /* PurpleNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040BE1231F85FD2500B672F8 /* PurpleNavigationBar.swift */; };
 		040BE1261F86DF6000B672F8 /* SenatorGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040BE1251F86DF6000B672F8 /* SenatorGetter.swift */; };
+		040BE12A1F87096100B672F8 /* StateGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040BE1291F87096100B672F8 /* StateGetter.swift */; };
 		042667A31F848D930063FFE3 /* senators.xml in Resources */ = {isa = PBXBuildFile; fileRef = 041EA40A1F84807200423C22 /* senators.xml */; };
 		042667A51F848E0C0063FFE3 /* Senator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042667A41F848E0C0063FFE3 /* Senator.swift */; };
 		042667A91F8494FF0063FFE3 /* ParserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042667A81F8494FF0063FFE3 /* ParserDelegate.swift */; };
@@ -53,6 +54,7 @@
 		040BE1211F85FB3900B672F8 /* StateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StateProfileViewController.swift; path = PWR/Controllers/StateProfileViewController.swift; sourceTree = SOURCE_ROOT; };
 		040BE1231F85FD2500B672F8 /* PurpleNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleNavigationBar.swift; sourceTree = "<group>"; };
 		040BE1251F86DF6000B672F8 /* SenatorGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenatorGetter.swift; sourceTree = "<group>"; };
+		040BE1291F87096100B672F8 /* StateGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateGetter.swift; sourceTree = "<group>"; };
 		041EA40A1F84807200423C22 /* senators.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = senators.xml; sourceTree = "<group>"; };
 		042667A41F848E0C0063FFE3 /* Senator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Senator.swift; sourceTree = "<group>"; };
 		042667A81F8494FF0063FFE3 /* ParserDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 		04E8F1161F847F62002C299A /* PWR */ = {
 			isa = PBXGroup;
 			children = (
+				040BE1291F87096100B672F8 /* StateGetter.swift */,
 				040BE1271F86DFCB00B672F8 /* Delegate */,
 				040BE1281F86DFD200B672F8 /* SenatorGetter */,
 				040BE11A1F85891200B672F8 /* Views */,
@@ -355,6 +358,7 @@
 				040BE11E1F85918C00B672F8 /* StateCollectionViewCell.swift in Sources */,
 				042667A51F848E0C0063FFE3 /* Senator.swift in Sources */,
 				04E8F11A1F847F62002C299A /* StateCollectionViewController.swift in Sources */,
+				040BE12A1F87096100B672F8 /* StateGetter.swift in Sources */,
 				040BE1241F85FD2500B672F8 /* PurpleNavigationBar.swift in Sources */,
 				040BE11C1F85911800B672F8 /* States.swift in Sources */,
 				04E8F1181F847F62002C299A /* AppDelegate.swift in Sources */,

@@ -10,16 +10,16 @@ import UIKit
 
 class StateCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
-    var stateData = States.states
-    var selectedState: State!
-    var filteredData: [String] = [] {
+    var states: [State] = StateGetter().states.sorted { $0.title < $1.title }
+    var filteredStates: [State] = [] {
         didSet {
-            print(filteredData.count)
             self.collectionView?.reloadSections(IndexSet(integer: 1))
         }
     }
+    var selectedState: State!
     
-    var senatorStateMap: [String: [Senator]]!
+    
+    //var senatorStateMap: [String: [Senator]]!
     var isFiltering = false
     
     override func viewDidLoad() {
@@ -35,8 +35,8 @@ class StateCollectionViewController: UICollectionViewController, UICollectionVie
         self.view.backgroundColor = UIColor.white
     }
     
-    private func filterStatesForSearchText(_ searchText: String) {
-        self.filteredData = self.stateData.filter{$0.lowercased().hasPrefix(searchText.lowercased())}
+    func filterStatesForSearchText(_ searchText: String) {
+        self.filteredStates = self.states.filter{$0.title.lowercased().hasPrefix(searchText.lowercased())}
     }
     
 }
@@ -63,10 +63,9 @@ extension StateCollectionViewController {
         switch section {
         case 1:
             if isFiltering {
-                print("This is the filteredDataCount \(filteredData.count)")
-                return filteredData.count
+                return filteredStates.count
             } else {
-                return stateData.count
+                return states.count
             }
         default:
             return 0
@@ -80,9 +79,9 @@ extension StateCollectionViewController {
             print("is filtering is set to : \(isFiltering)")
             switch isFiltering {
             case true:
-                cell.stateLabel.text = self.filteredData[indexPath.row]
+                cell.stateLabel.text = self.filteredStates[indexPath.row].abbreviation
             case false:
-                cell.stateLabel.text = self.stateData[indexPath.row]
+                cell.stateLabel.text = self.states[indexPath.row].abbreviation
             }
             
             return cell
@@ -112,18 +111,13 @@ extension StateCollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.view.endEditing(true)
-        var stateString: String = String()
+        
         switch isFiltering {
         case true:
-            stateString = self.filteredData[indexPath.row]
+            self.selectedState = self.filteredStates[indexPath.row]
         default:
-            stateString = self.stateData[indexPath.row]
+            self.selectedState = self.states[indexPath.row]
         }
-        let title = States.stateDictionary[stateString] ?? stateString
-        let senators = self.senatorStateMap[stateString] ?? []
-        let state: State = State(abbreviation: stateString, title: title, senators: senators)
-        print(state.title)
-        self.selectedState = state
         performSegue(withIdentifier: "goToStateProfile", sender: self.selectedState)
     }
     
@@ -137,7 +131,7 @@ extension StateCollectionViewController {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         isFiltering = (searchText.characters.count != 0)
-        self.filteredData = self.stateData.filter{$0.lowercased().hasPrefix(searchText.lowercased())}
+        self.filterStatesForSearchText(searchText.lowercased())
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {

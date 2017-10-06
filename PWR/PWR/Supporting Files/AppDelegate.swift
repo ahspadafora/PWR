@@ -15,14 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        if let senatorXMLFile = SenatorGetter().getSenatorXMLUrl() {
-            let (_, stateSenateMap) = SenatorGetter().getSenators(url: senatorXMLFile)
-            if let rootView = self.window?.rootViewController as? UINavigationController {
-                if let vc = rootView.viewControllers[0] as? StateCollectionViewController {
-                    vc.senatorStateMap = stateSenateMap
-                }
-            }
-        }
         return true
     }
 }

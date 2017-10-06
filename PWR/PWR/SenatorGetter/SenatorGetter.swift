@@ -19,7 +19,7 @@ class SenatorGetter {
         }
     }
     
-    func getSenators(url: URL) -> ([Senator], [String: [Senator]]){
+    func getSenators(url: URL) -> ([String: [Senator]]){
         let parser = XMLParser(contentsOf: url)
         let parserDelegate = ParserDelegate()
         parser?.delegate = parserDelegate
@@ -33,6 +33,6 @@ class SenatorGetter {
                 stateSenatorMap[senator.state] = [senator]
             }
         }
-        return (senators, stateSenatorMap)
+        return (stateSenatorMap)
     }
 }
