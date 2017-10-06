@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		040BE1171F85872B00B672F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040BE1161F85872B00B672F8 /* Main.storyboard */; };
 		040BE1191F85888000B672F8 /* SearchBarCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040BE1181F85888000B672F8 /* SearchBarCollectionReusableView.swift */; };
 		040BE11C1F85911800B672F8 /* States.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040BE11B1F85911800B672F8 /* States.swift */; };
 		040BE11E1F85918C00B672F8 /* StateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040BE11D1F85918C00B672F8 /* StateCollectionViewCell.swift */; };
 		040BE1201F85C25800B672F8 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040BE11F1F85C25800B672F8 /* State.swift */; };
-		040BE1221F85FB3900B672F8 /* StateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040BE1211F85FB3900B672F8 /* StateProfileViewController.swift */; };
-		040BE1241F85FD2500B672F8 /* PurpleNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040BE1231F85FD2500B672F8 /* PurpleNavigationBar.swift */; };
 		040BE1261F86DF6000B672F8 /* SenatorGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040BE1251F86DF6000B672F8 /* SenatorGetter.swift */; };
 		040BE12A1F87096100B672F8 /* StateGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040BE1291F87096100B672F8 /* StateGetter.swift */; };
 		042667A31F848D930063FFE3 /* senators.xml in Resources */ = {isa = PBXBuildFile; fileRef = 041EA40A1F84807200423C22 /* senators.xml */; };
 		042667A51F848E0C0063FFE3 /* Senator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042667A41F848E0C0063FFE3 /* Senator.swift */; };
 		042667A91F8494FF0063FFE3 /* ParserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042667A81F8494FF0063FFE3 /* ParserDelegate.swift */; };
-		042667AD1F84AE090063FFE3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04E8F1231F847F62002C299A /* Info.plist */; };
+		04BA61351F8762D30079BF9A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA61341F8762D30079BF9A /* Constants.swift */; };
+		04BA61381F87656E0079BF9A /* StateCollectionViewDelegateMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA61371F87656E0079BF9A /* StateCollectionViewDelegateMethods.swift */; };
+		04BA613D1F876BB10079BF9A /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04BA613C1F876BB10079BF9A /* HomeViewController.storyboard */; };
+		04BA613F1F876BCF0079BF9A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA613E1F876BCF0079BF9A /* HomeViewController.swift */; };
 		04E8F1181F847F62002C299A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8F1171F847F62002C299A /* AppDelegate.swift */; };
 		04E8F11A1F847F62002C299A /* StateCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8F1191F847F62002C299A /* StateCollectionViewController.swift */; };
 		04E8F11F1F847F62002C299A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E8F11E1F847F62002C299A /* Assets.xcassets */; };
@@ -46,18 +46,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		040BE1161F85872B00B672F8 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		040BE1181F85888000B672F8 /* SearchBarCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarCollectionReusableView.swift; sourceTree = "<group>"; };
 		040BE11B1F85911800B672F8 /* States.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = States.swift; sourceTree = "<group>"; };
 		040BE11D1F85918C00B672F8 /* StateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCollectionViewCell.swift; sourceTree = "<group>"; };
 		040BE11F1F85C25800B672F8 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
-		040BE1211F85FB3900B672F8 /* StateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StateProfileViewController.swift; path = PWR/Controllers/StateProfileViewController.swift; sourceTree = SOURCE_ROOT; };
-		040BE1231F85FD2500B672F8 /* PurpleNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleNavigationBar.swift; sourceTree = "<group>"; };
 		040BE1251F86DF6000B672F8 /* SenatorGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenatorGetter.swift; sourceTree = "<group>"; };
 		040BE1291F87096100B672F8 /* StateGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateGetter.swift; sourceTree = "<group>"; };
 		041EA40A1F84807200423C22 /* senators.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = senators.xml; sourceTree = "<group>"; };
 		042667A41F848E0C0063FFE3 /* Senator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Senator.swift; sourceTree = "<group>"; };
 		042667A81F8494FF0063FFE3 /* ParserDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserDelegate.swift; sourceTree = "<group>"; };
+		04BA61341F8762D30079BF9A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		04BA61371F87656E0079BF9A /* StateCollectionViewDelegateMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCollectionViewDelegateMethods.swift; sourceTree = "<group>"; };
+		04BA613C1F876BB10079BF9A /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
+		04BA613E1F876BCF0079BF9A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		04E8F1141F847F62002C299A /* PWR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PWR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E8F1171F847F62002C299A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04E8F1191F847F62002C299A /* StateCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCollectionViewController.swift; sourceTree = "<group>"; };
@@ -101,8 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				040BE1181F85888000B672F8 /* SearchBarCollectionReusableView.swift */,
-				040BE1161F85872B00B672F8 /* Main.storyboard */,
-				040BE1231F85FD2500B672F8 /* PurpleNavigationBar.swift */,
+				04BA613B1F876B820079BF9A /* Storyboards */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -145,9 +145,8 @@
 		042667AB1F84AB4B0063FFE3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				040BE1211F85FB3900B672F8 /* StateProfileViewController.swift */,
-				04E8F1191F847F62002C299A /* StateCollectionViewController.swift */,
-				040BE11D1F85918C00B672F8 /* StateCollectionViewCell.swift */,
+				04BA613E1F876BCF0079BF9A /* HomeViewController.swift */,
+				04BA61361F8764E00079BF9A /* StateCollectionViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -155,12 +154,31 @@
 		042667AC1F84ABB10063FFE3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				04BA61341F8762D30079BF9A /* Constants.swift */,
 				04E8F1171F847F62002C299A /* AppDelegate.swift */,
 				04E8F11E1F847F62002C299A /* Assets.xcassets */,
 				04E8F1201F847F62002C299A /* LaunchScreen.storyboard */,
 				04E8F1231F847F62002C299A /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		04BA61361F8764E00079BF9A /* StateCollectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				04E8F1191F847F62002C299A /* StateCollectionViewController.swift */,
+				04BA61371F87656E0079BF9A /* StateCollectionViewDelegateMethods.swift */,
+				040BE11D1F85918C00B672F8 /* StateCollectionViewCell.swift */,
+			);
+			path = StateCollectionViewController;
+			sourceTree = "<group>";
+		};
+		04BA613B1F876B820079BF9A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				04BA613C1F876BB10079BF9A /* HomeViewController.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		04E8F10B1F847F61002C299A = {
@@ -325,11 +343,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04BA613D1F876BB10079BF9A /* HomeViewController.storyboard in Resources */,
 				042667A31F848D930063FFE3 /* senators.xml in Resources */,
-				040BE1171F85872B00B672F8 /* Main.storyboard in Resources */,
 				04E8F1221F847F62002C299A /* LaunchScreen.storyboard in Resources */,
 				04E8F11F1F847F62002C299A /* Assets.xcassets in Resources */,
-				042667AD1F84AE090063FFE3 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,15 +371,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				040BE1221F85FB3900B672F8 /* StateProfileViewController.swift in Sources */,
 				040BE11E1F85918C00B672F8 /* StateCollectionViewCell.swift in Sources */,
 				042667A51F848E0C0063FFE3 /* Senator.swift in Sources */,
 				04E8F11A1F847F62002C299A /* StateCollectionViewController.swift in Sources */,
+				04BA61381F87656E0079BF9A /* StateCollectionViewDelegateMethods.swift in Sources */,
 				040BE12A1F87096100B672F8 /* StateGetter.swift in Sources */,
-				040BE1241F85FD2500B672F8 /* PurpleNavigationBar.swift in Sources */,
 				040BE11C1F85911800B672F8 /* States.swift in Sources */,
+				04BA61351F8762D30079BF9A /* Constants.swift in Sources */,
 				04E8F1181F847F62002C299A /* AppDelegate.swift in Sources */,
 				040BE1201F85C25800B672F8 /* State.swift in Sources */,
+				04BA613F1F876BCF0079BF9A /* HomeViewController.swift in Sources */,
 				040BE1261F86DF6000B672F8 /* SenatorGetter.swift in Sources */,
 				042667A91F8494FF0063FFE3 /* ParserDelegate.swift in Sources */,
 				040BE1191F85888000B672F8 /* SearchBarCollectionReusableView.swift in Sources */,

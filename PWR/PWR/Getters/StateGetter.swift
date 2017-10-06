@@ -11,7 +11,7 @@ import Foundation
 struct StateGetter {
     var states: [State] {
         if let states = getStates() {
-            return states
+            return states.sorted { $0.title < $1.title }
         } else {
             return []
         }
