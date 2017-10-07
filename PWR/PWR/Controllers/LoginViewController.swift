@@ -18,7 +18,7 @@ class LoginViewController: UIViewController, StatePickerDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.segueFromLoginToStateVC {
             guard let destinationVC = segue.destination as? StateCollectionViewController else { return }
-            destinationVC.statePickerDelegate = self
+            destinationVC.statePickerDelegate = HomeViewController()
         }
     }
 

@@ -49,7 +49,7 @@ extension StateCollectionViewController {
         }
         UserDefaultManager.setStoredState(abbreviation: self.selectedState.abbreviation)
         self.statePickerDelegate?.userDidSelectState()
-        self.dismiss(animated: true, completion: nil)
-        //self.navigationController?.popViewController(animated: true)
+        
+        performSegue(withIdentifier: Constants.segueFromStateCollectionVCtoHomeVC, sender: self)
     }
 }
