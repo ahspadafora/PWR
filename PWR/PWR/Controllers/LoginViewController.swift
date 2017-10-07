@@ -12,15 +12,16 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController, StatePickerDelegate, FBSDKLoginButtonDelegate {
     
-    
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-        Auth.auth().signIn(with: credential) { (user, error) in
-            if error != nil {
-                print(error?.localizedDescription)
+        if let token = FBSDKAccessToken.current().tokenString {
+            let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+            Auth.auth().signIn(with: credential) { (user, error) in
+                if error != nil {
+                    print(error?.localizedDescription)
+                }
+                guard let uid = user?.uid else { return }
+                self.signIn(uid: uid)
             }
-            guard let uid = user?.uid else { return }
-            self.signIn(uid: uid)
         }
     }
     
@@ -35,7 +36,6 @@ class LoginViewController: UIViewController, StatePickerDelegate, FBSDKLoginButt
         }
     }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpFacebookBttn()
@@ -47,11 +47,16 @@ class LoginViewController: UIViewController, StatePickerDelegate, FBSDKLoginButt
             destinationVC.statePickerDelegate = HomeViewController()
         }
     }
-
+    
     func signIn(uid: String){
         UserDefaultManager.setisLoggedInTo(bool: true)
         UserDefaultManager.setUserId(uid: uid)
-        goToStatePicker()
+        if let _ = UserDefaultManager.storedState {
+            goToHome()
+        } else {
+            goToStatePicker()
+        }
+        goToHome()
     }
     func goToHome(){
         DispatchQueue.main.async {
@@ -63,7 +68,6 @@ class LoginViewController: UIViewController, StatePickerDelegate, FBSDKLoginButt
             self.performSegue(withIdentifier: Constants.segueFromLoginToStateVC, sender: self)
         }
     }
-    
     func userDidSelectState() {
         goToHome()
     }
@@ -74,3 +78,4 @@ class LoginViewController: UIViewController, StatePickerDelegate, FBSDKLoginButt
         self.view.addSubview(loginButton)
     }
 }
+

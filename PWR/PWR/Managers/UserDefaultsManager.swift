@@ -20,32 +20,31 @@ class UserDefaultManager{
     
     static var storedState: State? {
         get {
-            guard let stateName = userDefaults.value(forKey: "State") as? String else {
-                return nil
-            }
+            guard let dict = userDefaults.dictionary(forKey: "userStateDict"),
+            let uid = self.storedUserId,
+            let storedStateAbbreviation = dict[uid] as? String else { return nil }
             let states = StateGetter().states
-            return states.first {$0.abbreviation == stateName}
+            return states.first {$0.abbreviation == storedStateAbbreviation }
         }
     }
     
     static var userIsSignedIn: Bool {
         get {
-            guard let loggedIn = userDefaults.value(forKey: "isLoggedIn") as? Bool else {
-                return false
+            return userDefaults.value(forKey: "isLoggedIn") as? Bool ?? false
             }
-            return loggedIn
-        }
     }
     
     static func clearUserDefaults(){
         userDefaults.set(false, forKey: "isLoggedIn")
-        userDefaults.removeObject(forKey: "State")
         userDefaults.removeObject(forKey: "userId")
     }
     
     
     static func setStoredState(abbreviation: String){
-        userDefaults.set(abbreviation, forKey: "State")
+        if let uid = self.storedUserId {
+            let userStateDictionary: [String: String] = [uid:abbreviation]
+            userDefaults.set(userStateDictionary, forKey: "userStateDict")
+        }
     }
     
     static func setisLoggedInTo(bool: Bool) {
