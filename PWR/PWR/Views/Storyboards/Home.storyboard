@@ -118,29 +118,38 @@
                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Oval" translatesAutoresizingMaskIntoConstraints="NO" id="vtE-gx-qff">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Oval" translatesAutoresizingMaskIntoConstraints="NO" id="rEC-c2-WkN" userLabel="Picture">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                            <color key="tintColor" red="0.30196078430000001" green="0.51372549020000002" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </imageView>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Oval" translatesAutoresizingMaskIntoConstraints="NO" id="vtE-gx-qff">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NY" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gta-VU-Mod">
                                             <rect key="frame" x="53.5" y="56.5" width="43" height="38.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                            <color key="textColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </view>
                                 <constraints>
                                     <constraint firstItem="gta-VU-Mod" firstAttribute="height" relation="lessThanOrEqual" secondItem="vtE-gx-qff" secondAttribute="height" id="7iS-MQ-nq2"/>
+                                    <constraint firstItem="rEC-c2-WkN" firstAttribute="centerY" secondItem="vtE-gx-qff" secondAttribute="centerY" id="7zA-tp-sQN"/>
+                                    <constraint firstItem="rEC-c2-WkN" firstAttribute="width" secondItem="vtE-gx-qff" secondAttribute="width" id="IrL-Nh-GGM"/>
                                     <constraint firstItem="gta-VU-Mod" firstAttribute="centerX" secondItem="vtE-gx-qff" secondAttribute="centerX" id="PDF-DG-Qs2"/>
                                     <constraint firstItem="vtE-gx-qff" firstAttribute="top" secondItem="wPc-bT-dwO" secondAttribute="top" id="YlT-wp-j8E"/>
                                     <constraint firstItem="gta-VU-Mod" firstAttribute="centerY" secondItem="vtE-gx-qff" secondAttribute="centerY" id="bDh-qv-kQB"/>
                                     <constraint firstAttribute="bottom" secondItem="vtE-gx-qff" secondAttribute="bottom" id="iCZ-Em-97C"/>
+                                    <constraint firstItem="rEC-c2-WkN" firstAttribute="centerX" secondItem="vtE-gx-qff" secondAttribute="centerX" id="lSx-IM-brg"/>
                                     <constraint firstItem="gta-VU-Mod" firstAttribute="width" relation="lessThanOrEqual" secondItem="vtE-gx-qff" secondAttribute="width" id="pBF-z1-Rte"/>
+                                    <constraint firstItem="rEC-c2-WkN" firstAttribute="height" secondItem="vtE-gx-qff" secondAttribute="height" id="uDy-sf-zOP"/>
                                     <constraint firstAttribute="trailing" secondItem="vtE-gx-qff" secondAttribute="trailing" id="ybt-aH-7pT"/>
                                     <constraint firstItem="vtE-gx-qff" firstAttribute="leading" secondItem="wPc-bT-dwO" secondAttribute="leading" id="zGN-1c-wp8"/>
                                 </constraints>
                                 <size key="customSize" width="150" height="150"/>
                                 <connections>
+                                    <outlet property="pictureView" destination="rEC-c2-WkN" id="qxB-uW-Ipj"/>
                                     <outlet property="stateLabel" destination="gta-VU-Mod" id="XOe-pN-fq8"/>
                                 </connections>
                             </collectionViewCell>
@@ -182,7 +191,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8hd-SD-3HQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1462" y="961"/>
+            <point key="canvasLocation" x="2128.8000000000002" y="116.49175412293854"/>
         </scene>
         <!--Home-->
         <scene sceneID="OXy-he-Yw6">
