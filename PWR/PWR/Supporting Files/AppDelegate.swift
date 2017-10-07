@@ -13,9 +13,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        //UserDefaultManager.clearUserDefaults()
+        if UserDefaultManager.userIsSignedIn {
+            goToHomeVC()
+        } else {
+            goToLoginVC()
+        }
         return true
+    }
+    
+    func goToLoginVC(){
+        let storyboard = UIStoryboard(name: "LoginStoryboard", bundle: nil)
+        let loginVC = storyboard.instantiateInitialViewController()
+        self.window?.rootViewController = loginVC
+        self.window?.makeKeyAndVisible()
+    }
+    
+    func goToHomeVC(){
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        let homeVC = storyboard.instantiateInitialViewController()
+        self.window?.rootViewController = homeVC
+        self.window?.makeKeyAndVisible()
     }
 }
 
