@@ -54,7 +54,9 @@ extension StateCollectionViewController {
         default:
             self.selectedState = self.states[indexPath.row]
         }
-        self.statePickerDelegate?.getState(state: self.selectedState)
-        self.navigationController?.popViewController(animated: true)
+        UserDefaultManager.setStoredState(abbreviation: self.selectedState.abbreviation)
+        self.statePickerDelegate?.userDidSelectState()
+        self.dismiss(animated: true, completion: nil)
+        //self.navigationController?.popViewController(animated: true)
     }
 }

@@ -18,8 +18,13 @@
 		042667A91F8494FF0063FFE3 /* ParserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042667A81F8494FF0063FFE3 /* ParserDelegate.swift */; };
 		04BA61351F8762D30079BF9A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA61341F8762D30079BF9A /* Constants.swift */; };
 		04BA61381F87656E0079BF9A /* StateCollectionViewDelegateMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA61371F87656E0079BF9A /* StateCollectionViewDelegateMethods.swift */; };
-		04BA613D1F876BB10079BF9A /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04BA613C1F876BB10079BF9A /* HomeViewController.storyboard */; };
+		04BA613D1F876BB10079BF9A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04BA613C1F876BB10079BF9A /* Home.storyboard */; };
 		04BA613F1F876BCF0079BF9A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA613E1F876BCF0079BF9A /* HomeViewController.swift */; };
+		04BA61431F8845860079BF9A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA61421F8845860079BF9A /* SettingsViewController.swift */; };
+		04BA61451F8846AE0079BF9A /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04BA61441F8846AE0079BF9A /* LoginStoryboard.storyboard */; };
+		04BA61471F8846C30079BF9A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA61461F8846C30079BF9A /* LoginViewController.swift */; };
+		04BA61491F884F3E0079BF9A /* StatePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA61481F884F3E0079BF9A /* StatePickerDelegate.swift */; };
+		04BA614C1F8856F50079BF9A /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA614B1F8856F50079BF9A /* UserDefaultsManager.swift */; };
 		04E8F1181F847F62002C299A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8F1171F847F62002C299A /* AppDelegate.swift */; };
 		04E8F11A1F847F62002C299A /* StateCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8F1191F847F62002C299A /* StateCollectionViewController.swift */; };
 		04E8F11F1F847F62002C299A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E8F11E1F847F62002C299A /* Assets.xcassets */; };
@@ -57,8 +62,13 @@
 		042667A81F8494FF0063FFE3 /* ParserDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserDelegate.swift; sourceTree = "<group>"; };
 		04BA61341F8762D30079BF9A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		04BA61371F87656E0079BF9A /* StateCollectionViewDelegateMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCollectionViewDelegateMethods.swift; sourceTree = "<group>"; };
-		04BA613C1F876BB10079BF9A /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
+		04BA613C1F876BB10079BF9A /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		04BA613E1F876BCF0079BF9A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		04BA61421F8845860079BF9A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		04BA61441F8846AE0079BF9A /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
+		04BA61461F8846C30079BF9A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		04BA61481F884F3E0079BF9A /* StatePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatePickerDelegate.swift; sourceTree = "<group>"; };
+		04BA614B1F8856F50079BF9A /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		04E8F1141F847F62002C299A /* PWR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PWR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E8F1171F847F62002C299A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04E8F1191F847F62002C299A /* StateCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCollectionViewController.swift; sourceTree = "<group>"; };
@@ -107,12 +117,12 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		040BE1271F86DFCB00B672F8 /* Delegate */ = {
+		040BE1271F86DFCB00B672F8 /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
 				042667A81F8494FF0063FFE3 /* ParserDelegate.swift */,
 			);
-			path = Delegate;
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 		040BE1281F86DFD200B672F8 /* Getters */ = {
@@ -145,6 +155,8 @@
 		042667AB1F84AB4B0063FFE3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				04BA61461F8846C30079BF9A /* LoginViewController.swift */,
+				04BA61421F8845860079BF9A /* SettingsViewController.swift */,
 				04BA613E1F876BCF0079BF9A /* HomeViewController.swift */,
 				04BA61361F8764E00079BF9A /* StateCollectionViewController */,
 			);
@@ -176,9 +188,26 @@
 		04BA613B1F876B820079BF9A /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				04BA613C1F876BB10079BF9A /* HomeViewController.storyboard */,
+				04BA613C1F876BB10079BF9A /* Home.storyboard */,
+				04BA61441F8846AE0079BF9A /* LoginStoryboard.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		04BA614A1F884F4C0079BF9A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				04BA61481F884F3E0079BF9A /* StatePickerDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		04BA614D1F8856FF0079BF9A /* UserDefaultsManager */ = {
+			isa = PBXGroup;
+			children = (
+				04BA614B1F8856F50079BF9A /* UserDefaultsManager.swift */,
+			);
+			path = UserDefaultsManager;
 			sourceTree = "<group>";
 		};
 		04E8F10B1F847F61002C299A = {
@@ -204,7 +233,9 @@
 		04E8F1161F847F62002C299A /* PWR */ = {
 			isa = PBXGroup;
 			children = (
-				040BE1271F86DFCB00B672F8 /* Delegate */,
+				04BA614D1F8856FF0079BF9A /* UserDefaultsManager */,
+				04BA614A1F884F4C0079BF9A /* Protocols */,
+				040BE1271F86DFCB00B672F8 /* Delegates */,
 				040BE1281F86DFD200B672F8 /* Getters */,
 				040BE11A1F85891200B672F8 /* Views */,
 				041EA40B1F84808800423C22 /* dataSource */,
@@ -343,7 +374,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04BA613D1F876BB10079BF9A /* HomeViewController.storyboard in Resources */,
+				04BA613D1F876BB10079BF9A /* Home.storyboard in Resources */,
+				04BA61451F8846AE0079BF9A /* LoginStoryboard.storyboard in Resources */,
 				042667A31F848D930063FFE3 /* senators.xml in Resources */,
 				04E8F1221F847F62002C299A /* LaunchScreen.storyboard in Resources */,
 				04E8F11F1F847F62002C299A /* Assets.xcassets in Resources */,
@@ -373,16 +405,20 @@
 			files = (
 				040BE11E1F85918C00B672F8 /* StateCollectionViewCell.swift in Sources */,
 				042667A51F848E0C0063FFE3 /* Senator.swift in Sources */,
+				04BA614C1F8856F50079BF9A /* UserDefaultsManager.swift in Sources */,
 				04E8F11A1F847F62002C299A /* StateCollectionViewController.swift in Sources */,
+				04BA61471F8846C30079BF9A /* LoginViewController.swift in Sources */,
 				04BA61381F87656E0079BF9A /* StateCollectionViewDelegateMethods.swift in Sources */,
 				040BE12A1F87096100B672F8 /* StateGetter.swift in Sources */,
 				040BE11C1F85911800B672F8 /* States.swift in Sources */,
 				04BA61351F8762D30079BF9A /* Constants.swift in Sources */,
 				04E8F1181F847F62002C299A /* AppDelegate.swift in Sources */,
 				040BE1201F85C25800B672F8 /* State.swift in Sources */,
+				04BA61431F8845860079BF9A /* SettingsViewController.swift in Sources */,
 				04BA613F1F876BCF0079BF9A /* HomeViewController.swift in Sources */,
 				040BE1261F86DF6000B672F8 /* SenatorGetter.swift in Sources */,
 				042667A91F8494FF0063FFE3 /* ParserDelegate.swift in Sources */,
+				04BA61491F884F3E0079BF9A /* StatePickerDelegate.swift in Sources */,
 				040BE1191F85888000B672F8 /* SearchBarCollectionReusableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
