@@ -6,7 +6,7 @@
 //  Copyright © 2017 Amber Spadafora. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct StateGetter {
     var states: [State] {
@@ -24,7 +24,8 @@ struct StateGetter {
             var states:[State] = []
             for (key, value) in statesDict {
                 let senators = senatorMap[key] ?? []
-                let state = State(abbreviation: key, title: value, senators: senators)
+                let map = UIImage(named: value) ?? UIImage(imageLiteralResourceName: "Oval")
+                let state = State(abbreviation: key, title: value, senators: senators, pic: map)
                 states.append(state)
             }
             return states
