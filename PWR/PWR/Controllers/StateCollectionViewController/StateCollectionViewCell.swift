@@ -11,6 +11,5 @@ import UIKit
 class StateCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var stateLabel: UILabel!
-    
-    
+    @IBOutlet weak var pictureView: UIImageView!
 }

@@ -30,10 +30,17 @@ extension StateCollectionViewController {
             let cell = self.collectionView?.dequeueReusableCell(withReuseIdentifier: "state", for: indexPath) as! StateCollectionViewCell
             switch isFiltering {
             case true:
+                let tintedImage = self.filteredStates[indexPath.row].pic.withRenderingMode(.alwaysTemplate)
                 cell.stateLabel.text = self.filteredStates[indexPath.row].abbreviation
+                cell.pictureView.image = tintedImage
             case false:
+                let tintedImage = self.states[indexPath.row].pic.withRenderingMode(.alwaysTemplate)
                 cell.stateLabel.text = self.states[indexPath.row].abbreviation
+                cell.pictureView.image = tintedImage
             }
+            
+            cell.pictureView.tintColor = UIColor.lightGray
+            
             return cell
         }
         return UICollectionViewCell()
