@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
 class LoginViewController: UIViewController, StatePickerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        signIn()
+        setUpFacebookBttn()
+        //signIn()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -24,7 +26,6 @@ class LoginViewController: UIViewController, StatePickerDelegate {
 
     func signIn(){
         let dummyId = "123456"
-        // add firebase authentication
         UserDefaultManager.setisLoggedInTo(bool: true)
         UserDefaultManager.setUserId(uid: dummyId)
         if let _ = UserDefaultManager.storedState {
@@ -33,13 +34,11 @@ class LoginViewController: UIViewController, StatePickerDelegate {
             goToStatePicker()
         }
     }
-    
     func goToHome(){
         DispatchQueue.main.async {
             self.performSegue(withIdentifier: Constants.segueFromLoginToHomeVC, sender: self)
         }
     }
-    
     func goToStatePicker(){
         DispatchQueue.main.async {
             self.performSegue(withIdentifier: Constants.segueFromLoginToStateVC, sender: self)
@@ -49,5 +48,9 @@ class LoginViewController: UIViewController, StatePickerDelegate {
     func userDidSelectState() {
         goToHome()
     }
-
+    func setUpFacebookBttn(){
+        let loginButton = FBSDKLoginButton()
+        loginButton.center = self.view.center
+        self.view.addSubview(loginButton)
+    }
 }

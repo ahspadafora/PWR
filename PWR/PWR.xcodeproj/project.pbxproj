@@ -26,6 +26,10 @@
 		04BA61491F884F3E0079BF9A /* StatePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA61481F884F3E0079BF9A /* StatePickerDelegate.swift */; };
 		04BA614C1F8856F50079BF9A /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA614B1F8856F50079BF9A /* UserDefaultsManager.swift */; };
 		04BA61501F88D07C0079BF9A /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA614F1F88D07C0079BF9A /* FirebaseManager.swift */; };
+		04BA61561F88D8FE0079BF9A /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BA61551F88D85B0079BF9A /* FBSDKShareKit.framework */; };
+		04BA61571F88D9010079BF9A /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BA61541F88D8480079BF9A /* Bolts.framework */; };
+		04BA61581F88D9030079BF9A /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BA61521F88D83F0079BF9A /* FBSDKCoreKit.framework */; };
+		04BA61591F88D9060079BF9A /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BA61531F88D8410079BF9A /* FBSDKLoginKit.framework */; };
 		04E8F1181F847F62002C299A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8F1171F847F62002C299A /* AppDelegate.swift */; };
 		04E8F11A1F847F62002C299A /* StateCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8F1191F847F62002C299A /* StateCollectionViewController.swift */; };
 		04E8F11F1F847F62002C299A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E8F11E1F847F62002C299A /* Assets.xcassets */; };
@@ -75,6 +79,10 @@
 		04BA614B1F8856F50079BF9A /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		04BA614E1F88CE680079BF9A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04BA614F1F88D07C0079BF9A /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		04BA61521F88D83F0079BF9A /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		04BA61531F88D8410079BF9A /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		04BA61541F88D8480079BF9A /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		04BA61551F88D85B0079BF9A /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		04E8F1141F847F62002C299A /* PWR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PWR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E8F1171F847F62002C299A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04E8F1191F847F62002C299A /* StateCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCollectionViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +111,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04BA61571F88D9010079BF9A /* Bolts.framework in Frameworks */,
+				04BA61581F88D9030079BF9A /* FBSDKCoreKit.framework in Frameworks */,
+				04BA61591F88D9060079BF9A /* FBSDKLoginKit.framework in Frameworks */,
+				04BA61561F88D8FE0079BF9A /* FBSDKShareKit.framework in Frameworks */,
 				CF7B686D23ECF12B1276DAAF /* Pods_PWR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +314,10 @@
 		FF0DB9AE8680E07682720BCE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04BA61551F88D85B0079BF9A /* FBSDKShareKit.framework */,
+				04BA61541F88D8480079BF9A /* Bolts.framework */,
+				04BA61521F88D83F0079BF9A /* FBSDKCoreKit.framework */,
+				04BA61531F88D8410079BF9A /* FBSDKLoginKit.framework */,
 				E4F170B39983E666656FB199 /* Pods_PWR.framework */,
 				871D0A1760DD9397618FD842 /* Pods_PWRTests.framework */,
 				22820BB6157660E8D282345E /* Pods_PWRUITests.framework */,
@@ -758,6 +774,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = V38M9976HU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/PWR/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -773,6 +793,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = V38M9976HU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/PWR/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
