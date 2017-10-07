@@ -1,0 +1,6 @@
+framework module Pods_PWRUITests {
+  umbrella header "Pods-PWRUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
