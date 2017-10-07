@@ -31,6 +31,8 @@
 		04E8F1221F847F62002C299A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E8F1201F847F62002C299A /* LaunchScreen.storyboard */; };
 		04E8F12D1F847F62002C299A /* PWRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8F12C1F847F62002C299A /* PWRTests.swift */; };
 		04E8F1381F847F62002C299A /* PWRUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8F1371F847F62002C299A /* PWRUITests.swift */; };
+		058AB9391F895C9E008DEC39 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058AB9381F895C9E008DEC39 /* APIManager.swift */; };
+		058AB93B1F895CAE008DEC39 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058AB93A1F895CAE008DEC39 /* Endpoints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		04E8F1331F847F62002C299A /* PWRUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PWRUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E8F1371F847F62002C299A /* PWRUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWRUITests.swift; sourceTree = "<group>"; };
 		04E8F1391F847F62002C299A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		058AB9381F895C9E008DEC39 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		058AB93A1F895CAE008DEC39 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +237,7 @@
 		04E8F1161F847F62002C299A /* PWR */ = {
 			isa = PBXGroup;
 			children = (
+				058AB9371F895C6E008DEC39 /* APIManager */,
 				04BA614D1F8856FF0079BF9A /* UserDefaultsManager */,
 				04BA614A1F884F4C0079BF9A /* Protocols */,
 				040BE1271F86DFCB00B672F8 /* Delegates */,
@@ -262,6 +267,15 @@
 				04E8F1391F847F62002C299A /* Info.plist */,
 			);
 			path = PWRUITests;
+			sourceTree = "<group>";
+		};
+		058AB9371F895C6E008DEC39 /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				058AB9381F895C9E008DEC39 /* APIManager.swift */,
+				058AB93A1F895CAE008DEC39 /* Endpoints.swift */,
+			);
+			path = APIManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,7 +429,9 @@
 				04E8F1181F847F62002C299A /* AppDelegate.swift in Sources */,
 				040BE1201F85C25800B672F8 /* State.swift in Sources */,
 				04BA61431F8845860079BF9A /* SettingsViewController.swift in Sources */,
+				058AB9391F895C9E008DEC39 /* APIManager.swift in Sources */,
 				04BA613F1F876BCF0079BF9A /* HomeViewController.swift in Sources */,
+				058AB93B1F895CAE008DEC39 /* Endpoints.swift in Sources */,
 				040BE1261F86DF6000B672F8 /* SenatorGetter.swift in Sources */,
 				042667A91F8494FF0063FFE3 /* ParserDelegate.swift in Sources */,
 				04BA61491F884F3E0079BF9A /* StatePickerDelegate.swift in Sources */,
