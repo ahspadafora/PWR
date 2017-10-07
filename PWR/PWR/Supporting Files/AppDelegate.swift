@@ -10,12 +10,12 @@ import UIKit
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, backendConfig {
 
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+        configureBackend()
         // UserDefaultManager.clearUserDefaults()
         if UserDefaultManager.userIsSignedIn {
             goToHomeVC()
