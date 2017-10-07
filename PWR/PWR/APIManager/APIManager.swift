@@ -12,10 +12,16 @@ class APIManager {
     private init() {}
     static let manager = APIManager()
     
-    func getData(for endpoint: URL, callback: @escaping (Data?) -> Void) {
+    private let dummyAPIKey = "000"
+    
+    func getData(on endpoint: URL, callback: @escaping (Data?) -> Void) {
         let session = URLSession(configuration: URLSessionConfiguration.default)
+        var request = URLRequest(url: endpoint)
         
-        session.dataTask(with: endpoint) { (data: Data?, response: URLResponse?, error: Error?) in
+        request.setValue(dummyAPIKey, forHTTPHeaderField: "X-API-Key")
+        request.httpMethod = "GET"
+        
+        session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
             if error != nil {
                 print("Error during session: \(String(describing: error))")
             }
