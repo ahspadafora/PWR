@@ -39,7 +39,7 @@ extension StateCollectionViewController {
                 cell.pictureView.image = tintedImage
             }
             
-            cell.pictureView.tintColor = UIColor.lightGray
+            cell.pictureView.tintColor = UIColor.white
             
             return cell
         }
