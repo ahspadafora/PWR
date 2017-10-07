@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, backendConfig {
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
-        // UserDefaultManager.clearUserDefaults()
+        //UserDefaultManager.clearUserDefaults()
         if UserDefaultManager.userIsSignedIn {
             goToHomeVC()
         } else {
@@ -31,15 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, backendConfig {
         }
         return true
     }
-    
-//    - (BOOL)application:(UIApplication *)application
-//    openURL:(NSURL *)url
-//    sourceApplication:(NSString *)sourceApplication
-//    annotation:(id)annotation {
-//    return [[FBSDKApplicationDelegate sharedInstance] application:application
-//    openURL:url
-//    sourceApplication:sourceApplication
-//    annotation:annotation];
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         guard let sourceApplication = options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String else { return false }

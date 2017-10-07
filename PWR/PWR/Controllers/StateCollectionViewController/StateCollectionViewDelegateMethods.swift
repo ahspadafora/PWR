@@ -56,7 +56,8 @@ extension StateCollectionViewController {
         }
         UserDefaultManager.setStoredState(abbreviation: self.selectedState.abbreviation)
         self.statePickerDelegate?.userDidSelectState()
-        
         performSegue(withIdentifier: Constants.segueFromStateCollectionVCtoHomeVC, sender: self)
     }
+    
+    
 }

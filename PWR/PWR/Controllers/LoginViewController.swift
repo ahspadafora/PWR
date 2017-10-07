@@ -12,6 +12,7 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController, StatePickerDelegate, FBSDKLoginButtonDelegate {
     
+    
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
         Auth.auth().signIn(with: credential) { (user, error) in
@@ -25,6 +26,13 @@ class LoginViewController: UIViewController, StatePickerDelegate, FBSDKLoginButt
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         UserDefaultManager.clearUserDefaults()
+        let auth = Auth.auth()
+        do {
+            try auth.signOut()
+        }
+        catch let signoutError as NSError {
+            print(signoutError.localizedDescription)
+        }
     }
     
 
@@ -32,8 +40,6 @@ class LoginViewController: UIViewController, StatePickerDelegate, FBSDKLoginButt
         super.viewDidLoad()
         setUpFacebookBttn()
     }
-    
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.segueFromLoginToStateVC {
