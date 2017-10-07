@@ -38,7 +38,7 @@ class UserDefaultManager{
     }
     
     static func clearUserDefaults(){
-        userDefaults.removeObject(forKey: "isLoggedIn")
+        userDefaults.set(false, forKey: "isLoggedIn")
         userDefaults.removeObject(forKey: "State")
         userDefaults.removeObject(forKey: "userId")
     }

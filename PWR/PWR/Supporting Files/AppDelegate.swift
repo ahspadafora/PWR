@@ -42,8 +42,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, backendConfig {
 //    annotation:annotation];
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        let sourceApplication = UIApplicationOpenURLOptionsKey.sourceApplication.rawValue
-        let annotation = UIApplicationOpenURLOptionsKey.annotation.rawValue
+        guard let sourceApplication = options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String else { return false }
+        let annotation = options[UIApplicationOpenURLOptionsKey.annotation] as? String
         return FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: sourceApplication, annotation: annotation)
     }
     

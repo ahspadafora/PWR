@@ -8,14 +8,32 @@
 
 import UIKit
 import FBSDKLoginKit
+import FirebaseAuth
 
-class LoginViewController: UIViewController, StatePickerDelegate {
+class LoginViewController: UIViewController, StatePickerDelegate, FBSDKLoginButtonDelegate {
+    
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+        Auth.auth().signIn(with: credential) { (user, error) in
+            if error != nil {
+                print(error?.localizedDescription)
+            }
+            guard let uid = user?.uid else { return }
+            self.signIn(uid: uid)
+        }
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        UserDefaultManager.clearUserDefaults()
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpFacebookBttn()
-        //signIn()
     }
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.segueFromLoginToStateVC {
@@ -24,15 +42,10 @@ class LoginViewController: UIViewController, StatePickerDelegate {
         }
     }
 
-    func signIn(){
-        let dummyId = "123456"
+    func signIn(uid: String){
         UserDefaultManager.setisLoggedInTo(bool: true)
-        UserDefaultManager.setUserId(uid: dummyId)
-        if let _ = UserDefaultManager.storedState {
-            goToHome()
-        } else {
-            goToStatePicker()
-        }
+        UserDefaultManager.setUserId(uid: uid)
+        goToStatePicker()
     }
     func goToHome(){
         DispatchQueue.main.async {
@@ -50,6 +63,7 @@ class LoginViewController: UIViewController, StatePickerDelegate {
     }
     func setUpFacebookBttn(){
         let loginButton = FBSDKLoginButton()
+        loginButton.delegate = self
         loginButton.center = self.view.center
         self.view.addSubview(loginButton)
     }
