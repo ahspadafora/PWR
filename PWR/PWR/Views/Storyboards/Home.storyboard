@@ -19,17 +19,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4rK-Ai-e9z">
-                                <rect key="frame" x="0.0" y="122" width="0.0" height="51"/>
+                                <rect key="frame" x="125" y="166" width="125" height="51"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fh5-vv-m7m">
-                                        <rect key="frame" x="125" y="0.0" width="125" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="125" height="30"/>
                                         <state key="normal" title="Choose your state"/>
                                         <connections>
                                             <segue destination="m2t-FP-Qu9" kind="show" identifier="goToSearchController" id="zl9-Pa-Hrg"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZr-9l-tSZ">
-                                        <rect key="frame" x="0.0" y="30" width="0.0" height="21"/>
+                                        <rect key="frame" x="41.5" y="30" width="42" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="zs9-Bz-yeC"/>
                                         </constraints>
@@ -186,12 +186,12 @@
                     </collectionView>
                     <navigationItem key="navigationItem" id="kYn-Eh-8gy"/>
                     <connections>
-                        <segue destination="06i-zS-duR" kind="show" identifier="userSelectedState" id="scU-6f-7mb"/>
+                        <segue destination="suU-nt-Xcr" kind="show" identifier="userSelectedState" id="lW9-ss-9OS"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8hd-SD-3HQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2128.8000000000002" y="116.49175412293854"/>
+            <point key="canvasLocation" x="1074" y="1039"/>
         </scene>
         <!--Home-->
         <scene sceneID="OXy-he-Yw6">
@@ -216,7 +216,4 @@
     <resources>
         <image name="Oval" width="140" height="140"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="scU-6f-7mb"/>
-    </inferredMetricsTieBreakers>
 </document>
