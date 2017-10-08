@@ -24,17 +24,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4rK-Ai-e9z">
-                                <rect key="frame" x="125" y="166" width="125" height="51"/>
+                                <rect key="frame" x="166.5" y="166" width="42" height="21"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fh5-vv-m7m">
-                                        <rect key="frame" x="0.0" y="0.0" width="125" height="30"/>
-                                        <state key="normal" title="Choose your state"/>
-                                        <connections>
-                                            <segue destination="m2t-FP-Qu9" kind="show" identifier="goToSearchController" id="zl9-Pa-Hrg"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZr-9l-tSZ">
-                                        <rect key="frame" x="41.5" y="30" width="42" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="zs9-Bz-yeC"/>
                                         </constraints>
@@ -74,13 +67,58 @@
                     <view key="view" contentMode="scaleToFill" id="aNR-ll-rFN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zYj-Ua-Jp3">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settingsTableCell" textLabel="b1o-1S-R1s" style="IBUITableViewCellStyleDefault" id="40y-BD-HtE">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="40y-BD-HtE" id="GsQ-FW-EwQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Update State" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b1o-1S-R1s">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zYj-Ua-Jp3" firstAttribute="leading" secondItem="7Y8-vX-fRG" secondAttribute="leading" id="Oj1-SY-Dn3"/>
+                            <constraint firstItem="7Y8-vX-fRG" firstAttribute="trailing" secondItem="zYj-Ua-Jp3" secondAttribute="trailing" id="Sie-fn-Y2E"/>
+                            <constraint firstItem="zYj-Ua-Jp3" firstAttribute="top" secondItem="7Y8-vX-fRG" secondAttribute="top" id="Zgl-7Q-EZ3"/>
+                            <constraint firstItem="7Y8-vX-fRG" firstAttribute="bottom" secondItem="zYj-Ua-Jp3" secondAttribute="bottom" id="ho9-1u-el0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7Y8-vX-fRG"/>
                     </view>
+                    <connections>
+                        <outlet property="settingsTable" destination="zYj-Ua-Jp3" id="AOF-rj-LSQ"/>
+                        <segue destination="m2t-FP-Qu9" kind="presentation" identifier="goToStatePickerFromSettings" id="Zxj-xb-Xcu"/>
+                        <segue destination="OCj-jw-bIg" kind="presentation" identifier="goToLoginVC" id="QqX-Qd-ggw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pJ1-Ki-c84" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2334" y="118"/>
+            <point key="canvasLocation" x="1462" y="991"/>
+        </scene>
+        <!--loginVC-->
+        <scene sceneID="OIT-bu-vl5">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="loginVC" storyboardName="LoginStoryboard" referencedIdentifier="loginVC" id="OCj-jw-bIg" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kig-6M-T13" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2155" y="880"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Gj9-ui-oac">
@@ -194,10 +232,13 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="kYn-Eh-8gy"/>
+                    <connections>
+                        <segue destination="suU-nt-Xcr" kind="show" identifier="userSelectedState" id="lW9-ss-9OS"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8hd-SD-3HQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2128.8000000000002" y="116.49175412293854"/>
+            <point key="canvasLocation" x="-156" y="1754"/>
         </scene>
         <!--Home-->
         <scene sceneID="OXy-he-Yw6">

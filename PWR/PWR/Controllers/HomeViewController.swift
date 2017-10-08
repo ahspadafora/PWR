@@ -12,16 +12,13 @@ class HomeViewController: UIViewController, StatePickerDelegate {
     
     @IBOutlet weak var stateLabel: UILabel!
     
-    var usersState: State! {
-        didSet {
-            self.stateLabel.text = usersState.title
-        }
-    }
+    var usersState: State!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if let state = UserDefaultManager.storedState {
             self.usersState = state
+            self.stateLabel.text = self.usersState!.abbreviation
         }
     }
     

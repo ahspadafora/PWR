@@ -7,13 +7,22 @@
 //
 
 import UIKit
+import FBSDKCoreKit
+
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, backendConfig {
 
     var window: UIWindow?
 
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        FBSDKAppEvents.activateApp()
+    }
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        configureBackend()
+        
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
         //UserDefaultManager.clearUserDefaults()
         if UserDefaultManager.userIsSignedIn {
             goToHomeVC()
@@ -22,6 +31,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return true
     }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        guard let sourceApplication = options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String else { return false }
+        let annotation = options[UIApplicationOpenURLOptionsKey.annotation] as? String
+        return FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: sourceApplication, annotation: annotation)
+    }
+    
+    
     
     func goToLoginVC(){
         let storyboard = UIStoryboard(name: "LoginStoryboard", bundle: nil)
