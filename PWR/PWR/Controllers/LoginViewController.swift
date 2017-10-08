@@ -19,11 +19,11 @@ class LoginViewController: UIViewController, StatePickerDelegate, FBSDKLoginButt
             if let tokenString = token.tokenString {
                 let credential = FacebookAuthProvider.credential(withAccessToken: tokenString)
                 Auth.auth().signIn(with: credential) { (user, error) in
+                    guard let uid = user?.uid else { return }
+                    self.setUserDefaultFor(uid: uid)
                     if error != nil {
                         print(error?.localizedDescription)
                     }
-                    guard let uid = user?.uid else { return }
-                    self.setUserDefaultFor(uid: uid)
                 }
             }
         }
