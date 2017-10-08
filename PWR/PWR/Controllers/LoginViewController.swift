@@ -13,16 +13,21 @@ import FirebaseAuth
 class LoginViewController: UIViewController, StatePickerDelegate, FBSDKLoginButtonDelegate {
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-        if let token = FBSDKAccessToken.current().tokenString {
-            let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-            Auth.auth().signIn(with: credential) { (user, error) in
-                if error != nil {
-                    print(error?.localizedDescription)
+        if result.isCancelled == true {
+            print("user cancelled login")
+        } else if let token = result.token {
+            if let tokenString = token.tokenString {
+                let credential = FacebookAuthProvider.credential(withAccessToken: tokenString)
+                Auth.auth().signIn(with: credential) { (user, error) in
+                    if error != nil {
+                        print(error?.localizedDescription)
+                    }
+                    guard let uid = user?.uid else { return }
+                    self.setUserDefaultFor(uid: uid)
                 }
-                guard let uid = user?.uid else { return }
-                self.signIn(uid: uid)
             }
         }
+        
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
@@ -48,7 +53,7 @@ class LoginViewController: UIViewController, StatePickerDelegate, FBSDKLoginButt
         }
     }
     
-    func signIn(uid: String){
+    func setUserDefaultFor(uid: String){
         UserDefaultManager.setisLoggedInTo(bool: true)
         UserDefaultManager.setUserId(uid: uid)
         if let _ = UserDefaultManager.storedState {
@@ -74,6 +79,7 @@ class LoginViewController: UIViewController, StatePickerDelegate, FBSDKLoginButt
     func setUpFacebookBttn(){
         let loginButton = FBSDKLoginButton()
         loginButton.delegate = self
+        loginButton.loginBehavior = .web
         loginButton.center = self.view.center
         self.view.addSubview(loginButton)
     }

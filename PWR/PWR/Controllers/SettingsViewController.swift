@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FBSDKLoginKit
+import Firebase
 
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -35,6 +37,14 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         }
         if indexPath.row == 1 {
             performSegue(withIdentifier: Constants.segueToLoginFromHome, sender: self)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.segueToLoginFromHome {
+            FBSDKLoginManager().logOut()
+            FirebaseManager.logoutOfFireBase()
+            UserDefaultManager.clearUserDefaults()
         }
     }
 }

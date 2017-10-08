@@ -17,3 +17,17 @@ extension backendConfig {
         FirebaseApp.configure()
     }
 }
+
+class FirebaseManager {
+    private init(){}
+    static func logoutOfFireBase(){
+        let auth = Auth.auth()
+        do {
+            try auth.signOut()
+            UserDefaultManager.clearUserDefaults()
+        }
+        catch let signoutError as NSError {
+            print(signoutError.localizedDescription)
+        }
+    }
+}
