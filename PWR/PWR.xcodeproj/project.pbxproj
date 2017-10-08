@@ -26,7 +26,9 @@
 		04BA61491F884F3E0079BF9A /* StatePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA61481F884F3E0079BF9A /* StatePickerDelegate.swift */; };
 		04BA614C1F8856F50079BF9A /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA614B1F8856F50079BF9A /* UserDefaultsManager.swift */; };
 		04BA61501F88D07C0079BF9A /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA614F1F88D07C0079BF9A /* FirebaseManager.swift */; };
-		04BA61561F88D8FE0079BF9A /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BA61551F88D85B0079BF9A /* FBSDKShareKit.framework */; };
+		04BA614F1F88D07C0079BF9A /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA614F1F88D07C0079BF9A /* APIManager.swift */; };
+		04BA614F1F88D07C0079BF9A /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA614F1F88D07C0079BF9A /* Endpoints.swift */; 
+    04BA61561F88D8FE0079BF9A /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BA61551F88D85B0079BF9A /* FBSDKShareKit.framework */; };
 		04BA61571F88D9010079BF9A /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BA61541F88D8480079BF9A /* Bolts.framework */; };
 		04BA61581F88D9030079BF9A /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BA61521F88D83F0079BF9A /* FBSDKCoreKit.framework */; };
 		04BA61591F88D9060079BF9A /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BA61531F88D8410079BF9A /* FBSDKLoginKit.framework */; };
@@ -40,6 +42,7 @@
 		144504089E94398A352F5699 /* Pods_PWRTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 871D0A1760DD9397618FD842 /* Pods_PWRTests.framework */; };
 		CE4A0C8DA14D30885760FFEC /* Pods_PWRUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22820BB6157660E8D282345E /* Pods_PWRUITests.framework */; };
 		CF7B686D23ECF12B1276DAAF /* Pods_PWR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4F170B39983E666656FB199 /* Pods_PWR.framework */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +83,9 @@
 		04BA614B1F8856F50079BF9A /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		04BA614E1F88CE680079BF9A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04BA614F1F88D07C0079BF9A /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
-		04BA61521F88D83F0079BF9A /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		04BA614F1F88D07C0079BF9A /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		04BA614F1F88D07C0079BF9A /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; 
+    04BA61521F88D83F0079BF9A /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		04BA61531F88D8410079BF9A /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		04BA61541F88D8480079BF9A /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		04BA61551F88D85B0079BF9A /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
@@ -240,6 +245,8 @@
 			children = (
 				04BA614B1F8856F50079BF9A /* UserDefaultsManager.swift */,
 				04BA614F1F88D07C0079BF9A /* FirebaseManager.swift */,
+        04BA614F1F88D07C0079BF9A /* APIManager */,
+        04BA614F1F88D07C0079BF9A /* UserDefaultsManager */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -632,8 +639,10 @@
 				04E8F1181F847F62002C299A /* AppDelegate.swift in Sources */,
 				040BE1201F85C25800B672F8 /* State.swift in Sources */,
 				04BA61431F8845860079BF9A /* SettingsViewController.swift in Sources */,
+				04BA614F1F88D07C0079BF9A /* APIManager.swift in Sources */,
 				04BA61501F88D07C0079BF9A /* FirebaseManager.swift in Sources */,
 				04BA613F1F876BCF0079BF9A /* HomeViewController.swift in Sources */,
+				04BA614F1F88D07C0079BF9A /* Endpoints.swift in Sources */,
 				040BE1261F86DF6000B672F8 /* SenatorGetter.swift in Sources */,
 				042667A91F8494FF0063FFE3 /* ParserDelegate.swift in Sources */,
 				04BA61491F884F3E0079BF9A /* StatePickerDelegate.swift in Sources */,
