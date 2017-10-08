@@ -9,7 +9,6 @@
 import Foundation
 
 class UserDefaultManager{
-    private init(){}
     static let userDefaults = UserDefaults.standard
     
     static var storedUserId: String? {
