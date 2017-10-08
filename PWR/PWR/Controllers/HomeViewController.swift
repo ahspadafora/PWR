@@ -51,11 +51,14 @@ class HomeViewController: UIViewController, StatePickerDelegate {
     
     // MARK: -  IBAction functions
     @IBAction func callSenator(_ sender: UIButton) {
-        // switch on senator
+        let selectedSenator = self.senators[sender.tag]
+        print(selectedSenator.lastName)
+        print(selectedSenator.phone)
     }
     
     @IBAction func visitSenatorsWebsite(_ sender: UIButton) {
-        // switch on senator
+        let selectedSenator = self.senators[sender.tag]
+        print(selectedSenator.website)
     }
     
     // MARK: - Helper Functions
