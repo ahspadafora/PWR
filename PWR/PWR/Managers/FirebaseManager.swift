@@ -19,7 +19,6 @@ extension backendConfig {
 }
 
 class FirebaseManager {
-    private init(){}
     static func logoutOfFireBase(){
         let auth = Auth.auth()
         do {
