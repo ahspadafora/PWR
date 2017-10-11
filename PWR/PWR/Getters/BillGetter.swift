@@ -18,7 +18,7 @@ struct BillGetter {
     }
     
     func getBills() -> [Bill]? {
-        let dummyBill = Bill(name: "", number: "", lastAction: "h.r.116")
+        let dummyBill = Bill(name: "", number: "h.r.116", lastAction: "")
         let manager = APIManager.instance
         if let recentAbortionLegislation = Endpoints.abortionBills {
         
