@@ -43,7 +43,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.segueToLoginFromHome {
             FBSDKLoginManager().logOut()
-            FirebaseManager.logoutOfFireBase()
+            FirebaseAuthManager.logoutOfFireBase()
             UserDefaultManager.clearUserDefaults()
         }
     }

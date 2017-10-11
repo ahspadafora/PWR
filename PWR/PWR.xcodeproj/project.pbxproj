@@ -25,12 +25,13 @@
 		04BA61471F8846C30079BF9A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA61461F8846C30079BF9A /* LoginViewController.swift */; };
 		04BA61491F884F3E0079BF9A /* StatePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA61481F884F3E0079BF9A /* StatePickerDelegate.swift */; };
 		04BA614C1F8856F50079BF9A /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA614B1F8856F50079BF9A /* UserDefaultsManager.swift */; };
-		04BA61501F88D07C0079BF9A /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA614F1F88D07C0079BF9A /* FirebaseManager.swift */; };
+		04BA61501F88D07C0079BF9A /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA614F1F88D07C0079BF9A /* FirebaseAuthManager.swift */; };
 		04BA61561F88D8FE0079BF9A /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BA61551F88D85B0079BF9A /* FBSDKShareKit.framework */; };
 		04BA61571F88D9010079BF9A /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BA61541F88D8480079BF9A /* Bolts.framework */; };
 		04BA61581F88D9030079BF9A /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BA61521F88D83F0079BF9A /* FBSDKCoreKit.framework */; };
 		04BA61591F88D9060079BF9A /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BA61531F88D8410079BF9A /* FBSDKLoginKit.framework */; };
 		04BA615A1F88DF6E0079BF9A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04BA614E1F88CE680079BF9A /* GoogleService-Info.plist */; };
+		04BA619B1F8C80840079BF9A /* FBLoginButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA619A1F8C80840079BF9A /* FBLoginButtonDelegate.swift */; };
 		04E8F1181F847F62002C299A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8F1171F847F62002C299A /* AppDelegate.swift */; };
 		04E8F11A1F847F62002C299A /* StateCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8F1191F847F62002C299A /* StateCollectionViewController.swift */; };
 		04E8F11F1F847F62002C299A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E8F11E1F847F62002C299A /* Assets.xcassets */; };
@@ -83,12 +84,13 @@
 		04BA61481F884F3E0079BF9A /* StatePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatePickerDelegate.swift; sourceTree = "<group>"; };
 		04BA614B1F8856F50079BF9A /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		04BA614E1F88CE680079BF9A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		04BA614F1F88D07C0079BF9A /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		04BA614F1F88D07C0079BF9A /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		04BA61521F88D83F0079BF9A /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		04BA61531F88D8410079BF9A /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		04BA61541F88D8480079BF9A /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		04BA61551F88D85B0079BF9A /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		04BA615B1F88E0C40079BF9A /* PWR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PWR.entitlements; sourceTree = "<group>"; };
+		04BA619A1F8C80840079BF9A /* FBLoginButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginButtonDelegate.swift; sourceTree = "<group>"; };
 		04E8F1141F847F62002C299A /* PWR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PWR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E8F1171F847F62002C299A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04E8F1191F847F62002C299A /* StateCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCollectionViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 		040BE1271F86DFCB00B672F8 /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
+				04BA619A1F8C80840079BF9A /* FBLoginButtonDelegate.swift */,
 				042667A81F8494FF0063FFE3 /* ParserDelegate.swift */,
 			);
 			path = Delegates;
@@ -248,7 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				04BA614B1F8856F50079BF9A /* UserDefaultsManager.swift */,
-				04BA614F1F88D07C0079BF9A /* FirebaseManager.swift */,
+				04BA614F1F88D07C0079BF9A /* FirebaseAuthManager.swift */,
 				058AB93D1F89B6B9008DEC39 /* Endpoints.swift */,
 				058AB93F1F89B72A008DEC39 /* APIManager.swift */,
 				0549B09E1F8DC9C7002ABF2F /* StyleManager.swift */,
@@ -645,13 +648,13 @@
 				040BE1201F85C25800B672F8 /* State.swift in Sources */,
 				04BA61431F8845860079BF9A /* SettingsViewController.swift in Sources */,
 				058AB9401F89B72A008DEC39 /* APIManager.swift in Sources */,
-				04BA61501F88D07C0079BF9A /* FirebaseManager.swift in Sources */,
+				04BA61501F88D07C0079BF9A /* FirebaseAuthManager.swift in Sources */,
 				04BA613F1F876BCF0079BF9A /* HomeViewController.swift in Sources */,
 				058AB93E1F89B6B9008DEC39 /* Endpoints.swift in Sources */,
 				040BE1261F86DF6000B672F8 /* SenatorGetter.swift in Sources */,
 				042667A91F8494FF0063FFE3 /* ParserDelegate.swift in Sources */,
 				04BA61491F884F3E0079BF9A /* StatePickerDelegate.swift in Sources */,
-				0549B09F1F8DC9C7002ABF2F /* StyleManager.swift in Sources */,
+				04BA619B1F8C80840079BF9A /* FBLoginButtonDelegate.swift in Sources */,
 				040BE1191F85888000B672F8 /* SearchBarCollectionReusableView.swift in Sources */,
 				0549B09D1F8DC6D2002ABF2F /* UIColor+PWRcolors .swift in Sources */,
 			);
