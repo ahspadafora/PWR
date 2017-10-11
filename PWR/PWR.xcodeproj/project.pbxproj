@@ -655,7 +655,7 @@
 				042667A91F8494FF0063FFE3 /* ParserDelegate.swift in Sources */,
 				04BA61491F884F3E0079BF9A /* StatePickerDelegate.swift in Sources */,
 				0549B09F1F8DC9C7002ABF2F /* StyleManager.swift in Sources */,
-
+				04BA619B1F8C80840079BF9A /* FBLoginButtonDelegate.swift in Sources */,
 				040BE1191F85888000B672F8 /* SearchBarCollectionReusableView.swift in Sources */,
 				0549B09D1F8DC6D2002ABF2F /* UIColor+PWRcolors .swift in Sources */,
 			);
