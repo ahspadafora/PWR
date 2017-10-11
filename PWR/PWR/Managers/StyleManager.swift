@@ -8,19 +8,15 @@
 
 import UIKit
 
-protocol ThemeFonts {
-    func createFontDirectory() -> [String: UIFont]
-}
-
 protocol ThemeUIKitClasses {
    func applyStylingAppwide()
 }
 
-class StyleManager: ThemeFonts, ThemeUIKitClasses {
+class StyleManager: ThemeUIKitClasses {
     private init() {}
     static let instance = StyleManager()
     
-    func createFontDirectory() -> [String: UIFont] {
+   private func createFontDirectory() -> [String: UIFont] {
         let bold = "Avenir-Black"
         let boldItalic = "Avenir-BlackOblique"
         let regular = "Avenir-Roman"
@@ -69,17 +65,17 @@ class StyleManager: ThemeFonts, ThemeUIKitClasses {
         
         // styling
         
-        let navTitleColor = UIColor.white
+        let navTitleColor = UIColor.PWRred
         let navTitleFont = themeFonts["bold"]!
         let navAttributes: [String: AnyObject] = [
             NSFontAttributeName: navTitleFont,
             NSForegroundColorAttributeName: navTitleColor
         ]
         
-        proxyNavBar.tintColor = UIColor.white
+        proxyNavBar.tintColor = UIColor.PWRred
         proxyNavBar.titleTextAttributes = navAttributes
-        proxyNavBar.barTintColor = UIColor.PWRred
-        proxyNavBar.backgroundColor = UIColor.white
+        proxyNavBar.barTintColor = UIColor.PWRpale
+        proxyNavBar.backgroundColor = UIColor.PWRred
         
         proxyTextField.backgroundColor = UIColor.white
         proxyTextField.textColor = UIColor.black
@@ -96,6 +92,7 @@ class StyleManager: ThemeFonts, ThemeUIKitClasses {
         proxyTextView.font = themeFonts["reguar"]
         
         proxyButtonLabel.textColor = UIColor.white
+        proxyButtonLabel.font = themeFonts["bold"]
         
         proxyWebView.scalesPageToFit = true
         proxyWebView.scrollView.bounces = true
