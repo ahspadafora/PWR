@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:AdditionalInfo.plist">
+   </FileRef>
+   <FileRef
       location = "group:PWR.xcodeproj">
    </FileRef>
    <FileRef
