@@ -8,10 +8,22 @@
 
 import UIKit
 
-class BannerView: UIView {
+@IBDesignable class BannerView: UIView {
     
     var label: UILabel!
     var pic: UIImageView!
+    
+    @IBInspectable var text: String = "" {
+        didSet {
+            self.label.text = text
+        }
+    }
+    
+    @IBInspectable var image: UIImage = #imageLiteral(resourceName: "Oval") {
+        didSet {
+            self.pic.image = image
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -91,6 +103,12 @@ class BannerView: UIView {
         self.pic.contentMode = .scaleAspectFit
         self.pic.backgroundColor = UIColor.PWRblueLight
         self.pic.image = #imageLiteral(resourceName: "New York")
+    }
+    
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        self.pic.image = #imageLiteral(resourceName: "Oval")
+        self.label.text = "Senator McGovern"
     }
     
 }

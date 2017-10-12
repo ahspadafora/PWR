@@ -359,7 +359,10 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SG1-uS-zDi" customClass="BannerView" customModule="PWR" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="273"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.87058823529999996" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Hi!"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="Tennessee"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -601,6 +604,7 @@
     </scenes>
     <resources>
         <image name="Oval" width="140" height="140"/>
+        <image name="Tennessee" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="lW9-ss-9OS"/>
