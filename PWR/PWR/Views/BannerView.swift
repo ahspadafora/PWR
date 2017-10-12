@@ -19,7 +19,25 @@ import UIKit
         }
     }
     
-    @IBInspectable var image: UIImage = #imageLiteral(resourceName: "Oval") {
+    @IBInspectable var textColor: UIColor = UIColor.white {
+        didSet {
+            self.label.textColor = textColor
+        }
+    }
+    
+    @IBInspectable var textBackground: UIColor = UIColor.PWRred {
+        didSet {
+            self.label.backgroundColor = textColor
+        }
+    }
+    
+    @IBInspectable var picBackground: UIColor = UIColor.PWRblueLight {
+        didSet {
+            self.backgroundColor = textColor
+        }
+    }
+    
+    @IBInspectable var image: UIImage? = nil {
         didSet {
             self.pic.image = image
         }
@@ -32,10 +50,6 @@ import UIKit
         
         self.addSubview(self.pic)
         self.addSubview(self.label)
-        
-        constrainViews()
-        
-        styleViews()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -45,9 +59,12 @@ import UIKit
         
         self.addSubview(self.pic)
         self.addSubview(self.label)
-        
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    
         constrainViews()
-        
         styleViews()
     }
     
@@ -107,6 +124,11 @@ import UIKit
     
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
+        
+        createViews()
+        constrainViews()
+        styleViews()
+        
         self.pic.image = #imageLiteral(resourceName: "Oval")
         self.label.text = "Senator McGovern"
     }
