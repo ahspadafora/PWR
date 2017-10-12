@@ -42,6 +42,7 @@
 		0549B0A91F8E0A0F002ABF2F /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B0A81F8E0A0F002ABF2F /* Bill.swift */; };
 		0549B09D1F8DC6D2002ABF2F /* UIColor+PWRcolors .swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B09C1F8DC6D2002ABF2F /* UIColor+PWRcolors .swift */; };
 		0549B09F1F8DC9C7002ABF2F /* StyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B09E1F8DC9C7002ABF2F /* StyleManager.swift */; };
+		0549B0AB1F8F0D4C002ABF2F /* SenatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B0AA1F8F0D4C002ABF2F /* SenatorViewController.swift */; };
 		058AB93E1F89B6B9008DEC39 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058AB93D1F89B6B9008DEC39 /* Endpoints.swift */; };
 		058AB9401F89B72A008DEC39 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058AB93F1F89B72A008DEC39 /* APIManager.swift */; };
 		144504089E94398A352F5699 /* Pods_PWRTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 871D0A1760DD9397618FD842 /* Pods_PWRTests.framework */; };
@@ -109,6 +110,7 @@
 		0549B0A81F8E0A0F002ABF2F /* Bill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 		0549B09C1F8DC6D2002ABF2F /* UIColor+PWRcolors .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+PWRcolors .swift"; sourceTree = "<group>"; };
 		0549B09E1F8DC9C7002ABF2F /* StyleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleManager.swift; sourceTree = "<group>"; };
+		0549B0AA1F8F0D4C002ABF2F /* SenatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenatorViewController.swift; sourceTree = "<group>"; };
 		058AB93D1F89B6B9008DEC39 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		058AB93F1F89B72A008DEC39 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		22820BB6157660E8D282345E /* Pods_PWRUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PWRUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,6 +210,7 @@
 				04BA61421F8845860079BF9A /* SettingsViewController.swift */,
 				04BA613E1F876BCF0079BF9A /* HomeViewController.swift */,
 				04BA61361F8764E00079BF9A /* StateCollectionViewController */,
+				0549B0AA1F8F0D4C002ABF2F /* SenatorViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -659,7 +662,11 @@
 				04BA613F1F876BCF0079BF9A /* HomeViewController.swift in Sources */,
 				058AB93E1F89B6B9008DEC39 /* Endpoints.swift in Sources */,
 				040BE1261F86DF6000B672F8 /* SenatorGetter.swift in Sources */,
+<<<<<<< HEAD
 				0549B0A91F8E0A0F002ABF2F /* Bill.swift in Sources */,
+=======
+				0549B0AB1F8F0D4C002ABF2F /* SenatorViewController.swift in Sources */,
+>>>>>>> f59af23484ae5e6adfe85bdbaf7caf4d4b1cecdd
 				042667A91F8494FF0063FFE3 /* ParserDelegate.swift in Sources */,
 				04BA61491F884F3E0079BF9A /* StatePickerDelegate.swift in Sources */,
 				0549B09F1F8DC9C7002ABF2F /* StyleManager.swift in Sources */,
