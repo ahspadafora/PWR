@@ -31,11 +31,11 @@ extension StateCollectionViewController {
             switch isFiltering {
             case true:
                 let tintedImage = self.filteredStates[indexPath.row].pic.withRenderingMode(.alwaysTemplate)
-                cell.stateLabel.text = self.filteredStates[indexPath.row].abbreviation
+                cell.stateLabel.text = self.filteredStates[indexPath.row].title
                 cell.pictureView.image = tintedImage
             case false:
                 let tintedImage = self.states[indexPath.row].pic.withRenderingMode(.alwaysTemplate)
-                cell.stateLabel.text = self.states[indexPath.row].abbreviation
+                cell.stateLabel.text = self.states[indexPath.row].title
                 cell.pictureView.image = tintedImage
             }
             
