@@ -362,13 +362,18 @@
                                 <color key="separatorColor" red="0.87058823529999996" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.87058823529999996" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Log out" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UzW-DI-367">
+                                <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GZP-0F-qAM">
                                     <rect key="frame" x="0.0" y="72" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="Avenir-LightOblique" family="Avenir" pointSize="18"/>
-                                    <color key="textColor" red="0.87058823529411766" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                    <inset key="titleEdgeInsets" minX="12" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" title="Log out">
+                                        <color key="titleColor" red="0.86901271343231201" green="0.32668352127075195" blue="0.32617950439453125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="logOutUser:" destination="HqS-Tu-zqe" eventType="touchUpInside" id="235-cL-gbF"/>
+                                    </connections>
+                                </button>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settingsTableCell" textLabel="b1o-1S-R1s" detailTextLabel="eRu-SP-ytQ" style="IBUITableViewCellStyleValue1" id="40y-BD-HtE">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
@@ -409,6 +414,7 @@
                         <viewLayoutGuide key="safeArea" id="7Y8-vX-fRG"/>
                     </view>
                     <connections>
+                        <outlet property="logOutButton" destination="GZP-0F-qAM" id="eAM-Yh-7b7"/>
                         <outlet property="settingsTable" destination="zYj-Ua-Jp3" id="AOF-rj-LSQ"/>
                         <segue destination="m2t-FP-Qu9" kind="presentation" identifier="goToStatePickerFromSettings" id="Zxj-xb-Xcu"/>
                         <segue destination="OCj-jw-bIg" kind="presentation" identifier="goToLoginVC" id="QqX-Qd-ggw"/>

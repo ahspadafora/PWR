@@ -13,6 +13,7 @@ import Firebase
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var settingsTable: UITableView!
+    @IBOutlet weak var logOutButton: UIButton!
     var usersState: State!
     
     override func viewDidLoad() {
@@ -22,7 +23,13 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
         settingsTable.delegate = self
         settingsTable.dataSource = self
+        logOutButton.contentHorizontalAlignment = .left
     }
+    
+    @IBAction func logOutUser(_ sender: UIButton) {
+        performSegue(withIdentifier: Constants.segueToLoginFromHome, sender: self)
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -36,8 +43,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         case 0:
             currentSetting = self.usersState.title
         case 1:
-            currentSetting =  "Yes" // to-do: bool - check if they have allowed app to post to facebook
-        case 2:
             currentSetting = "Daily" // to-do: bool - check if they have set up push  notifications
         default:
             currentSetting = ""
@@ -56,9 +61,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
             performSegue(withIdentifier: Constants.segueFromSettingsToStatePicker, sender: self)
-        }
-        if indexPath.row == 1 {
-            performSegue(withIdentifier: Constants.segueToLoginFromHome, sender: self)
         }
     }
     
@@ -79,8 +81,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         case 0:
             return "Current state:"
         case 1:
-            return "Post to Facebook?"
-        case 2:
             return "Remind to call?"
         default:
             return ""
