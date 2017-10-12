@@ -9,6 +9,10 @@
 import Foundation
 
 struct Endpoints {
+    static let abortionBills = URL(string: "https://api.propublica.org/congress/v1/bills/subjects/abortion.json")
+}
+
+struct HR36Endpoints {
     /*
      Note! The bill has not been assigned a senate bill id yet. The endpoints
      below will work for querying the House of Representaives on their version
