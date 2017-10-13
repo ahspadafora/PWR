@@ -17,6 +17,7 @@
 		042155B11F90B7E7003B1EA0 /* CoSponsershipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042155B01F90B7E7003B1EA0 /* CoSponsershipViewController.swift */; };
 		042155B31F90B7FD003B1EA0 /* CommiteeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042155B21F90B7FD003B1EA0 /* CommiteeViewController.swift */; };
 		042155B51F90B95E003B1EA0 /* StatesSenatorsTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042155B41F90B95E003B1EA0 /* StatesSenatorsTableViewDelegate.swift */; };
+		042155B71F90BA3E003B1EA0 /* SenatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042155B61F90BA3E003B1EA0 /* SenatorTableViewCell.swift */; };
 		042667A31F848D930063FFE3 /* senators.xml in Resources */ = {isa = PBXBuildFile; fileRef = 041EA40A1F84807200423C22 /* senators.xml */; };
 		042667A51F848E0C0063FFE3 /* Senator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042667A41F848E0C0063FFE3 /* Senator.swift */; };
 		042667A91F8494FF0063FFE3 /* ParserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042667A81F8494FF0063FFE3 /* ParserDelegate.swift */; };
@@ -84,6 +85,7 @@
 		042155B01F90B7E7003B1EA0 /* CoSponsershipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoSponsershipViewController.swift; sourceTree = "<group>"; };
 		042155B21F90B7FD003B1EA0 /* CommiteeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommiteeViewController.swift; sourceTree = "<group>"; };
 		042155B41F90B95E003B1EA0 /* StatesSenatorsTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatesSenatorsTableViewDelegate.swift; sourceTree = "<group>"; };
+		042155B61F90BA3E003B1EA0 /* SenatorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenatorTableViewCell.swift; sourceTree = "<group>"; };
 		042667A41F848E0C0063FFE3 /* Senator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Senator.swift; sourceTree = "<group>"; };
 		042667A81F8494FF0063FFE3 /* ParserDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserDelegate.swift; sourceTree = "<group>"; };
 		04BA61341F8762D30079BF9A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				040BE1181F85888000B672F8 /* SearchBarCollectionReusableView.swift */,
 				0549B0B01F8F49DE002ABF2F /* BannerView.swift */,
 				04BA613B1F876B820079BF9A /* Storyboards */,
+				042155B61F90BA3E003B1EA0 /* SenatorTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -679,6 +682,7 @@
 				04BA61501F88D07C0079BF9A /* FirebaseAuthManager.swift in Sources */,
 				04BA613F1F876BCF0079BF9A /* HomeViewController.swift in Sources */,
 				058AB93E1F89B6B9008DEC39 /* Endpoints.swift in Sources */,
+				042155B71F90BA3E003B1EA0 /* SenatorTableViewCell.swift in Sources */,
 				042155AF1F90B75E003B1EA0 /* BillDetailViewController.swift in Sources */,
 				040BE1261F86DF6000B672F8 /* SenatorGetter.swift in Sources */,
 				0549B0A91F8E0A0F002ABF2F /* Bill.swift in Sources */,
