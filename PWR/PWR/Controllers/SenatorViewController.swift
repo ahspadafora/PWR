@@ -10,10 +10,13 @@ import UIKit
 
 class SenatorViewController: UIViewController {
 
-    @IBOutlet weak var senatorImage: UIImageView!
-    @IBOutlet weak var stateLabel: UILabel!
+    @IBOutlet weak var senatorBannerView: BannerView!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var partyLabel: UILabel!
     @IBOutlet weak var senatorTable: UITableView!
+    
+    // properties
+    var senator: Senator!
     
     override func viewDidLoad() {
         super.viewDidLoad()

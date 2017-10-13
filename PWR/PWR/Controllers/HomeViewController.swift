@@ -32,12 +32,12 @@ class HomeViewController: UIViewController, StatePickerDelegate {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Constants.segueToSearchController {
-            guard let destinationVC = segue.destination as? StateCollectionViewController else { return }
-            destinationVC.statePickerDelegate = self
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == Constants.segueToSearchController {
+//            guard let destinationVC = segue.destination as? StateCollectionViewController else { return }
+//            destinationVC.statePickerDelegate = self
+//        }
+//    }
     
     // MARK: - StatePickerDelegateMethod
     func userDidSelectState() {
@@ -58,6 +58,12 @@ class HomeViewController: UIViewController, StatePickerDelegate {
     @IBAction func visitSenatorsWebsite(_ sender: UIButton) {
         let selectedSenator = self.senators[sender.tag]
         print(selectedSenator.website)
+    }
+    
+    @IBAction func viewSenator(_ sender: UIButton) {
+        let destination = SenatorViewController()
+        destination.senator = self.senators[sender.tag]
+        performSegue(withIdentifier: Constants.sequeToSenatorVC, sender: self)
     }
     
     // MARK: - Helper Functions
