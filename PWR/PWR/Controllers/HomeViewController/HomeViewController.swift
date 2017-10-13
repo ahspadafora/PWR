@@ -12,10 +12,7 @@ class HomeViewController: UIViewController, StatePickerDelegate {
     
     // MARK: - IBOutlets
     @IBOutlet weak var stateBannerView: BannerView!
-    @IBOutlet weak var firstSenatorNameLabel: UILabel!
-    @IBOutlet weak var firstSenPartyLabel: UILabel!
-    @IBOutlet weak var secondSenNameLabel: UILabel!
-    @IBOutlet weak var secondSenPartyLabel: UILabel!
+    @IBOutlet weak var senatorTable: UITableView!
     
     // MARK: - Properties
     var usersState: State!
@@ -25,6 +22,7 @@ class HomeViewController: UIViewController, StatePickerDelegate {
     // MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if let state = UserDefaultManager.storedState {
             self.usersState = state
             self.senators = self.usersState.senators
@@ -73,10 +71,10 @@ class HomeViewController: UIViewController, StatePickerDelegate {
     
     // MARK: - Helper Functions
     private func setUpSenatorLabels(senators: [Senator]){
-        self.firstSenPartyLabel.text = "Party: \(senators[0].party)\nOffices located at \(senators[0].address)"
-        self.firstSenatorNameLabel.text = "Sen. \(senators[0].lastName)"
-        self.secondSenPartyLabel.text = "Party: \(senators[1].party)\nOffices located at \(senators[1].address)"
-        self.secondSenNameLabel.text = "Sen. \(senators[1].lastName)"
+//        self.firstSenPartyLabel.text = "Party: \(senators[0].party)\nOffices located at \(senators[0].address)"
+//        self.firstSenatorNameLabel.text = "Sen. \(senators[0].lastName)"
+//        self.secondSenPartyLabel.text = "Party: \(senators[1].party)\nOffices located at \(senators[1].address)"
+//        self.secondSenNameLabel.text = "Sen. \(senators[1].lastName)"
     }
     
     private func setUpStateLabels(state: State){
