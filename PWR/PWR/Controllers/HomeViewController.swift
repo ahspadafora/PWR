@@ -11,8 +11,7 @@ import UIKit
 class HomeViewController: UIViewController, StatePickerDelegate {
     
     // MARK: - IBOutlets
-    @IBOutlet weak var stateLabel: UILabel!
-    @IBOutlet weak var stateImageView: UIImageView!
+    @IBOutlet weak var stateBannerView: BannerView!
     @IBOutlet weak var firstSenatorNameLabel: UILabel!
     @IBOutlet weak var firstSenPartyLabel: UILabel!
     @IBOutlet weak var secondSenNameLabel: UILabel!
@@ -43,7 +42,7 @@ class HomeViewController: UIViewController, StatePickerDelegate {
     // MARK: - StatePickerDelegateMethod
     func userDidSelectState() {
         guard let state = UserDefaultManager.storedState else {
-            self.stateLabel.text = "You have not chosen a state"
+            self.stateBannerView.label.text = "You have not chosen a state"
             return
         }
         self.usersState = state
@@ -63,18 +62,15 @@ class HomeViewController: UIViewController, StatePickerDelegate {
     
     // MARK: - Helper Functions
     private func setUpSenatorLabels(senators: [Senator]){
-        self.firstSenPartyLabel.text = "Party: \(senators[0].party)"
-        self.firstSenatorNameLabel.text = "Senator \(senators[0].lastName)"
-        self.secondSenPartyLabel.text = "Party: \(senators[1].party)"
-        self.secondSenNameLabel.text = "Senator \(senators[1].lastName)"
+        self.firstSenPartyLabel.text = "Party: \(senators[0].party)\nOffices located at \(senators[0].address)"
+        self.firstSenatorNameLabel.text = "Sen. \(senators[0].lastName)"
+        self.secondSenPartyLabel.text = "Party: \(senators[1].party)\nOffices located at \(senators[1].address)"
+        self.secondSenNameLabel.text = "Sen. \(senators[1].lastName)"
     }
     
     private func setUpStateLabels(state: State){
-        self.stateLabel.text = state.title
-        self.stateImageView.image = state.pic
+        self.stateBannerView.label.text = state.title
+        self.stateBannerView.pic.image = state.pic
     }
-    
-    
-    
 }
 

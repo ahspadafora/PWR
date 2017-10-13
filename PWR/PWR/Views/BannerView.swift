@@ -81,7 +81,7 @@ import UIKit
             
             _ = [
                 self.widthAnchor.constraint(equalTo: superview.widthAnchor)
-                , self.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.5)
+                , self.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.66)
                 ].map { $0.isActive = true }
         }
         
@@ -118,7 +118,7 @@ import UIKit
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         
-        self.pic.image = #imageLiteral(resourceName: "New York")
+        self.pic.image = nil
         self.label.text = "New York"
         styleViews()
     }
