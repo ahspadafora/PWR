@@ -16,6 +16,7 @@ class HomeTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         pic.layer.cornerRadius = pic.frame.width/2
         pic.layer.borderColor = UIColor.PWRblueDark.cgColor
         pic.layer.borderWidth = 3

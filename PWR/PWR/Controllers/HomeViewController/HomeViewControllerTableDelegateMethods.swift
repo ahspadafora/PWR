@@ -25,9 +25,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "senator", for: indexPath) as! HomeTableViewCell
 
         // Configure the cell...
+        cell.name.text = "dfsdf"
+        cell.pic.image = #imageLiteral(resourceName: "California")
+        cell.party.text = "vverbve"
 
         return cell
     }
