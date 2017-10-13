@@ -118,8 +118,8 @@ import UIKit
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         
-        image = #imageLiteral(resourceName: "New York")
-        text = "New York"
+        self.pic.image = #imageLiteral(resourceName: "New York")
+        self.label.text = "New York"
         styleViews()
     }
     
