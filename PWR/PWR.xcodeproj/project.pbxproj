@@ -38,6 +38,8 @@
 		04E8F1221F847F62002C299A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E8F1201F847F62002C299A /* LaunchScreen.storyboard */; };
 		04E8F12D1F847F62002C299A /* PWRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8F12C1F847F62002C299A /* PWRTests.swift */; };
 		04E8F1381F847F62002C299A /* PWRUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8F1371F847F62002C299A /* PWRUITests.swift */; };
+		0549B0A71F8E09A8002ABF2F /* BillGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B0A61F8E09A8002ABF2F /* BillGetter.swift */; };
+		0549B0A91F8E0A0F002ABF2F /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B0A81F8E0A0F002ABF2F /* Bill.swift */; };
 		0549B09D1F8DC6D2002ABF2F /* UIColor+PWRcolors .swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B09C1F8DC6D2002ABF2F /* UIColor+PWRcolors .swift */; };
 		0549B09F1F8DC9C7002ABF2F /* StyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B09E1F8DC9C7002ABF2F /* StyleManager.swift */; };
 		0549B0AB1F8F0D4C002ABF2F /* SenatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B0AA1F8F0D4C002ABF2F /* SenatorViewController.swift */; };
@@ -105,6 +107,8 @@
 		04E8F1331F847F62002C299A /* PWRUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PWRUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E8F1371F847F62002C299A /* PWRUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWRUITests.swift; sourceTree = "<group>"; };
 		04E8F1391F847F62002C299A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0549B0A61F8E09A8002ABF2F /* BillGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillGetter.swift; sourceTree = "<group>"; };
+		0549B0A81F8E0A0F002ABF2F /* Bill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 		0549B09C1F8DC6D2002ABF2F /* UIColor+PWRcolors .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+PWRcolors .swift"; sourceTree = "<group>"; };
 		0549B09E1F8DC9C7002ABF2F /* StyleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleManager.swift; sourceTree = "<group>"; };
 		0549B0AA1F8F0D4C002ABF2F /* SenatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenatorViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 			children = (
 				040BE1291F87096100B672F8 /* StateGetter.swift */,
 				040BE1251F86DF6000B672F8 /* SenatorGetter.swift */,
+				0549B0A61F8E09A8002ABF2F /* BillGetter.swift */,
 			);
 			path = Getters;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 			children = (
 				040BE11F1F85C25800B672F8 /* State.swift */,
 				042667A41F848E0C0063FFE3 /* Senator.swift */,
+				0549B0A81F8E0A0F002ABF2F /* Bill.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -643,6 +649,7 @@
 			files = (
 				0549B0B11F8F49DE002ABF2F /* BannerView.swift in Sources */,
 				040BE11E1F85918C00B672F8 /* StateCollectionViewCell.swift in Sources */,
+				0549B0A71F8E09A8002ABF2F /* BillGetter.swift in Sources */,
 				042667A51F848E0C0063FFE3 /* Senator.swift in Sources */,
 				04BA614C1F8856F50079BF9A /* UserDefaultsManager.swift in Sources */,
 				04E8F11A1F847F62002C299A /* StateCollectionViewController.swift in Sources */,
@@ -659,7 +666,10 @@
 				04BA613F1F876BCF0079BF9A /* HomeViewController.swift in Sources */,
 				058AB93E1F89B6B9008DEC39 /* Endpoints.swift in Sources */,
 				040BE1261F86DF6000B672F8 /* SenatorGetter.swift in Sources */,
+
+				0549B0A91F8E0A0F002ABF2F /* Bill.swift in Sources */,
 				0549B0AB1F8F0D4C002ABF2F /* SenatorViewController.swift in Sources */,
+
 				042667A91F8494FF0063FFE3 /* ParserDelegate.swift in Sources */,
 				04BA61491F884F3E0079BF9A /* StatePickerDelegate.swift in Sources */,
 				0549B09F1F8DC9C7002ABF2F /* StyleManager.swift in Sources */,
