@@ -43,6 +43,7 @@
 		0549B09D1F8DC6D2002ABF2F /* UIColor+PWRcolors .swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B09C1F8DC6D2002ABF2F /* UIColor+PWRcolors .swift */; };
 		0549B09F1F8DC9C7002ABF2F /* StyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B09E1F8DC9C7002ABF2F /* StyleManager.swift */; };
 		0549B0AB1F8F0D4C002ABF2F /* SenatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B0AA1F8F0D4C002ABF2F /* SenatorViewController.swift */; };
+		0549B0B11F8F49DE002ABF2F /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B0B01F8F49DE002ABF2F /* BannerView.swift */; };
 		058AB93E1F89B6B9008DEC39 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058AB93D1F89B6B9008DEC39 /* Endpoints.swift */; };
 		058AB9401F89B72A008DEC39 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058AB93F1F89B72A008DEC39 /* APIManager.swift */; };
 		144504089E94398A352F5699 /* Pods_PWRTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 871D0A1760DD9397618FD842 /* Pods_PWRTests.framework */; };
@@ -111,6 +112,7 @@
 		0549B09C1F8DC6D2002ABF2F /* UIColor+PWRcolors .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+PWRcolors .swift"; sourceTree = "<group>"; };
 		0549B09E1F8DC9C7002ABF2F /* StyleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleManager.swift; sourceTree = "<group>"; };
 		0549B0AA1F8F0D4C002ABF2F /* SenatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenatorViewController.swift; sourceTree = "<group>"; };
+		0549B0B01F8F49DE002ABF2F /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		058AB93D1F89B6B9008DEC39 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		058AB93F1F89B72A008DEC39 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		22820BB6157660E8D282345E /* Pods_PWRUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PWRUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				040BE1181F85888000B672F8 /* SearchBarCollectionReusableView.swift */,
+				0549B0B01F8F49DE002ABF2F /* BannerView.swift */,
 				04BA613B1F876B820079BF9A /* Storyboards */,
 			);
 			path = Views;
@@ -644,6 +647,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0549B0B11F8F49DE002ABF2F /* BannerView.swift in Sources */,
 				040BE11E1F85918C00B672F8 /* StateCollectionViewCell.swift in Sources */,
 				0549B0A71F8E09A8002ABF2F /* BillGetter.swift in Sources */,
 				042667A51F848E0C0063FFE3 /* Senator.swift in Sources */,
