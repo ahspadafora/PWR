@@ -69,7 +69,6 @@ import UIKit
     }
     
     private func createViews() {
-        print("ccccccc")
         let labelFrame = CGRect.zero
         let picFrame = CGRect.zero
         self.label = UILabel(frame: labelFrame)
@@ -84,8 +83,6 @@ import UIKit
                 self.widthAnchor.constraint(equalTo: superview.widthAnchor)
                 , self.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.5)
                 ].map { $0.isActive = true }
-        } else {
-            print("Either you forgot to place this in another view...or you're on a storyboard.")
         }
         
         _ = [
@@ -106,8 +103,6 @@ import UIKit
     }
     
     private func styleViews() {
-        print("?????")
-        
         self.backgroundColor = UIColor.PWRblueLight
         self.label.backgroundColor = UIColor.PWRred
         self.pic.backgroundColor = UIColor.PWRblueLight
@@ -115,22 +110,15 @@ import UIKit
         self.label.textColor = UIColor.white
         self.label.textAlignment = .center
         self.label.font = UIFont(name: "Avenir-BlackOblique", size: 20)
-        self.label.text = "New York"
         
         self.pic.contentMode = .scaleAspectFit
         self.pic.backgroundColor = UIColor.PWRblueLight
-        self.pic.image = #imageLiteral(resourceName: "New York")
     }
     
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
-        
-        createViews()
-        constrainViews()
+
         styleViews()
-        
-        self.pic.image = #imageLiteral(resourceName: "Oval")
-        self.label.text = "Senator McGovern"
     }
     
 }
