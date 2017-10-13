@@ -13,6 +13,9 @@
 		040BE1201F85C25800B672F8 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040BE11F1F85C25800B672F8 /* State.swift */; };
 		040BE1261F86DF6000B672F8 /* SenatorGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040BE1251F86DF6000B672F8 /* SenatorGetter.swift */; };
 		040BE12A1F87096100B672F8 /* StateGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040BE1291F87096100B672F8 /* StateGetter.swift */; };
+		042155AF1F90B75E003B1EA0 /* BillDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042155AE1F90B75E003B1EA0 /* BillDetailViewController.swift */; };
+		042155B11F90B7E7003B1EA0 /* CoSponsershipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042155B01F90B7E7003B1EA0 /* CoSponsershipViewController.swift */; };
+		042155B31F90B7FD003B1EA0 /* CommiteeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042155B21F90B7FD003B1EA0 /* CommiteeViewController.swift */; };
 		042667A31F848D930063FFE3 /* senators.xml in Resources */ = {isa = PBXBuildFile; fileRef = 041EA40A1F84807200423C22 /* senators.xml */; };
 		042667A51F848E0C0063FFE3 /* Senator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042667A41F848E0C0063FFE3 /* Senator.swift */; };
 		042667A91F8494FF0063FFE3 /* ParserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042667A81F8494FF0063FFE3 /* ParserDelegate.swift */; };
@@ -38,10 +41,10 @@
 		04E8F1221F847F62002C299A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E8F1201F847F62002C299A /* LaunchScreen.storyboard */; };
 		04E8F12D1F847F62002C299A /* PWRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8F12C1F847F62002C299A /* PWRTests.swift */; };
 		04E8F1381F847F62002C299A /* PWRUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8F1371F847F62002C299A /* PWRUITests.swift */; };
-		0549B0A71F8E09A8002ABF2F /* BillGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B0A61F8E09A8002ABF2F /* BillGetter.swift */; };
-		0549B0A91F8E0A0F002ABF2F /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B0A81F8E0A0F002ABF2F /* Bill.swift */; };
 		0549B09D1F8DC6D2002ABF2F /* UIColor+PWRcolors .swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B09C1F8DC6D2002ABF2F /* UIColor+PWRcolors .swift */; };
 		0549B09F1F8DC9C7002ABF2F /* StyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B09E1F8DC9C7002ABF2F /* StyleManager.swift */; };
+		0549B0A71F8E09A8002ABF2F /* BillGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B0A61F8E09A8002ABF2F /* BillGetter.swift */; };
+		0549B0A91F8E0A0F002ABF2F /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B0A81F8E0A0F002ABF2F /* Bill.swift */; };
 		0549B0AB1F8F0D4C002ABF2F /* SenatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B0AA1F8F0D4C002ABF2F /* SenatorViewController.swift */; };
 		0549B0B11F8F49DE002ABF2F /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B0B01F8F49DE002ABF2F /* BannerView.swift */; };
 		058AB93E1F89B6B9008DEC39 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058AB93D1F89B6B9008DEC39 /* Endpoints.swift */; };
@@ -76,6 +79,9 @@
 		040BE1251F86DF6000B672F8 /* SenatorGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenatorGetter.swift; sourceTree = "<group>"; };
 		040BE1291F87096100B672F8 /* StateGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateGetter.swift; sourceTree = "<group>"; };
 		041EA40A1F84807200423C22 /* senators.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = senators.xml; sourceTree = "<group>"; };
+		042155AE1F90B75E003B1EA0 /* BillDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailViewController.swift; sourceTree = "<group>"; };
+		042155B01F90B7E7003B1EA0 /* CoSponsershipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoSponsershipViewController.swift; sourceTree = "<group>"; };
+		042155B21F90B7FD003B1EA0 /* CommiteeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommiteeViewController.swift; sourceTree = "<group>"; };
 		042667A41F848E0C0063FFE3 /* Senator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Senator.swift; sourceTree = "<group>"; };
 		042667A81F8494FF0063FFE3 /* ParserDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserDelegate.swift; sourceTree = "<group>"; };
 		04BA61341F8762D30079BF9A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -107,10 +113,10 @@
 		04E8F1331F847F62002C299A /* PWRUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PWRUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E8F1371F847F62002C299A /* PWRUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWRUITests.swift; sourceTree = "<group>"; };
 		04E8F1391F847F62002C299A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0549B0A61F8E09A8002ABF2F /* BillGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillGetter.swift; sourceTree = "<group>"; };
-		0549B0A81F8E0A0F002ABF2F /* Bill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 		0549B09C1F8DC6D2002ABF2F /* UIColor+PWRcolors .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+PWRcolors .swift"; sourceTree = "<group>"; };
 		0549B09E1F8DC9C7002ABF2F /* StyleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleManager.swift; sourceTree = "<group>"; };
+		0549B0A61F8E09A8002ABF2F /* BillGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillGetter.swift; sourceTree = "<group>"; };
+		0549B0A81F8E0A0F002ABF2F /* Bill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 		0549B0AA1F8F0D4C002ABF2F /* SenatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenatorViewController.swift; sourceTree = "<group>"; };
 		0549B0B01F8F49DE002ABF2F /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		058AB93D1F89B6B9008DEC39 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
@@ -209,11 +215,14 @@
 		042667AB1F84AB4B0063FFE3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				042155AE1F90B75E003B1EA0 /* BillDetailViewController.swift */,
 				04BA61461F8846C30079BF9A /* LoginViewController.swift */,
 				04BA61421F8845860079BF9A /* SettingsViewController.swift */,
 				04BA613E1F876BCF0079BF9A /* HomeViewController.swift */,
 				04BA61361F8764E00079BF9A /* StateCollectionViewController */,
 				0549B0AA1F8F0D4C002ABF2F /* SenatorViewController.swift */,
+				042155B01F90B7E7003B1EA0 /* CoSponsershipViewController.swift */,
+				042155B21F90B7FD003B1EA0 /* CommiteeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -650,6 +659,7 @@
 				0549B0B11F8F49DE002ABF2F /* BannerView.swift in Sources */,
 				040BE11E1F85918C00B672F8 /* StateCollectionViewCell.swift in Sources */,
 				0549B0A71F8E09A8002ABF2F /* BillGetter.swift in Sources */,
+				042155B31F90B7FD003B1EA0 /* CommiteeViewController.swift in Sources */,
 				042667A51F848E0C0063FFE3 /* Senator.swift in Sources */,
 				04BA614C1F8856F50079BF9A /* UserDefaultsManager.swift in Sources */,
 				04E8F11A1F847F62002C299A /* StateCollectionViewController.swift in Sources */,
@@ -665,14 +675,14 @@
 				04BA61501F88D07C0079BF9A /* FirebaseAuthManager.swift in Sources */,
 				04BA613F1F876BCF0079BF9A /* HomeViewController.swift in Sources */,
 				058AB93E1F89B6B9008DEC39 /* Endpoints.swift in Sources */,
+				042155AF1F90B75E003B1EA0 /* BillDetailViewController.swift in Sources */,
 				040BE1261F86DF6000B672F8 /* SenatorGetter.swift in Sources */,
-
 				0549B0A91F8E0A0F002ABF2F /* Bill.swift in Sources */,
 				0549B0AB1F8F0D4C002ABF2F /* SenatorViewController.swift in Sources */,
-
 				042667A91F8494FF0063FFE3 /* ParserDelegate.swift in Sources */,
 				04BA61491F884F3E0079BF9A /* StatePickerDelegate.swift in Sources */,
 				0549B09F1F8DC9C7002ABF2F /* StyleManager.swift in Sources */,
+				042155B11F90B7E7003B1EA0 /* CoSponsershipViewController.swift in Sources */,
 				04BA619B1F8C80840079BF9A /* FBLoginButtonDelegate.swift in Sources */,
 				040BE1191F85888000B672F8 /* SearchBarCollectionReusableView.swift in Sources */,
 				0549B09D1F8DC6D2002ABF2F /* UIColor+PWRcolors .swift in Sources */,
