@@ -17,11 +17,15 @@ class SenatorViewController: UIViewController {
     
     // properties
     var senator: Senator!
+    var usersState: State!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.senatorBannerView.label.text = usersState.title
+        self.nameLabel.text = "\(senator.firstName) \(senator.lastName)"
     }
 
     override func didReceiveMemoryWarning() {

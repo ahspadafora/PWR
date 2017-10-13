@@ -20,6 +20,7 @@ class HomeViewController: UIViewController, StatePickerDelegate {
     // MARK: - Properties
     var usersState: State!
     var senators: [Senator] = []
+    var selectedSenator: Senator?
     
     // MARK: - Override Methods
     override func viewDidLoad() {
@@ -32,12 +33,17 @@ class HomeViewController: UIViewController, StatePickerDelegate {
         }
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == Constants.segueToSearchController {
-//            guard let destinationVC = segue.destination as? StateCollectionViewController else { return }
-//            destinationVC.statePickerDelegate = self
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.segueToSearchController {
+            guard let destinationVC = segue.destination as? StateCollectionViewController else { return }
+            destinationVC.statePickerDelegate = self
+        } else if segue.identifier == Constants.sequeToSenatorVC {
+            guard let destinationVC = segue.destination as? SenatorViewController,
+                let selectedSenator = self.selectedSenator else { return }
+                destinationVC.senator = selectedSenator
+                destinationVC.usersState = self.usersState
+        }
+    }
     
     // MARK: - StatePickerDelegateMethod
     func userDidSelectState() {
@@ -50,19 +56,18 @@ class HomeViewController: UIViewController, StatePickerDelegate {
     
     // MARK: -  IBAction functions
     @IBAction func callSenator(_ sender: UIButton) {
-        let selectedSenator = self.senators[sender.tag]
-        print(selectedSenator.lastName)
-        print(selectedSenator.phone)
+        selectedSenator = self.senators[sender.tag]
+        print(selectedSenator?.lastName ?? "no name")
+        print(selectedSenator?.phone ?? "no phone")
     }
     
     @IBAction func visitSenatorsWebsite(_ sender: UIButton) {
-        let selectedSenator = self.senators[sender.tag]
-        print(selectedSenator.website)
+        selectedSenator = self.senators[sender.tag]
+        print(selectedSenator?.website ?? "no site")
     }
     
     @IBAction func viewSenator(_ sender: UIButton) {
-        let destination = SenatorViewController()
-        destination.senator = self.senators[sender.tag]
+        selectedSenator = self.senators[sender.tag]
         performSegue(withIdentifier: Constants.sequeToSenatorVC, sender: self)
     }
     
