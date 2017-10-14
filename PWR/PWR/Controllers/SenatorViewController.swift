@@ -19,7 +19,7 @@ class SenatorViewController: UIViewController {
     var senator: Senator!
     var usersState: State!
     
-    var bills: [Bill]?
+    var votingRecord: [(bill: Bill, votedInFavor: Bool)]?
     var commitees: [String]?
     var cosponsorships: [Bill]?
     
@@ -27,6 +27,8 @@ class SenatorViewController: UIViewController {
         super.viewDidLoad()
         
         commitees = ["A","B","C","D"]
+        let law = Bill(name: "A", number: "", lastAction: "")
+        votingRecord = [(bill: law, votedInFavor: true), (bill: law, votedInFavor: false)]
         senatorTable.delegate = self
         senatorTable.dataSource = self
     }
@@ -78,7 +80,7 @@ extension SenatorViewController: UITableViewDelegate, UITableViewDataSource {
                 return 4
             }
         case 2:
-            return self.bills?.count ?? 1
+            return self.votingRecord?.count ?? 1
         default:
             return 0
         }
@@ -108,11 +110,16 @@ extension SenatorViewController: UITableViewDelegate, UITableViewDataSource {
                     cellText = "See more..."
                 }
             } else {
-                cellText = "No cosponsored bills"
+                cellText = "No co-sponsored bills"
             }
         case 2:
-            if let voted = bills {
-                cellText = voted[indexPath.row].name
+            if let votedOnABill = votingRecord {
+                cellText = votedOnABill[indexPath.row].bill.name
+                if votedOnABill[indexPath.row].votedInFavor {
+                    cell.detailTextLabel?.text = "YES"
+                } else {
+                    cell.detailTextLabel?.text = "NO"
+                }
             } else {
                 cellText = "No bills voted on yet"
             }
@@ -136,11 +143,11 @@ extension SenatorViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return "Commitees"
+            return "Commitees".uppercased()
         case 1:
-            return "Cosponsored Bills"
+            return "Co-sponsored Bills".uppercased()
         case 2:
-            return "Voting Record"
+            return "Voting Record".uppercased()
         default:
             return ""
         }
