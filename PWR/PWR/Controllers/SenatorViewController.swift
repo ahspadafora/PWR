@@ -19,20 +19,28 @@ class SenatorViewController: UIViewController {
     var senator: Senator!
     var usersState: State!
     
+    var bills: [Bill]?
+    var commitees: [String]?
+    var cosponsorships: [Bill]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        commitees = ["A","B","C","D"]
+        senatorTable.delegate = self
+        senatorTable.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        usersState = State(abbreviation: "CA", title: "California", senators: [], pic: #imageLiteral(resourceName: "Oval"))
         self.senatorBannerView.label.text = usersState.title
-        self.nameLabel.text = "\(senator.firstName) \(senator.lastName)"
+       // self.nameLabel.text = "\(senator.firstName) \(senator.lastName)"
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation
@@ -44,4 +52,113 @@ class SenatorViewController: UIViewController {
     }
     */
 
+}
+
+extension SenatorViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            guard let sitsOnCommitee = self.commitees else {
+                return 1
+            }
+            
+            if sitsOnCommitee.count <= 3 {
+                return sitsOnCommitee.count
+            } else {
+                return 4
+            }
+        case 1:
+            guard let cosponsoredABill = self.cosponsorships else {
+                return 1
+            }
+            
+            if cosponsoredABill.count <= 3 {
+                return cosponsoredABill.count
+            } else {
+                return 4
+            }
+        case 2:
+            return self.bills?.count ?? 1
+        default:
+            return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = senatorTable.dequeueReusableCell(withIdentifier: "votingOrCommitee", for: indexPath)
+        
+        var cellText: String = ""
+        
+        switch indexPath.section {
+        case 0:
+            if let sitsOnCommitee = commitees {
+                if indexPath.row < 3 {
+                    cellText = sitsOnCommitee[indexPath.row]
+                } else if indexPath.row == 3 {
+                    cellText = "See more..."
+                }
+            } else  {
+                cellText = "No commitees"
+            }
+        case 1:
+            if let cosponsoredABill = cosponsorships {
+                if indexPath.row < 3 {
+                    cellText = cosponsoredABill[indexPath.row].name
+                } else if indexPath.row == 3 {
+                    cellText = "See more..."
+                }
+            } else {
+                cellText = "No cosponsored bills"
+            }
+        case 2:
+            if let voted = bills {
+                cellText = voted[indexPath.row].name
+            } else {
+                cellText = "No bills voted on yet"
+            }
+        default:
+            cellText = ""
+        }
+        
+        cell.textLabel?.text = cellText
+        if cell.textLabel?.text == "See more..." {
+            cell.textLabel?.textColor = UIColor.PWRred
+            cell.textLabel?.font = UIFont(name: "Avenir-LightOblique", size: 20)
+        }
+        
+        return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Commitees"
+        case 1:
+            return "Cosponsored Bills"
+        case 2:
+            return "Voting Record"
+        default:
+            return ""
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor.white
+        header.textLabel?.font = UIFont(name: "Avenir-Light", size: 20)
+        header.textLabel?.adjustsFontSizeToFitWidth = true
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        let footer = view as! UITableViewHeaderFooterView
+        footer.tintColor = UIColor.PWRred
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 3.0
+    }
 }
