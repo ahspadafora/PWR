@@ -76,15 +76,6 @@ import UIKit
     }
     
     private func constrainViews() {
-        if let superview = self.superview {
-            self.translatesAutoresizingMaskIntoConstraints = false
-            
-            _ = [
-                self.widthAnchor.constraint(equalTo: superview.widthAnchor)
-                , self.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.66)
-                ].map { $0.isActive = true }
-        }
-        
         _ = [
             self.label
             , self.pic

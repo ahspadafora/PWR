@@ -6,14 +6,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="Avenir.ttc">
-            <string>Avenir-Black</string>
             <string>Avenir-BlackOblique</string>
             <string>Avenir-LightOblique</string>
             <string>Avenir-Roman</string>
@@ -26,138 +25,42 @@
                 <viewController storyboardIdentifier="homeVC" title="State Details" id="06i-zS-duR" customClass="HomeViewController" customModule="PWR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FkA-8s-Smm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cMH-cc-GD6">
-                                <rect key="frame" x="0.0" y="359" width="414" height="328"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pgi-Ft-Tsc" customClass="BannerView" customModule="PWR" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="64" width="414" height="200"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UOL-jU-7x2">
-                                        <rect key="frame" x="8" y="132" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Senator 2" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLR-Sl-bj7">
-                                        <rect key="frame" x="12" y="224" width="120" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.99989503619999998" green="1" blue="0.999871552" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="15"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZeE-Jr-zjX">
-                                        <rect key="frame" x="8" y="132" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <accessibility key="accessibilityConfiguration" identifier="bottomSenator"/>
-                                        <connections>
-                                            <action selector="viewSenator:" destination="06i-zS-duR" eventType="touchUpInside" id="pRe-4k-KmT"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sen 2 Party" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="260-WI-b7T">
-                                        <rect key="frame" x="0.0" y="268" width="414" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.14901960784313725" green="0.41568627450980389" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Avenir-LightOblique" family="Avenir" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvM-Te-LO4">
-                                        <rect key="frame" x="230" y="224" width="184" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.87058823529999996" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
-                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="website"/>
-                                        <connections>
-                                            <action selector="visitSenatorsWebsite:" destination="06i-zS-duR" eventType="touchUpInside" id="YCC-rq-j5f"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIS-wf-8W8">
-                                        <rect key="frame" x="230" y="186" width="184" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.87058823529999996" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
-                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="call"/>
-                                        <connections>
-                                            <action selector="callSenator:" destination="06i-zS-duR" eventType="touchUpInside" id="H9s-pa-haJ"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cMH-cc-GD6">
+                                <rect key="frame" x="0.0" y="359" width="320" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.94901960780000005" green="0.94509803920000002" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="00K-f3-RIv">
-                                <rect key="frame" x="8" y="285" width="128" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Senator 1" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxE-qX-6gm">
-                                <rect key="frame" x="12" y="377" width="120" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.99989503619999998" green="1" blue="0.999871552" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sen 1 Party" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIK-5C-Be7">
-                                <rect key="frame" x="0.0" y="421" width="414" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.14901960784313725" green="0.41568627450980389" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Avenir-LightOblique" family="Avenir" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ooz-q7-dZa">
-                                <rect key="frame" x="230" y="341" width="184" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.87058823529999996" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="call"/>
-                                <connections>
-                                    <action selector="callSenator:" destination="06i-zS-duR" eventType="touchUpInside" id="m79-sV-dmV"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHg-iz-fax">
-                                <rect key="frame" x="230" y="379" width="184" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.87058823529999996" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="website"/>
-                                <connections>
-                                    <action selector="visitSenatorsWebsite:" destination="06i-zS-duR" eventType="touchUpInside" id="cfx-HZ-TFU"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pN3-Wy-qsk">
-                                <rect key="frame" x="8" y="285" width="128" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration" identifier="topSenator"/>
-                                <connections>
-                                    <action selector="viewSenator:" destination="06i-zS-duR" eventType="touchUpInside" id="NLj-Ta-XKh"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pgi-Ft-Tsc" customClass="BannerView" customModule="PWR" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="414" height="199"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Xg-H1-oE8">
+                                <rect key="frame" x="0.0" y="264" width="414" height="423"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="senator" id="43n-kb-0yj" customClass="HomeTableViewCell" customModule="PWR" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="43n-kb-0yj" id="n27-aI-aEA">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.94901960780000005" green="0.94509803920000002" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="cMH-cc-GD6" firstAttribute="leading" secondItem="FkA-8s-Smm" secondAttribute="leading" id="3Pu-Sh-sLs"/>
-                            <constraint firstItem="cMH-cc-GD6" firstAttribute="top" secondItem="FkA-8s-Smm" secondAttribute="top" constant="359" id="4Wt-dB-eNc"/>
-                            <constraint firstItem="cMH-cc-GD6" firstAttribute="leading" secondItem="FkA-8s-Smm" secondAttribute="leading" id="4sV-RU-cob"/>
-                            <constraint firstItem="cMH-cc-GD6" firstAttribute="bottom" secondItem="7Vo-XS-jBh" secondAttribute="bottom" id="8bJ-XM-dGU"/>
-                            <constraint firstItem="cMH-cc-GD6" firstAttribute="trailing" secondItem="7Vo-XS-jBh" secondAttribute="trailing" id="AL1-5T-uCN"/>
-                            <constraint firstItem="cMH-cc-GD6" firstAttribute="bottom" secondItem="FkA-8s-Smm" secondAttribute="bottomMargin" id="CNW-sh-bEi"/>
-                            <constraint firstItem="cMH-cc-GD6" firstAttribute="leading" secondItem="FkA-8s-Smm" secondAttribute="leading" id="FQz-9b-P7n"/>
-                            <constraint firstItem="cMH-cc-GD6" firstAttribute="top" secondItem="FkA-8s-Smm" secondAttribute="top" constant="359" id="IP7-Gy-jXS"/>
-                            <constraint firstItem="cMH-cc-GD6" firstAttribute="leading" secondItem="7Vo-XS-jBh" secondAttribute="leading" id="Ir5-YD-ugX"/>
-                            <constraint firstAttribute="trailing" secondItem="cMH-cc-GD6" secondAttribute="trailing" id="Qan-I4-hR9"/>
-                            <constraint firstItem="cMH-cc-GD6" firstAttribute="centerX" secondItem="FkA-8s-Smm" secondAttribute="centerX" id="gDf-cB-rwM"/>
-                            <constraint firstAttribute="trailing" secondItem="cMH-cc-GD6" secondAttribute="trailing" id="jW8-VT-5nw"/>
-                            <constraint firstItem="cMH-cc-GD6" firstAttribute="bottom" secondItem="7Vo-XS-jBh" secondAttribute="bottom" id="kha-Ko-q5B"/>
-                            <constraint firstAttribute="bottom" secondItem="cMH-cc-GD6" secondAttribute="bottom" constant="49" id="y1D-Bd-6t4"/>
+                            <constraint firstItem="3Xg-H1-oE8" firstAttribute="width" secondItem="Pgi-Ft-Tsc" secondAttribute="width" id="HLz-OE-8fm"/>
+                            <constraint firstItem="3Xg-H1-oE8" firstAttribute="centerX" secondItem="7Vo-XS-jBh" secondAttribute="centerX" id="HMe-BL-GvX"/>
+                            <constraint firstItem="Pgi-Ft-Tsc" firstAttribute="centerX" secondItem="7Vo-XS-jBh" secondAttribute="centerX" id="Nqn-9l-m4O"/>
+                            <constraint firstItem="Pgi-Ft-Tsc" firstAttribute="top" secondItem="7Vo-XS-jBh" secondAttribute="top" id="Ow5-cu-XRb"/>
+                            <constraint firstItem="Pgi-Ft-Tsc" firstAttribute="width" secondItem="FkA-8s-Smm" secondAttribute="width" id="P7q-cZ-LrP"/>
+                            <constraint firstItem="7Vo-XS-jBh" firstAttribute="bottom" secondItem="3Xg-H1-oE8" secondAttribute="bottom" id="QSj-0V-OXL"/>
+                            <constraint firstItem="Pgi-Ft-Tsc" firstAttribute="height" secondItem="FkA-8s-Smm" secondAttribute="height" multiplier="0.27" id="Qhy-Vz-1PZ"/>
+                            <constraint firstItem="3Xg-H1-oE8" firstAttribute="top" secondItem="Pgi-Ft-Tsc" secondAttribute="bottom" constant="1" id="ugV-zN-nVA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7Vo-XS-jBh"/>
                     </view>
@@ -169,17 +72,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="firstSenPartyLabel" destination="nIK-5C-Be7" id="F0n-ss-c17"/>
-                        <outlet property="firstSenatorNameLabel" destination="kxE-qX-6gm" id="oXF-aa-1LI"/>
-                        <outlet property="secondSenNameLabel" destination="XLR-Sl-bj7" id="maG-DR-hYR"/>
-                        <outlet property="secondSenPartyLabel" destination="260-WI-b7T" id="nGs-jw-pPc"/>
+                        <outlet property="senatorTable" destination="3Xg-H1-oE8" id="Q94-3S-UaE"/>
                         <outlet property="stateBannerView" destination="Pgi-Ft-Tsc" id="k2d-jg-JuY"/>
                         <segue destination="wGN-di-uB6" kind="show" identifier="goToSenatorVC" id="lcG-za-etX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FWi-Pf-SVc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1460.8695652173915" y="117.39130434782609"/>
+            <point key="canvasLocation" x="1459.4202898550725" y="116.57608695652175"/>
         </scene>
         <!--Senator View Controller-->
         <scene sceneID="iqB-Ba-CAn">
@@ -189,35 +89,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sbP-Eb-9tj">
-                                <rect key="frame" x="0.0" y="64" width="414" height="273"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Republican in Senate since 1995" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9DT-2S-KYu">
-                                        <rect key="frame" x="0.0" y="210" width="414" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.14901960780000001" green="0.41568627450000001" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Avenir-LightOblique" family="Avenir" pointSize="20"/>
-                                        <color key="textColor" red="0.99989503622055054" green="1" blue="0.99987155199050903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ok6-gd-XJ7" customClass="BannerView" customModule="PWR" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="211"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1e-7D-GFL">
-                                        <rect key="frame" x="107" y="126" width="200" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Avenir-BlackOblique" family="Avenir" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.20784313730000001" green="0.56862745100000001" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uQp-u8-fCv">
-                                <rect key="frame" x="0.0" y="333" width="414" height="354"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Republican in Senate since 1995" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9DT-2S-KYu">
+                                <rect key="frame" x="0.0" y="262.66666666666669" width="414" height="50"/>
+                                <color key="backgroundColor" red="0.14901960780000001" green="0.41568627450000001" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="0bo-WJ-3mi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-LightOblique" family="Avenir" pointSize="20"/>
+                                <color key="textColor" red="0.99989503622055054" green="1" blue="0.99987155199050903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uQp-u8-fCv">
+                                <rect key="frame" x="0.0" y="311.66666666666674" width="414" height="375.33333333333326"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.87058823529411766" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -241,27 +124,37 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ok6-gd-XJ7" customClass="BannerView" customModule="PWR" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="414" height="198.66666666666669"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1e-7D-GFL">
+                                <rect key="frame" x="103" y="172.66666666666666" width="207" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="LKl-Ea-ijL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-BlackOblique" family="Avenir" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="sbP-Eb-9tj" firstAttribute="top" secondItem="qid-SS-CS2" secondAttribute="topMargin" id="0ID-pJ-PQY"/>
-                            <constraint firstItem="sbP-Eb-9tj" firstAttribute="leading" secondItem="qid-SS-CS2" secondAttribute="leading" id="0m6-wG-Iay"/>
-                            <constraint firstItem="sbP-Eb-9tj" firstAttribute="top" secondItem="g6i-sA-x6i" secondAttribute="top" id="1wV-9X-rd5"/>
-                            <constraint firstItem="sbP-Eb-9tj" firstAttribute="top" secondItem="qid-SS-CS2" secondAttribute="top" constant="64" id="2WO-Zj-x4K"/>
-                            <constraint firstAttribute="bottom" secondItem="sbP-Eb-9tj" secondAttribute="bottom" constant="399" id="9Do-Y3-Xqy"/>
-                            <constraint firstItem="sbP-Eb-9tj" firstAttribute="leading" secondItem="uQp-u8-fCv" secondAttribute="leading" id="9n3-v8-LTv"/>
-                            <constraint firstItem="sbP-Eb-9tj" firstAttribute="top" secondItem="qid-SS-CS2" secondAttribute="top" constant="64" id="CMz-1d-rxi"/>
-                            <constraint firstItem="sbP-Eb-9tj" firstAttribute="leading" secondItem="g6i-sA-x6i" secondAttribute="leading" id="LNN-Ah-kVI"/>
-                            <constraint firstItem="sbP-Eb-9tj" firstAttribute="leading" secondItem="qid-SS-CS2" secondAttribute="leading" id="Td9-my-Ht9"/>
-                            <constraint firstItem="sbP-Eb-9tj" firstAttribute="leading" secondItem="qid-SS-CS2" secondAttribute="leading" id="WHg-SF-nnM"/>
-                            <constraint firstAttribute="trailing" secondItem="sbP-Eb-9tj" secondAttribute="trailing" id="df0-JM-kbu"/>
-                            <constraint firstAttribute="trailing" secondItem="sbP-Eb-9tj" secondAttribute="trailing" id="k2b-xO-Gta"/>
-                            <constraint firstItem="g6i-sA-x6i" firstAttribute="bottom" secondItem="sbP-Eb-9tj" secondAttribute="bottom" constant="350" id="lbb-ch-9dS"/>
-                            <constraint firstItem="sbP-Eb-9tj" firstAttribute="top" secondItem="g6i-sA-x6i" secondAttribute="top" id="oQc-Xo-cfa"/>
-                            <constraint firstItem="sbP-Eb-9tj" firstAttribute="centerX" secondItem="qid-SS-CS2" secondAttribute="centerX" id="py2-R6-Al6"/>
-                            <constraint firstItem="sbP-Eb-9tj" firstAttribute="centerX" secondItem="uQp-u8-fCv" secondAttribute="centerX" id="w6H-I3-Uhq"/>
-                            <constraint firstItem="sbP-Eb-9tj" firstAttribute="trailing" secondItem="uQp-u8-fCv" secondAttribute="trailing" id="woj-Sm-9ll"/>
-                            <constraint firstItem="sbP-Eb-9tj" firstAttribute="trailing" secondItem="g6i-sA-x6i" secondAttribute="trailing" id="xcg-VB-hYl"/>
+                            <constraint firstItem="9DT-2S-KYu" firstAttribute="width" secondItem="ok6-gd-XJ7" secondAttribute="width" id="HRH-tU-4gw"/>
+                            <constraint firstItem="L1e-7D-GFL" firstAttribute="centerX" secondItem="ok6-gd-XJ7" secondAttribute="centerX" id="ISF-Wt-KU3"/>
+                            <constraint firstItem="g6i-sA-x6i" firstAttribute="bottom" secondItem="uQp-u8-fCv" secondAttribute="bottom" id="Jse-K9-kXa"/>
+                            <constraint firstItem="uQp-u8-fCv" firstAttribute="centerX" secondItem="g6i-sA-x6i" secondAttribute="centerX" id="T0z-3W-sE6"/>
+                            <constraint firstItem="9DT-2S-KYu" firstAttribute="top" secondItem="ok6-gd-XJ7" secondAttribute="bottom" id="U1c-1M-tZx"/>
+                            <constraint firstItem="L1e-7D-GFL" firstAttribute="bottom" secondItem="ok6-gd-XJ7" secondAttribute="bottom" constant="-60" id="W3f-ke-hxr"/>
+                            <constraint firstItem="uQp-u8-fCv" firstAttribute="width" secondItem="qid-SS-CS2" secondAttribute="width" id="Wi6-2y-fhP"/>
+                            <constraint firstItem="9DT-2S-KYu" firstAttribute="centerX" secondItem="ok6-gd-XJ7" secondAttribute="centerX" id="iAr-7t-Pea"/>
+                            <constraint firstItem="ok6-gd-XJ7" firstAttribute="width" secondItem="qid-SS-CS2" secondAttribute="width" id="kG7-AG-FWd"/>
+                            <constraint firstItem="ok6-gd-XJ7" firstAttribute="top" secondItem="g6i-sA-x6i" secondAttribute="top" id="pxK-8K-dSl"/>
+                            <constraint firstItem="uQp-u8-fCv" firstAttribute="top" secondItem="9DT-2S-KYu" secondAttribute="bottom" constant="-1" id="qDf-YI-NpH"/>
+                            <constraint firstItem="ok6-gd-XJ7" firstAttribute="height" secondItem="qid-SS-CS2" secondAttribute="height" multiplier="0.27" id="yU4-3r-daH"/>
+                            <constraint firstItem="ok6-gd-XJ7" firstAttribute="centerX" secondItem="g6i-sA-x6i" secondAttribute="centerX" id="yys-fC-jV7"/>
+                            <constraint firstItem="L1e-7D-GFL" firstAttribute="width" secondItem="ok6-gd-XJ7" secondAttribute="width" multiplier="0.5" id="zaf-zL-xR1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="g6i-sA-x6i"/>
                     </view>
@@ -274,7 +167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0d6-Mg-oNZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3293" y="117"/>
+            <point key="canvasLocation" x="3292.5" y="116.19718309859155"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="aVn-Ts-V4F">
@@ -359,128 +252,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kig-6M-T13" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1264" y="902"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="iAx-DW-hYy">
-            <objects>
-                <viewController id="Dxa-xh-l40" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mAd-lD-22w">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="Lo9-z3-Un7">
-                                <rect key="frame" x="0.0" y="338.33333333333326" width="414" height="397.66666666666674"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="200" id="i2g-e9-iTF" customClass="SenatorTableViewCell" customModule="PWR" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1" width="414" height="200"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="i2g-e9-iTF" id="Tbg-9r-UTm">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="199.66666666666666"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ICw-H6-vPL" userLabel="buttonsStackView">
-                                                    <rect key="frame" x="204" y="119" width="202" height="68"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40f-TK-ovf">
-                                                            <rect key="frame" x="0.0" y="0.0" width="202" height="30"/>
-                                                            <color key="backgroundColor" red="0.86923617124557495" green="0.32457253336906433" blue="0.32746440172195435" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="30" id="bu7-VK-sPq"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
-                                                            <state key="normal" title="Call">
-                                                                <color key="titleColor" red="0.98595470190048218" green="0.9414442777633667" blue="0.94492393732070923" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </state>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wf1-Fh-yB8">
-                                                            <rect key="frame" x="0.0" y="38" width="202" height="30"/>
-                                                            <color key="backgroundColor" red="0.86923617124557495" green="0.32457253336906433" blue="0.32746440172195435" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="30" id="6Vu-og-MuB"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
-                                                            <state key="normal" title="Website">
-                                                                <color key="titleColor" red="0.98595470190048218" green="0.9414442777633667" blue="0.94492393732070923" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </state>
-                                                        </button>
-                                                    </subviews>
-                                                </stackView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mi7-AH-wQZ">
-                                                    <rect key="frame" x="8" y="77" width="110" height="110"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="mi7-AH-wQZ" secondAttribute="height" multiplier="1:1" id="LL9-Wm-OI3"/>
-                                                        <constraint firstAttribute="width" constant="110" id="gKo-bI-2sC"/>
-                                                        <constraint firstAttribute="height" constant="110" id="kfV-u2-1MP"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senator " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8p-pi-Csa">
-                                                    <rect key="frame" x="8" y="166.66666666666663" width="110" height="20.333333333333343"/>
-                                                    <color key="backgroundColor" red="0.9999127984046936" green="1" blue="0.99988144636154175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senators Party info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qg7-60-3Uo">
-                                                    <rect key="frame" x="8" y="8" width="398" height="61"/>
-                                                    <color key="backgroundColor" red="0.14913460612297058" green="0.41360682249069214" blue="0.66616642475128174" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="61" id="4w8-se-OqI"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.9999127984046936" green="1" blue="0.99988144636154175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="ICw-H6-vPL" firstAttribute="leading" secondItem="mi7-AH-wQZ" secondAttribute="trailing" constant="86" id="6xj-h3-dcW"/>
-                                                <constraint firstItem="b8p-pi-Csa" firstAttribute="leading" secondItem="Tbg-9r-UTm" secondAttribute="leadingMargin" id="B0J-et-OKB"/>
-                                                <constraint firstItem="qg7-60-3Uo" firstAttribute="top" secondItem="Tbg-9r-UTm" secondAttribute="topMargin" id="BSs-IR-EpR"/>
-                                                <constraint firstItem="qg7-60-3Uo" firstAttribute="leading" secondItem="Tbg-9r-UTm" secondAttribute="leadingMargin" id="HEW-KT-eXC"/>
-                                                <constraint firstItem="b8p-pi-Csa" firstAttribute="width" secondItem="mi7-AH-wQZ" secondAttribute="width" id="Jca-Z3-aEO"/>
-                                                <constraint firstItem="ICw-H6-vPL" firstAttribute="trailing" secondItem="Tbg-9r-UTm" secondAttribute="trailingMargin" id="R63-nB-cJ8"/>
-                                                <constraint firstItem="mi7-AH-wQZ" firstAttribute="bottom" secondItem="ICw-H6-vPL" secondAttribute="bottom" id="WDz-pA-qm4"/>
-                                                <constraint firstItem="mi7-AH-wQZ" firstAttribute="top" secondItem="qg7-60-3Uo" secondAttribute="bottom" constant="8" id="ccY-U3-muY"/>
-                                                <constraint firstItem="b8p-pi-Csa" firstAttribute="bottom" secondItem="mi7-AH-wQZ" secondAttribute="bottom" id="ghq-ZH-6Jg"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="qg7-60-3Uo" secondAttribute="trailing" id="l3k-06-yBq"/>
-                                                <constraint firstItem="b8p-pi-Csa" firstAttribute="trailing" secondItem="mi7-AH-wQZ" secondAttribute="trailing" id="mwA-wQ-w5A"/>
-                                                <constraint firstItem="b8p-pi-Csa" firstAttribute="leading" secondItem="mi7-AH-wQZ" secondAttribute="leading" id="nFh-p4-jGB"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="ICw-H6-vPL" secondAttribute="trailing" id="xN2-Qa-TVE"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.94879442453384399" green="0.94542235136032104" blue="0.9276091456413269" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="bsp-RY-dce">
-                                        <rect key="frame" x="0.0" y="201" width="414" height="200"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bsp-RY-dce" id="B7q-Zl-n5f">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="199.66666666666666"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYH-ly-P5F" customClass="BannerView" customModule="PWR" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="65" width="414" height="273.33333333333331"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="ZYH-ly-P5F" firstAttribute="top" secondItem="mAd-lD-22w" secondAttribute="top" constant="65" id="3R4-L1-GJi"/>
-                            <constraint firstItem="Lo9-z3-Un7" firstAttribute="top" secondItem="ZYH-ly-P5F" secondAttribute="bottom" id="8bo-Bt-oE0"/>
-                            <constraint firstItem="ZYH-ly-P5F" firstAttribute="leading" secondItem="kAU-7e-ivq" secondAttribute="leading" id="9ML-ZA-5iM"/>
-                            <constraint firstItem="ZYH-ly-P5F" firstAttribute="trailing" secondItem="kAU-7e-ivq" secondAttribute="trailing" id="Hz3-nl-O4s"/>
-                            <constraint firstItem="Lo9-z3-Un7" firstAttribute="leading" secondItem="kAU-7e-ivq" secondAttribute="leading" id="PT0-3x-yEs"/>
-                            <constraint firstItem="kAU-7e-ivq" firstAttribute="bottom" secondItem="Lo9-z3-Un7" secondAttribute="bottom" id="jGv-4Y-dFx"/>
-                            <constraint firstItem="kAU-7e-ivq" firstAttribute="trailing" secondItem="Lo9-z3-Un7" secondAttribute="trailing" id="shd-40-Jvy"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="kAU-7e-ivq"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uIC-Hl-4SQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2225" y="176"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Gj9-ui-oac">
