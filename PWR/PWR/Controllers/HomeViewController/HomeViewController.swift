@@ -23,8 +23,9 @@ class HomeViewController: UIViewController, StatePickerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
        let senatorCell = UINib(nibName: "HomeTableViewCell", bundle: .main)
+        senatorTable.delegate = self
+        senatorTable.dataSource = self
         senatorTable.register(senatorCell, forCellReuseIdentifier: "senator")
-       // senatorTable.register(HomeTableViewCell.self, forCellReuseIdentifier: "senator")
         
         if let state = UserDefaultManager.storedState {
             self.usersState = state

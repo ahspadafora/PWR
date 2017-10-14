@@ -29,7 +29,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
         // Configure the cell...
         cell.name.text = "dfsdf"
-        cell.pic.image = #imageLiteral(resourceName: "California")
+        cell.pic.image = #imageLiteral(resourceName: "Oval")
         cell.party.text = "vverbve"
 
         return cell
