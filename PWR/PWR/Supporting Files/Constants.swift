@@ -11,6 +11,7 @@ import Foundation
 struct Constants {
     
     static let segueToSearchController = "goToSearchController"
+    static let sequeToSenatorVC = "goToSenatorVC"
     static let segueFromLoginToStateVC = "chooseState"
     static let segueFromLoginToHomeVC = "goHome"
     static let segueFromStateCollectionVCtoHomeVC = "userSelectedState"

@@ -13,6 +13,10 @@
 		040BE1201F85C25800B672F8 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040BE11F1F85C25800B672F8 /* State.swift */; };
 		040BE1261F86DF6000B672F8 /* SenatorGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040BE1251F86DF6000B672F8 /* SenatorGetter.swift */; };
 		040BE12A1F87096100B672F8 /* StateGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040BE1291F87096100B672F8 /* StateGetter.swift */; };
+		042155AF1F90B75E003B1EA0 /* BillDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042155AE1F90B75E003B1EA0 /* BillDetailViewController.swift */; };
+		042155B11F90B7E7003B1EA0 /* CoSponsershipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042155B01F90B7E7003B1EA0 /* CoSponsershipViewController.swift */; };
+		042155B31F90B7FD003B1EA0 /* CommiteeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042155B21F90B7FD003B1EA0 /* CommiteeViewController.swift */; };
+		042155B51F90B95E003B1EA0 /* StatesSenatorsTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042155B41F90B95E003B1EA0 /* StatesSenatorsTableViewDelegate.swift */; };
 		042667A31F848D930063FFE3 /* senators.xml in Resources */ = {isa = PBXBuildFile; fileRef = 041EA40A1F84807200423C22 /* senators.xml */; };
 		042667A51F848E0C0063FFE3 /* Senator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042667A41F848E0C0063FFE3 /* Senator.swift */; };
 		042667A91F8494FF0063FFE3 /* ParserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042667A81F8494FF0063FFE3 /* ParserDelegate.swift */; };
@@ -25,18 +29,28 @@
 		04BA61471F8846C30079BF9A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA61461F8846C30079BF9A /* LoginViewController.swift */; };
 		04BA61491F884F3E0079BF9A /* StatePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA61481F884F3E0079BF9A /* StatePickerDelegate.swift */; };
 		04BA614C1F8856F50079BF9A /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA614B1F8856F50079BF9A /* UserDefaultsManager.swift */; };
-		04BA61501F88D07C0079BF9A /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA614F1F88D07C0079BF9A /* FirebaseManager.swift */; };
+		04BA61501F88D07C0079BF9A /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA614F1F88D07C0079BF9A /* FirebaseAuthManager.swift */; };
 		04BA61561F88D8FE0079BF9A /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BA61551F88D85B0079BF9A /* FBSDKShareKit.framework */; };
 		04BA61571F88D9010079BF9A /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BA61541F88D8480079BF9A /* Bolts.framework */; };
 		04BA61581F88D9030079BF9A /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BA61521F88D83F0079BF9A /* FBSDKCoreKit.framework */; };
 		04BA61591F88D9060079BF9A /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BA61531F88D8410079BF9A /* FBSDKLoginKit.framework */; };
 		04BA615A1F88DF6E0079BF9A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04BA614E1F88CE680079BF9A /* GoogleService-Info.plist */; };
+		04BA619B1F8C80840079BF9A /* FBLoginButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA619A1F8C80840079BF9A /* FBLoginButtonDelegate.swift */; };
 		04E8F1181F847F62002C299A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8F1171F847F62002C299A /* AppDelegate.swift */; };
 		04E8F11A1F847F62002C299A /* StateCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8F1191F847F62002C299A /* StateCollectionViewController.swift */; };
 		04E8F11F1F847F62002C299A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E8F11E1F847F62002C299A /* Assets.xcassets */; };
 		04E8F1221F847F62002C299A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E8F1201F847F62002C299A /* LaunchScreen.storyboard */; };
 		04E8F12D1F847F62002C299A /* PWRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8F12C1F847F62002C299A /* PWRTests.swift */; };
 		04E8F1381F847F62002C299A /* PWRUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8F1371F847F62002C299A /* PWRUITests.swift */; };
+		0549B09D1F8DC6D2002ABF2F /* UIColor+PWRcolors .swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B09C1F8DC6D2002ABF2F /* UIColor+PWRcolors .swift */; };
+		0549B09F1F8DC9C7002ABF2F /* StyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B09E1F8DC9C7002ABF2F /* StyleManager.swift */; };
+		0549B0A71F8E09A8002ABF2F /* BillGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B0A61F8E09A8002ABF2F /* BillGetter.swift */; };
+		0549B0A91F8E0A0F002ABF2F /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B0A81F8E0A0F002ABF2F /* Bill.swift */; };
+		0549B0AB1F8F0D4C002ABF2F /* SenatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B0AA1F8F0D4C002ABF2F /* SenatorViewController.swift */; };
+		0549B0B11F8F49DE002ABF2F /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B0B01F8F49DE002ABF2F /* BannerView.swift */; };
+		0576E0901F915130005F2C8D /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0576E08E1F915130005F2C8D /* HomeTableViewCell.swift */; };
+		0576E0911F915130005F2C8D /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0576E08F1F915130005F2C8D /* HomeTableViewCell.xib */; };
+		0576E0931F9169CF005F2C8D /* HomeViewControllerTableDelegateMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0576E0921F9169CF005F2C8D /* HomeViewControllerTableDelegateMethods.swift */; };
 		058AB93E1F89B6B9008DEC39 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058AB93D1F89B6B9008DEC39 /* Endpoints.swift */; };
 		058AB9401F89B72A008DEC39 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058AB93F1F89B72A008DEC39 /* APIManager.swift */; };
 		144504089E94398A352F5699 /* Pods_PWRTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 871D0A1760DD9397618FD842 /* Pods_PWRTests.framework */; };
@@ -69,6 +83,10 @@
 		040BE1251F86DF6000B672F8 /* SenatorGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenatorGetter.swift; sourceTree = "<group>"; };
 		040BE1291F87096100B672F8 /* StateGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateGetter.swift; sourceTree = "<group>"; };
 		041EA40A1F84807200423C22 /* senators.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = senators.xml; sourceTree = "<group>"; };
+		042155AE1F90B75E003B1EA0 /* BillDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailViewController.swift; sourceTree = "<group>"; };
+		042155B01F90B7E7003B1EA0 /* CoSponsershipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoSponsershipViewController.swift; sourceTree = "<group>"; };
+		042155B21F90B7FD003B1EA0 /* CommiteeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommiteeViewController.swift; sourceTree = "<group>"; };
+		042155B41F90B95E003B1EA0 /* StatesSenatorsTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatesSenatorsTableViewDelegate.swift; sourceTree = "<group>"; };
 		042667A41F848E0C0063FFE3 /* Senator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Senator.swift; sourceTree = "<group>"; };
 		042667A81F8494FF0063FFE3 /* ParserDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserDelegate.swift; sourceTree = "<group>"; };
 		04BA61341F8762D30079BF9A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -81,12 +99,13 @@
 		04BA61481F884F3E0079BF9A /* StatePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatePickerDelegate.swift; sourceTree = "<group>"; };
 		04BA614B1F8856F50079BF9A /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		04BA614E1F88CE680079BF9A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		04BA614F1F88D07C0079BF9A /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		04BA614F1F88D07C0079BF9A /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		04BA61521F88D83F0079BF9A /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		04BA61531F88D8410079BF9A /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		04BA61541F88D8480079BF9A /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		04BA61551F88D85B0079BF9A /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		04BA615B1F88E0C40079BF9A /* PWR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PWR.entitlements; sourceTree = "<group>"; };
+		04BA619A1F8C80840079BF9A /* FBLoginButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginButtonDelegate.swift; sourceTree = "<group>"; };
 		04E8F1141F847F62002C299A /* PWR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PWR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E8F1171F847F62002C299A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04E8F1191F847F62002C299A /* StateCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCollectionViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +118,15 @@
 		04E8F1331F847F62002C299A /* PWRUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PWRUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E8F1371F847F62002C299A /* PWRUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWRUITests.swift; sourceTree = "<group>"; };
 		04E8F1391F847F62002C299A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0549B09C1F8DC6D2002ABF2F /* UIColor+PWRcolors .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+PWRcolors .swift"; sourceTree = "<group>"; };
+		0549B09E1F8DC9C7002ABF2F /* StyleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleManager.swift; sourceTree = "<group>"; };
+		0549B0A61F8E09A8002ABF2F /* BillGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillGetter.swift; sourceTree = "<group>"; };
+		0549B0A81F8E0A0F002ABF2F /* Bill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
+		0549B0AA1F8F0D4C002ABF2F /* SenatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenatorViewController.swift; sourceTree = "<group>"; };
+		0549B0B01F8F49DE002ABF2F /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		0576E08E1F915130005F2C8D /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		0576E08F1F915130005F2C8D /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		0576E0921F9169CF005F2C8D /* HomeViewControllerTableDelegateMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTableDelegateMethods.swift; sourceTree = "<group>"; };
 		058AB93D1F89B6B9008DEC39 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		058AB93F1F89B72A008DEC39 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		22820BB6157660E8D282345E /* Pods_PWRUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PWRUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				040BE1181F85888000B672F8 /* SearchBarCollectionReusableView.swift */,
+				0549B0B01F8F49DE002ABF2F /* BannerView.swift */,
 				04BA613B1F876B820079BF9A /* Storyboards */,
 			);
 			path = Views;
@@ -156,7 +185,9 @@
 		040BE1271F86DFCB00B672F8 /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
+				04BA619A1F8C80840079BF9A /* FBLoginButtonDelegate.swift */,
 				042667A81F8494FF0063FFE3 /* ParserDelegate.swift */,
+				042155B41F90B95E003B1EA0 /* StatesSenatorsTableViewDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -166,6 +197,7 @@
 			children = (
 				040BE1291F87096100B672F8 /* StateGetter.swift */,
 				040BE1251F86DF6000B672F8 /* SenatorGetter.swift */,
+				0549B0A61F8E09A8002ABF2F /* BillGetter.swift */,
 			);
 			path = Getters;
 			sourceTree = "<group>";
@@ -184,6 +216,7 @@
 			children = (
 				040BE11F1F85C25800B672F8 /* State.swift */,
 				042667A41F848E0C0063FFE3 /* Senator.swift */,
+				0549B0A81F8E0A0F002ABF2F /* Bill.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -191,10 +224,14 @@
 		042667AB1F84AB4B0063FFE3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				042155AE1F90B75E003B1EA0 /* BillDetailViewController.swift */,
 				04BA61461F8846C30079BF9A /* LoginViewController.swift */,
 				04BA61421F8845860079BF9A /* SettingsViewController.swift */,
-				04BA613E1F876BCF0079BF9A /* HomeViewController.swift */,
+				0576E0941F916B12005F2C8D /* HomeViewController */,
 				04BA61361F8764E00079BF9A /* StateCollectionViewController */,
+				0549B0AA1F8F0D4C002ABF2F /* SenatorViewController.swift */,
+				042155B01F90B7E7003B1EA0 /* CoSponsershipViewController.swift */,
+				042155B21F90B7FD003B1EA0 /* CommiteeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -204,6 +241,7 @@
 			children = (
 				04BA614E1F88CE680079BF9A /* GoogleService-Info.plist */,
 				04BA61341F8762D30079BF9A /* Constants.swift */,
+				0549B09C1F8DC6D2002ABF2F /* UIColor+PWRcolors .swift */,
 				04E8F1171F847F62002C299A /* AppDelegate.swift */,
 				04E8F11E1F847F62002C299A /* Assets.xcassets */,
 				04E8F1201F847F62002C299A /* LaunchScreen.storyboard */,
@@ -243,9 +281,10 @@
 			isa = PBXGroup;
 			children = (
 				04BA614B1F8856F50079BF9A /* UserDefaultsManager.swift */,
-				04BA614F1F88D07C0079BF9A /* FirebaseManager.swift */,
+				04BA614F1F88D07C0079BF9A /* FirebaseAuthManager.swift */,
 				058AB93D1F89B6B9008DEC39 /* Endpoints.swift */,
 				058AB93F1F89B72A008DEC39 /* APIManager.swift */,
+				0549B09E1F8DC9C7002ABF2F /* StyleManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -305,6 +344,17 @@
 				04E8F1391F847F62002C299A /* Info.plist */,
 			);
 			path = PWRUITests;
+			sourceTree = "<group>";
+		};
+		0576E0941F916B12005F2C8D /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				04BA613E1F876BCF0079BF9A /* HomeViewController.swift */,
+				0576E0921F9169CF005F2C8D /* HomeViewControllerTableDelegateMethods.swift */,
+				0576E08E1F915130005F2C8D /* HomeTableViewCell.swift */,
+				0576E08F1F915130005F2C8D /* HomeTableViewCell.xib */,
+			);
+			path = HomeViewController;
 			sourceTree = "<group>";
 		};
 		848A13F6081638AA195C6215 /* Pods */ = {
@@ -459,6 +509,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04BA613D1F876BB10079BF9A /* Home.storyboard in Resources */,
+				0576E0911F915130005F2C8D /* HomeTableViewCell.xib in Resources */,
 				04BA61451F8846AE0079BF9A /* LoginStoryboard.storyboard in Resources */,
 				042667A31F848D930063FFE3 /* senators.xml in Resources */,
 				04E8F1221F847F62002C299A /* LaunchScreen.storyboard in Resources */,
@@ -626,7 +677,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				042155B51F90B95E003B1EA0 /* StatesSenatorsTableViewDelegate.swift in Sources */,
+				0549B0B11F8F49DE002ABF2F /* BannerView.swift in Sources */,
 				040BE11E1F85918C00B672F8 /* StateCollectionViewCell.swift in Sources */,
+				0549B0A71F8E09A8002ABF2F /* BillGetter.swift in Sources */,
+				042155B31F90B7FD003B1EA0 /* CommiteeViewController.swift in Sources */,
 				042667A51F848E0C0063FFE3 /* Senator.swift in Sources */,
 				04BA614C1F8856F50079BF9A /* UserDefaultsManager.swift in Sources */,
 				04E8F11A1F847F62002C299A /* StateCollectionViewController.swift in Sources */,
@@ -639,13 +694,22 @@
 				040BE1201F85C25800B672F8 /* State.swift in Sources */,
 				04BA61431F8845860079BF9A /* SettingsViewController.swift in Sources */,
 				058AB9401F89B72A008DEC39 /* APIManager.swift in Sources */,
-				04BA61501F88D07C0079BF9A /* FirebaseManager.swift in Sources */,
+				04BA61501F88D07C0079BF9A /* FirebaseAuthManager.swift in Sources */,
 				04BA613F1F876BCF0079BF9A /* HomeViewController.swift in Sources */,
 				058AB93E1F89B6B9008DEC39 /* Endpoints.swift in Sources */,
+				042155AF1F90B75E003B1EA0 /* BillDetailViewController.swift in Sources */,
 				040BE1261F86DF6000B672F8 /* SenatorGetter.swift in Sources */,
+				0549B0A91F8E0A0F002ABF2F /* Bill.swift in Sources */,
+				0549B0AB1F8F0D4C002ABF2F /* SenatorViewController.swift in Sources */,
 				042667A91F8494FF0063FFE3 /* ParserDelegate.swift in Sources */,
+				0576E0931F9169CF005F2C8D /* HomeViewControllerTableDelegateMethods.swift in Sources */,
 				04BA61491F884F3E0079BF9A /* StatePickerDelegate.swift in Sources */,
+				0576E0901F915130005F2C8D /* HomeTableViewCell.swift in Sources */,
+				0549B09F1F8DC9C7002ABF2F /* StyleManager.swift in Sources */,
+				042155B11F90B7E7003B1EA0 /* CoSponsershipViewController.swift in Sources */,
+				04BA619B1F8C80840079BF9A /* FBLoginButtonDelegate.swift in Sources */,
 				040BE1191F85888000B672F8 /* SearchBarCollectionReusableView.swift in Sources */,
+				0549B09D1F8DC6D2002ABF2F /* UIColor+PWRcolors .swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

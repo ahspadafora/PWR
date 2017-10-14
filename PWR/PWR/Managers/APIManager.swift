@@ -20,7 +20,7 @@ func retrieveKey(forAPI keyname: String) -> String {
 
 class APIManager {
     private init() {}
-    static let manager = APIManager()
+    static let instance = APIManager()
     
     private let key = retrieveKey(forAPI: "Propublica")
     

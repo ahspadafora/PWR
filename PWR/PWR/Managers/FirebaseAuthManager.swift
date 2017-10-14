@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import FirebaseAuth
 
 protocol backendConfig {
     func configureBackend()
@@ -18,8 +19,7 @@ extension backendConfig {
     }
 }
 
-class FirebaseManager {
-    private init(){}
+class FirebaseAuthManager {
     static func logoutOfFireBase(){
         let auth = Auth.auth()
         do {
@@ -28,6 +28,18 @@ class FirebaseManager {
         }
         catch let signoutError as NSError {
             print(signoutError.localizedDescription)
+        }
+    }
+    static func loginFirebaseWith(accessToken: String, closure: @escaping (NSError?)->Void) {
+        let credential = FacebookAuthProvider.credential(withAccessToken: accessToken)
+        Auth.auth().signIn(with: credential) { (user, error) in
+            guard let uid = user?.uid else { return }
+            UserDefaultManager.setUserId(uid: uid)
+            UserDefaultManager.setisLoggedInTo(bool: true)
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+            closure(error as NSError?)
         }
     }
 }

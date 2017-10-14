@@ -25,14 +25,14 @@ class SenatorGetter {
         parser?.delegate = parserDelegate
         parser?.parse()
         let senators: [Senator] = parserDelegate.senators
-        var stateSenatorMap: [String: [Senator]] = [:]
+        var stateSenatorDictionary: [String: [Senator]] = [:]
         for senator in senators {
-            if let _ = stateSenatorMap[senator.state] {
-                stateSenatorMap[senator.state]?.append(senator)
+            if let _ = stateSenatorDictionary[senator.state] {
+                stateSenatorDictionary[senator.state]?.append(senator)
             } else {
-                stateSenatorMap[senator.state] = [senator]
+                stateSenatorDictionary[senator.state] = [senator]
             }
         }
-        return (stateSenatorMap)
+        return (stateSenatorDictionary)
     }
 }

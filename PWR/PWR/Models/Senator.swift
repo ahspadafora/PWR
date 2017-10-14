@@ -16,6 +16,7 @@ struct Senator {
     var address: String
     var phone: String
     var website: URL?
+    var memberID: String
 }
 extension Senator {
     init?(dict: [String: String]) {
@@ -26,9 +27,10 @@ extension Senator {
         guard let phone = dict["phone"] else { return nil }
         guard let address = dict["address"] else { return nil }
         guard let web = dict["website"] else { return nil }
+        guard let id = dict["bioguide_id"] else {return nil}
         
         let website = URL(string: web)
-        self.init(firstName: fName, lastName: lName, party: party, state: state, address: address, phone: phone, website: website)
+        self.init(firstName: fName, lastName: lName, party: party, state: state, address: address, phone: phone, website: website, memberID: id)
     }
     
 }
