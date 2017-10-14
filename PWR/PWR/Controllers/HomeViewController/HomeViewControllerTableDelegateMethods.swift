@@ -10,6 +10,10 @@ import UIKit
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "senator", for: indexPath) as! HomeTableViewCell
+        
+    }
 
     // MARK: - Table view data source
 
@@ -28,9 +32,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "senator", for: indexPath) as! HomeTableViewCell
 
         // Configure the cell...
-        cell.name.text = "dfsdf"
-        cell.pic.image = #imageLiteral(resourceName: "Oval")
-        cell.party.text = "vverbve"
+        cell.name.text = "Sen. \(self.senators[indexPath.row].lastName)"
+        cell.pic.image = #imageLiteral(resourceName: "California")
+        cell.party.text = "Party: \(self.senators[indexPath.row].party)"
 
         return cell
     }

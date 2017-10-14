@@ -22,9 +22,12 @@ class HomeViewController: UIViewController, StatePickerDelegate {
     // MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-       let senatorCell = UINib(nibName: "HomeTableViewCell", bundle: .main)
+        
         senatorTable.delegate = self
         senatorTable.dataSource = self
+        
+        let senatorCell = UINib(nibName: "HomeTableViewCell", bundle: .main)
+        
         senatorTable.register(senatorCell, forCellReuseIdentifier: "senator")
         
         if let state = UserDefaultManager.storedState {
