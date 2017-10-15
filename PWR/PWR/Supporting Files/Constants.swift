@@ -18,4 +18,5 @@ struct Constants {
     static let segueFromSettingsToStatePicker = "goToStatePickerFromSettings"
     static let settingsTableCell = "settingsTableCell"
     static let segueToLoginFromHome = "goToLoginVC"
+    static let segueToBillDetailVC = "goToBillDetailVC"
 }

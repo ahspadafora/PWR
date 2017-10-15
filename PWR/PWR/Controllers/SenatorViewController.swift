@@ -10,10 +10,10 @@ import UIKit
 
 class SenatorViewController: UIViewController {
 
-    @IBOutlet weak var senatorBannerView: BannerView!
+    @IBOutlet weak var bannerView: BannerView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var partyLabel: UILabel!
-    @IBOutlet weak var senatorTable: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
     // properties
     var senator: Senator!
@@ -29,13 +29,13 @@ class SenatorViewController: UIViewController {
         commitees = ["A","B","C","D"]
         let law = Bill(name: "A", number: "", lastAction: "")
         votingRecord = [(bill: law, votedInFavor: true), (bill: law, votedInFavor: false)]
-        senatorTable.delegate = self
-        senatorTable.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         usersState = State(abbreviation: "CA", title: "California", senators: [], pic: #imageLiteral(resourceName: "Oval"))
-        self.senatorBannerView.label.text = usersState.title
+        self.bannerView.label.text = usersState.title
        // self.nameLabel.text = "\(senator.firstName) \(senator.lastName)"
     }
 
@@ -87,7 +87,7 @@ extension SenatorViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = senatorTable.dequeueReusableCell(withIdentifier: "votingOrCommitee", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "votingOrCommitee", for: indexPath)
         
         var cellText: String = ""
         
