@@ -11,10 +11,13 @@ import UIKit
 class CoSponsershipViewController: UIViewController {
 
     @IBOutlet weak var bannerView: BannerView!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     // Properties
     
+    var state: State!
+    var senator: Senator!
     var cosponsorships: [Bill]!
     
     override func viewDidLoad() {
@@ -25,7 +28,8 @@ class CoSponsershipViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        bannerView.label.text = ""
+        bannerView.label.text = self.state.title
+        nameLabel.text = "\(self.senator.firstName) \(self.senator.lastName)"
     }
 
     /*
@@ -55,5 +59,20 @@ extension CoSponsershipViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: Constants.segueToBillDetailVC, sender: self)
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Co-sponsored Bills".uppercased()
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor.white
+        header.textLabel?.font = UIFont(name: "Avenir-Light", size: 20)
+        header.textLabel?.adjustsFontSizeToFitWidth = true
     }
 }

@@ -12,9 +12,12 @@ class CommiteeViewController: UIViewController {
 
     @IBOutlet weak var bannerView: BannerView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var nameLabel: UILabel!
     
     // Properties
     
+    var senator: Senator!
+    var state: State!
     var commitees: [String]!
     
     override func viewDidLoad() {
@@ -25,7 +28,8 @@ class CommiteeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        bannerView.label.text = ""
+        bannerView.label.text = self.state.title
+        nameLabel.text = "\(self.senator.firstName) \(self.senator.lastName)"
     }
 }
 
@@ -40,5 +44,20 @@ extension CommiteeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = commitees[indexPath.row]
         
         return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Commitees".uppercased()
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor.white
+        header.textLabel?.font = UIFont(name: "Avenir-Light", size: 20)
+        header.textLabel?.adjustsFontSizeToFitWidth = true
     }
 }
