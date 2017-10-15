@@ -10,17 +10,27 @@ import UIKit
 
 class CoSponsershipViewController: UIViewController {
 
+    @IBOutlet weak var bannerView: BannerView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    
+    // Properties
+    
+    var senator: Senator!
+    var usersState: State!
+    var cellItems: [Bill]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        bannerView.label.text = self.usersState.title
+        nameLabel.text = "\(self.senator.firstName) \(self.senator.lastName)"
+    }
 
     /*
     // MARK: - Navigation
@@ -32,4 +42,37 @@ class CoSponsershipViewController: UIViewController {
     }
     */
 
+}
+
+extension CoSponsershipViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cellItems?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "bill", for: indexPath)
+        
+        cell.textLabel?.text = cellItems[indexPath.row].name
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: Constants.segueToBillDetailVC, sender: self)
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Co-sponsored Bills".uppercased()
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor.white
+        header.textLabel?.font = UIFont(name: "Avenir-Light", size: 20)
+        header.textLabel?.adjustsFontSizeToFitWidth = true
+    }
 }
