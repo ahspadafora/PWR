@@ -115,9 +115,12 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="callButton" destination="Unz-kM-UNB" id="JQW-QW-zwD"/>
                 <outlet property="name" destination="lUK-2u-GcC" id="D99-CL-mBS"/>
                 <outlet property="party" destination="NZA-fC-yUW" id="rsV-Pm-YTA"/>
                 <outlet property="pic" destination="gnU-Ac-zSF" id="VrU-e3-5MU"/>
+                <outlet property="senatorButton" destination="rG5-cm-FCP" id="rZv-at-SHp"/>
+                <outlet property="webButton" destination="iIE-9u-xZ6" id="8BN-TZ-8Si"/>
             </connections>
             <point key="canvasLocation" x="59.5" y="81"/>
         </tableViewCell>
