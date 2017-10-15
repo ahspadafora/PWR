@@ -112,8 +112,8 @@ extension SenatorViewController: UITableViewDelegate, UITableViewDataSource {
             }
             
             if indexPath.row < 3 {
-                cell.isUserInteractionEnabled = true
                 cellText = sitsOnCommitee[indexPath.row]
+                cell.isUserInteractionEnabled = false
             } else if indexPath.row == 3 {
                 cellText = "See more..."
             }
@@ -125,7 +125,6 @@ extension SenatorViewController: UITableViewDelegate, UITableViewDataSource {
             }
             
             if indexPath.row < 3 {
-                cell.isUserInteractionEnabled = true
                 cellText = cosponsoredABill[indexPath.row].name
             } else if indexPath.row == 3 {
                 cellText = "See more..."
@@ -161,7 +160,7 @@ extension SenatorViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.dequeueReusableCell(withIdentifier: "votingOrCommitee", for: indexPath)
         
-        guard cell.textLabel?.text != "See more..." || indexPath.section != 2 else {
+        guard cell.textLabel?.text != "See more..." else {
             performSegue(withIdentifier: Constants.segueToBillDetailVC, sender: self)
             return
         }
@@ -171,6 +170,8 @@ extension SenatorViewController: UITableViewDelegate, UITableViewDataSource {
            performSegue(withIdentifier: Constants.segueToCommitteeVC, sender: self)
         case 1:
             performSegue(withIdentifier: Constants.segueToCoSponsorshipVC, sender: self)
+        case 2:
+            performSegue(withIdentifier: Constants.segueToBillDetailVC, sender: self)
         default:
             return
         }

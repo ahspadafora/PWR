@@ -180,6 +180,7 @@
                         <outlet property="tableView" destination="uQp-u8-fCv" id="vSy-4p-W3C"/>
                         <segue destination="rxg-fd-RIp" kind="show" identifier="goToCoSponshipVC" id="lkL-vf-3DV"/>
                         <segue destination="b7K-fk-Ffl" kind="show" identifier="goToCommitteeVC" id="c8l-fm-J0d"/>
+                        <segue destination="DBq-Hc-8tb" kind="show" identifier="goToBillDetailVC" id="NVb-TJ-3gb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0d6-Mg-oNZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -306,7 +307,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TP5-o4-Dc8">
-                                <rect key="frame" x="0.0" y="314" width="414" height="422"/>
+                                <rect key="frame" x="0.0" y="314" width="414" height="373"/>
                                 <color key="backgroundColor" red="0.94901960780000005" green="0.94509803920000002" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.87058823529999996" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -353,7 +354,7 @@
                             <constraint firstItem="oLm-0w-tcz" firstAttribute="centerX" secondItem="hD7-R5-ssz" secondAttribute="centerX" id="ReW-SX-jNG"/>
                             <constraint firstItem="TP5-o4-Dc8" firstAttribute="width" secondItem="ZZ5-aZ-JDf" secondAttribute="width" id="XH8-kM-q2G"/>
                             <constraint firstItem="TP5-o4-Dc8" firstAttribute="centerX" secondItem="hD7-R5-ssz" secondAttribute="centerX" id="d1R-O3-mew"/>
-                            <constraint firstItem="TP5-o4-Dc8" firstAttribute="bottom" secondItem="hD7-R5-ssz" secondAttribute="bottom" constant="49" id="l20-WQ-qqF"/>
+                            <constraint firstItem="TP5-o4-Dc8" firstAttribute="bottom" secondItem="hD7-R5-ssz" secondAttribute="bottom" id="l20-WQ-qqF"/>
                             <constraint firstItem="oLm-0w-tcz" firstAttribute="width" secondItem="UG9-pK-atK" secondAttribute="width" id="sXF-N5-tER"/>
                             <constraint firstItem="oLm-0w-tcz" firstAttribute="bottom" secondItem="TP5-o4-Dc8" secondAttribute="top" id="uXT-6J-W1m"/>
                             <constraint firstItem="qi9-UB-0Cl" firstAttribute="width" secondItem="UG9-pK-atK" secondAttribute="width" multiplier="0.5" id="voW-Jv-qSW"/>
@@ -372,6 +373,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q0K-4c-syT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3346.376811594203" y="116.57608695652175"/>
+        </scene>
+        <!--Bill Detail View Controller-->
+        <scene sceneID="Ytp-di-Igp">
+            <objects>
+                <viewController id="DBq-Hc-8tb" customClass="BillDetailViewController" customModule="PWR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sok-RH-Sz6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dld-ER-Vic">
+                                <rect key="frame" x="0.0" y="264" width="414" height="472"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.94509803920000002" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="separatorColor" red="0.87058823529999996" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <color key="sectionIndexColor" red="0.94901960780000005" green="0.94509803920000002" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.87058823529999996" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="bill" textLabel="yGp-3Z-zZw" style="IBUITableViewCellStyleDefault" id="C44-Kd-DLl">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="C44-Kd-DLl" id="xyg-b5-44i">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yGp-3Z-zZw">
+                                                    <rect key="frame" x="15" y="0.0" width="384" height="43.666666666666664"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <color key="backgroundColor" red="0.94901960780000005" green="0.94509803920000002" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.94901960780000005" green="0.94509803920000002" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3eN-Kk-t4J" customClass="BannerView" customModule="PWR" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="414" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="lnB-7Y-JCX"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dld-ER-Vic" firstAttribute="width" secondItem="3eN-Kk-t4J" secondAttribute="width" id="0ys-6w-RjL"/>
+                            <constraint firstItem="dld-ER-Vic" firstAttribute="centerX" secondItem="aT6-hP-fYz" secondAttribute="centerX" id="DGg-5T-iwi"/>
+                            <constraint firstItem="dld-ER-Vic" firstAttribute="top" secondItem="3eN-Kk-t4J" secondAttribute="bottom" id="F60-A0-cck"/>
+                            <constraint firstItem="3eN-Kk-t4J" firstAttribute="top" secondItem="aT6-hP-fYz" secondAttribute="top" id="Mf4-n8-8pi"/>
+                            <constraint firstItem="3eN-Kk-t4J" firstAttribute="width" secondItem="Sok-RH-Sz6" secondAttribute="width" id="nap-Oq-Rcd"/>
+                            <constraint firstItem="3eN-Kk-t4J" firstAttribute="centerX" secondItem="aT6-hP-fYz" secondAttribute="centerX" id="wLg-Iv-NXr"/>
+                            <constraint firstItem="dld-ER-Vic" firstAttribute="bottom" secondItem="aT6-hP-fYz" secondAttribute="bottom" constant="49" id="zyU-t7-Z43"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aT6-hP-fYz"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="heF-9c-iAH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2485.507246376812" y="-608.1521739130435"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="aVn-Ts-V4F">
