@@ -33,7 +33,6 @@ class HomeViewController: UIViewController, StatePickerDelegate {
         if let state = UserDefaultManager.storedState {
             self.usersState = state
             self.senators = self.usersState.senators
-            setUpSenatorLabels(senators: self.senators)
             setUpStateLabels(state: self.usersState)
         }
     }
@@ -59,30 +58,24 @@ class HomeViewController: UIViewController, StatePickerDelegate {
         self.usersState = state
     }
     
-    // MARK: -  IBAction functions
-    @IBAction func callSenator(_ sender: UIButton) {
-        selectedSenator = self.senators[sender.tag]
+    // MARK: -  Button action functions
+    func callSenator(_ indexPath: IndexPath) {
+        self.selectedSenator = self.senators[indexPath.row]
         print(selectedSenator?.lastName ?? "no name")
         print(selectedSenator?.phone ?? "no phone")
     }
     
-    @IBAction func visitSenatorsWebsite(_ sender: UIButton) {
-        selectedSenator = self.senators[sender.tag]
+    func visitSenatorsWebsite(_ indexPath: IndexPath) {
+        self.selectedSenator = self.senators[indexPath.row]
         print(selectedSenator?.website ?? "no site")
     }
     
-    @IBAction func viewSenator(_ sender: UIButton) {
-        selectedSenator = self.senators[sender.tag]
+    func viewSenator(_ indexPath: IndexPath) {
+        self.selectedSenator = self.senators[indexPath.row]
         performSegue(withIdentifier: Constants.sequeToSenatorVC, sender: self)
     }
     
     // MARK: - Helper Functions
-    private func setUpSenatorLabels(senators: [Senator]){
-//        self.firstSenPartyLabel.text = "Party: \(senators[0].party)\nOffices located at \(senators[0].address)"
-//        self.firstSenatorNameLabel.text = "Sen. \(senators[0].lastName)"
-//        self.secondSenPartyLabel.text = "Party: \(senators[1].party)\nOffices located at \(senators[1].address)"
-//        self.secondSenNameLabel.text = "Sen. \(senators[1].lastName)"
-    }
     
     private func setUpStateLabels(state: State){
         self.stateBannerView.label.text = state.title

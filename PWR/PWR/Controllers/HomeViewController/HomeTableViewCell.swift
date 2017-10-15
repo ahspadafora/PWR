@@ -10,7 +10,7 @@ import UIKit
 
 // working off of advice here: https://stackoverflow.com/questions/26880526/performing-a-segue-from-a-button-within-a-custom-uitableviewcell
 
-protocol AllowSegueFromCellButton {
+protocol HomeCellButtonDelegate {
     func callSegue(from button: UIButton)
 }
 
@@ -28,7 +28,7 @@ class HomeTableViewCell: UITableViewCell {
 
     // properties
     
-    var delegate: AllowSegueFromCellButton!
+    var delegate: HomeCellButtonDelegate!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,24 +38,20 @@ class HomeTableViewCell: UITableViewCell {
         pic.layer.borderWidth = 3
         pic.clipsToBounds = true
         
-        self.senatorButton.addTarget(self, action: #selector(senatorButtonWasTapped(sender:)), for: .touchUpInside)
-        self.callButton.addTarget(self, action: #selector(callButtonWasTapped(sender:)), for: .touchUpInside)
-        self.webButton.addTarget(self, action: #selector(webButtonWasTapped(sender:)), for: .touchUpInside)
+        self.senatorButton.addTarget(self, action: #selector(self.cellButtonWasTapped(sender:)), for: .touchUpInside)
+        self.callButton.addTarget(self, action: #selector(self.cellButtonWasTapped(sender:)), for: .touchUpInside)
+        self.webButton.addTarget(self, action: #selector(self.cellButtonWasTapped(sender:)), for: .touchUpInside)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
-    func senatorButtonWasTapped(sender: UIButton) {
+    func cellButtonWasTapped(sender: UIButton) {
         guard let setDelegate = self.delegate else { return }
+        
+        
         
         setDelegate.callSegue(from: sender)
     }
-    
-    func callButtonWasTapped(sender: UIButton) {}
-    
-    func webButtonWasTapped(sender: UIButton) {}
 }

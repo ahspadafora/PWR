@@ -8,8 +8,8 @@
 
 import UIKit
 
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
-
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource, HomeCellButtonDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.dequeueReusableCell(withIdentifier: "senator", for: indexPath) as! HomeTableViewCell
         
@@ -32,21 +32,29 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "senator", for: indexPath) as! HomeTableViewCell
 
         // Configure the cell...
+        cell.delegate = self
         cell.name.text = "Sen. \(self.senators[indexPath.row].lastName)"
         cell.pic.image = #imageLiteral(resourceName: "California")
         cell.party.text = "Party: \(self.senators[indexPath.row].party)"
 
         return cell
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    // MARK: - Cell Delegate Method
+    
+    func callSegue(from button: UIButton) {
+        switch button.tag {
+        case 0:
+            print("0")
+           // self.viewSenator(indexPath)
+        case 1:
+            print("1")
+           // self.callSenator(indexPath)
+        case 2:
+            print("2")
+           // self.visitSenatorsWebsite(indexPath)
+        default:
+            return
+        }
     }
-    */
-
 }
