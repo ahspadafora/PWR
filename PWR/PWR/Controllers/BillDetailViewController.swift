@@ -9,13 +9,21 @@
 import UIKit
 
 class BillDetailViewController: UIViewController {
+    
+    @IBOutlet weak var bannerView: BannerView!
+    @IBOutlet weak var textView: UITextView!
+    
+    // Properties
+    
+    var bill: Bill!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.bannerView.label.text = bill.name
+        // need a bill summary in the bill model
+        self.textView.text = ""
     }
 }

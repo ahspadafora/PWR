@@ -1,76 +1,12 @@
 //
-//  SenatorViewController.swift
+//  SenatorViewControllerTableProtocolMethods.swift
 //  PWR
 //
-//  Created by Marty Hernandez Avedon on 10/11/17.
+//  Created by Marty Hernandez Avedon on 10/15/17.
 //  Copyright © 2017 Amber Spadafora. All rights reserved.
 //
 
 import UIKit
-
-class SenatorViewController: UIViewController {
-    
-    @IBOutlet weak var bannerView: BannerView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var partyLabel: UILabel!
-    @IBOutlet weak var tableView: UITableView!
-    
-    // properties
-    var senator: Senator!
-    var usersState: State!
-    var allowedSegues = [Constants.segueToCoSponsorshipVC, Constants.segueToCommitteeVC]
-    
-    var votingRecord: [(bill: Bill, votedInFavor: Bool)]?
-    var commitees: [String]?
-    var cosponsorships: [Bill]?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        // dummy data
-        senator = Senator(firstName: "John", lastName: "Bailey", party: "R", state: "LA", address: "??", phone: "", website: nil, memberID: "")
-        commitees = ["A","B","C","D"]
-        let law = Bill(name: "A", number: "", lastAction: "")
-        votingRecord = [(bill: law, votedInFavor: true), (bill: law, votedInFavor: false)]
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        usersState = State(abbreviation: "CA", title: "California", senators: [], pic: #imageLiteral(resourceName: "Oval"))
-        self.bannerView.label.text = usersState.title
-        // self.nameLabel.text = "\(senator.firstName) \(senator.lastName)"
-    }
-    
-    // MARK: - Navigation
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let identifier = segue.identifier else { return }
-        guard allowedSegues.contains(identifier) else { return }
-        
-        switch identifier {
-        case Constants.segueToCommitteeVC:
-            guard let destinationVC = segue.destination as? CommiteeViewController else { return }
-            
-            destinationVC.cellItems = self.commitees
-            destinationVC.senator = self.senator
-            destinationVC.usersState = self.usersState
-        case Constants.segueToCoSponsorshipVC:
-            guard let destinationVC = segue.destination as? CoSponsershipViewController else { return }
-            
-            destinationVC.cellItems = self.cosponsorships
-            destinationVC.senator = self.senator
-            destinationVC.usersState = self.usersState
-        case Constants.segueToBillDetailVC:
-            print("bill detail segue goes here")
-        //guard let destinationVC = segue.destination as? BillDetailViewController else { return }
-        default:
-            return
-        }
-    }
-    
-}
 
 extension SenatorViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -167,7 +103,7 @@ extension SenatorViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch indexPath.section {
         case 0:
-           performSegue(withIdentifier: Constants.segueToCommitteeVC, sender: self)
+            performSegue(withIdentifier: Constants.segueToCommitteeVC, sender: self)
         case 1:
             performSegue(withIdentifier: Constants.segueToCoSponsorshipVC, sender: self)
         case 2:
