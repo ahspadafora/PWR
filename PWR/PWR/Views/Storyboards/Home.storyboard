@@ -382,35 +382,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dld-ER-Vic">
-                                <rect key="frame" x="0.0" y="264" width="414" height="472"/>
-                                <color key="backgroundColor" red="0.94901960780000005" green="0.94509803920000002" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="separatorColor" red="0.87058823529999996" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <color key="sectionIndexColor" red="0.94901960780000005" green="0.94509803920000002" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="sectionIndexBackgroundColor" red="0.87058823529999996" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="bill" textLabel="yGp-3Z-zZw" style="IBUITableViewCellStyleDefault" id="C44-Kd-DLl">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="C44-Kd-DLl" id="xyg-b5-44i">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yGp-3Z-zZw">
-                                                    <rect key="frame" x="15" y="0.0" width="384" height="43.666666666666664"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <color key="backgroundColor" red="0.94901960780000005" green="0.94509803920000002" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.94901960780000005" green="0.94509803920000002" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3eN-Kk-t4J" customClass="BannerView" customModule="PWR" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="414" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -418,16 +389,23 @@
                                     <constraint firstAttribute="height" constant="200" id="lnB-7Y-JCX"/>
                                 </constraints>
                             </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="POj-J6-tlz">
+                                <rect key="frame" x="38.666666666666657" y="304" width="336.66666666666663" height="390"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.94509803920000002" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.14901960780000001" green="0.41568627450000001" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="dld-ER-Vic" firstAttribute="width" secondItem="3eN-Kk-t4J" secondAttribute="width" id="0ys-6w-RjL"/>
-                            <constraint firstItem="dld-ER-Vic" firstAttribute="centerX" secondItem="aT6-hP-fYz" secondAttribute="centerX" id="DGg-5T-iwi"/>
-                            <constraint firstItem="dld-ER-Vic" firstAttribute="top" secondItem="3eN-Kk-t4J" secondAttribute="bottom" id="F60-A0-cck"/>
                             <constraint firstItem="3eN-Kk-t4J" firstAttribute="top" secondItem="aT6-hP-fYz" secondAttribute="top" id="Mf4-n8-8pi"/>
+                            <constraint firstItem="POj-J6-tlz" firstAttribute="bottom" secondItem="aT6-hP-fYz" secondAttribute="bottom" constant="7" id="NGb-LZ-Nc6"/>
+                            <constraint firstItem="POj-J6-tlz" firstAttribute="top" secondItem="3eN-Kk-t4J" secondAttribute="bottom" constant="40" id="XCb-eb-CB7"/>
+                            <constraint firstItem="POj-J6-tlz" firstAttribute="centerX" secondItem="aT6-hP-fYz" secondAttribute="centerX" id="blS-p7-wZu"/>
+                            <constraint firstItem="POj-J6-tlz" firstAttribute="width" secondItem="Sok-RH-Sz6" secondAttribute="width" multiplier="13/16" id="gIj-BO-Zwd"/>
                             <constraint firstItem="3eN-Kk-t4J" firstAttribute="width" secondItem="Sok-RH-Sz6" secondAttribute="width" id="nap-Oq-Rcd"/>
                             <constraint firstItem="3eN-Kk-t4J" firstAttribute="centerX" secondItem="aT6-hP-fYz" secondAttribute="centerX" id="wLg-Iv-NXr"/>
-                            <constraint firstItem="dld-ER-Vic" firstAttribute="bottom" secondItem="aT6-hP-fYz" secondAttribute="bottom" constant="49" id="zyU-t7-Z43"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aT6-hP-fYz"/>
                     </view>
