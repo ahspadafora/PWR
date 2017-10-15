@@ -19,4 +19,6 @@ struct Constants {
     static let settingsTableCell = "settingsTableCell"
     static let segueToLoginFromHome = "goToLoginVC"
     static let segueToBillDetailVC = "goToBillDetailVC"
+    static let segueToCoSponsorshipVC = "goToCoSponshipVC"
+    static let segueToCommitteeVC = "goToCommitteeVC"
 }

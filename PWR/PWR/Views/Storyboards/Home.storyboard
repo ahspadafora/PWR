@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="suU-nt-Xcr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wGN-di-uB6">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -88,11 +88,11 @@
             <objects>
                 <viewController modalTransitionStyle="crossDissolve" id="wGN-di-uB6" customClass="SenatorViewController" customModule="PWR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qid-SS-CS2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Republican in Senate since 1995" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9DT-2S-KYu">
-                                <rect key="frame" x="0.0" y="264" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="182.66666666666669" width="414" height="50.000000000000028"/>
                                 <color key="backgroundColor" red="0.14901960780000001" green="0.41568627450000001" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="0bo-WJ-3mi"/>
@@ -102,7 +102,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uQp-u8-fCv">
-                                <rect key="frame" x="0.0" y="314" width="414" height="373"/>
+                                <rect key="frame" x="0.0" y="232.66666666666671" width="414" height="390.33333333333326"/>
                                 <color key="backgroundColor" red="0.94901960780000005" green="0.94509803920000002" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.87058823529999996" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -139,11 +139,11 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ok6-gd-XJ7" customClass="BannerView" customModule="PWR" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="414" height="200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="182.66666666666666"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1e-7D-GFL">
-                                <rect key="frame" x="103" y="172.66666666666666" width="207" height="30"/>
+                                <rect key="frame" x="103" y="91.333333333333343" width="207" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="LKl-Ea-ijL"/>
@@ -172,13 +172,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="g6i-sA-x6i"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
                         <outlet property="bannerView" destination="ok6-gd-XJ7" id="sR9-CK-gys"/>
                         <outlet property="nameLabel" destination="L1e-7D-GFL" id="Pue-QJ-8U7"/>
                         <outlet property="partyLabel" destination="9DT-2S-KYu" id="TJr-I5-MYf"/>
                         <outlet property="tableView" destination="uQp-u8-fCv" id="vSy-4p-W3C"/>
-                        <segue destination="rxg-fd-RIp" kind="show" id="lkL-vf-3DV"/>
-                        <segue destination="b7K-fk-Ffl" kind="show" id="c8l-fm-J0d"/>
+                        <segue destination="rxg-fd-RIp" kind="show" identifier="goToCoSponshipVC" id="lkL-vf-3DV"/>
+                        <segue destination="b7K-fk-Ffl" kind="show" identifier="goToCommitteeVC" id="c8l-fm-J0d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0d6-Mg-oNZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -196,19 +197,19 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NYY-cy-zmN" customClass="BannerView" customModule="PWR" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="414" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="RxZ-37-eyK"/>
+                                </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GVG-Pl-9ou">
-                                <rect key="frame" x="0.0" y="208" width="414" height="528"/>
+                                <rect key="frame" x="0.0" y="314" width="414" height="373"/>
                                 <color key="backgroundColor" red="0.94901960780000005" green="0.94509803920000002" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="528" id="6sx-MI-Bic"/>
-                                </constraints>
                                 <color key="separatorColor" red="0.87058823529999996" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexColor" red="0.94901960780000005" green="0.94509803920000002" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.87058823529999996" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="commitee" textLabel="L2q-Y0-U5x" style="IBUITableViewCellStyleDefault" id="bfV-2z-iOm">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="committee" textLabel="L2q-Y0-U5x" style="IBUITableViewCellStyleDefault" id="bfV-2z-iOm">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bfV-2z-iOm" id="Rky-dr-0sg">
@@ -231,7 +232,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Republican in Senate since 1995" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4p-p5-caS">
-                                <rect key="frame" x="0.0" y="158" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="264" width="414" height="50"/>
                                 <color key="backgroundColor" red="0.14901960780000001" green="0.41568627450000001" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="hOx-36-J2t"/>
@@ -261,8 +262,8 @@
                             <constraint firstItem="g4p-p5-caS" firstAttribute="centerX" secondItem="fXL-Sf-ti0" secondAttribute="centerX" id="bK0-HF-CFc"/>
                             <constraint firstItem="GVG-Pl-9ou" firstAttribute="top" secondItem="g4p-p5-caS" secondAttribute="bottom" id="bbW-Fd-9w4"/>
                             <constraint firstItem="Q1M-Wo-J2K" firstAttribute="width" secondItem="NYY-cy-zmN" secondAttribute="width" multiplier="0.5" id="gQN-xz-j7C"/>
-                            <constraint firstItem="GVG-Pl-9ou" firstAttribute="bottom" secondItem="fXL-Sf-ti0" secondAttribute="bottom" constant="49" id="hQc-aV-qaV"/>
-                            <constraint firstItem="g4p-p5-caS" firstAttribute="top" secondItem="NYY-cy-zmN" secondAttribute="bottom" constant="-106" id="lWO-n3-SpT"/>
+                            <constraint firstItem="GVG-Pl-9ou" firstAttribute="bottom" secondItem="fXL-Sf-ti0" secondAttribute="bottom" id="hQc-aV-qaV"/>
+                            <constraint firstItem="g4p-p5-caS" firstAttribute="top" secondItem="NYY-cy-zmN" secondAttribute="bottom" id="lWO-n3-SpT"/>
                             <constraint firstItem="NYY-cy-zmN" firstAttribute="centerX" secondItem="GVG-Pl-9ou" secondAttribute="centerX" id="wJN-BE-BpF"/>
                             <constraint firstItem="Q1M-Wo-J2K" firstAttribute="centerX" secondItem="NYY-cy-zmN" secondAttribute="centerX" id="ydk-ng-nUm"/>
                             <constraint firstItem="GVG-Pl-9ou" firstAttribute="width" secondItem="9dN-eM-Bzm" secondAttribute="width" id="zMs-Tv-ZnF"/>
@@ -606,6 +607,6 @@
         <image name="Oval" width="140" height="140"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QqC-nH-GCJ"/>
+        <segue reference="lW9-ss-9OS"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -17,8 +17,8 @@ class CommiteeViewController: UIViewController {
     // Properties
     
     var senator: Senator!
-    var state: State!
-    var commitees: [String]!
+    var usersState: State!
+    var cellItems: [String]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,20 +28,20 @@ class CommiteeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        bannerView.label.text = self.state.title
+        bannerView.label.text = self.usersState.title
         nameLabel.text = "\(self.senator.firstName) \(self.senator.lastName)"
     }
 }
 
 extension CommiteeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return commitees?.count ?? 0
+        return cellItems?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "bill", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "committee", for: indexPath)
         
-        cell.textLabel?.text = commitees[indexPath.row]
+        cell.textLabel?.text = cellItems[indexPath.row]
         
         return cell
     }

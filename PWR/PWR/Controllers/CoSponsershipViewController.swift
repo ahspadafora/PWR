@@ -16,9 +16,9 @@ class CoSponsershipViewController: UIViewController {
     
     // Properties
     
-    var state: State!
     var senator: Senator!
-    var cosponsorships: [Bill]!
+    var usersState: State!
+    var cellItems: [Bill]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class CoSponsershipViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        bannerView.label.text = self.state.title
+        bannerView.label.text = self.usersState.title
         nameLabel.text = "\(self.senator.firstName) \(self.senator.lastName)"
     }
 
@@ -46,13 +46,13 @@ class CoSponsershipViewController: UIViewController {
 
 extension CoSponsershipViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cosponsorships?.count ?? 0
+        return cellItems?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "bill", for: indexPath)
         
-        cell.textLabel?.text = cosponsorships[indexPath.row].name
+        cell.textLabel?.text = cellItems[indexPath.row].name
         
         return cell
     }
