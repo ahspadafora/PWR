@@ -31,8 +31,7 @@ class SenatorViewController: UIViewController {
         tableView.dataSource = self
         
         // dummy data
-        usersState = State(abbreviation: "CA", title: "California", senators: [], pic: #imageLiteral(resourceName: "Oval"))
-        senator = Senator(firstName: "John", lastName: "Bailey", party: "R", state: "LA", address: "??", phone: "", website: nil, memberID: "")
+        
         commitees = ["A","B","C","D"]
         let law = Bill(name: "A", number: "", lastAction: "")
         votingRecord = [(bill: law, votedInFavor: true), (bill: law, votedInFavor: false)]

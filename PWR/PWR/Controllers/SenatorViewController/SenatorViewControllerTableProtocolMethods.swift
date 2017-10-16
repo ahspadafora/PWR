@@ -113,6 +113,10 @@ extension SenatorViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func sendBillOver(_ indexPath: IndexPath) {
+        
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }

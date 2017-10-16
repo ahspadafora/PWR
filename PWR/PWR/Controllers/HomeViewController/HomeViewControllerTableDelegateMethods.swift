@@ -9,11 +9,6 @@
 import UIKit
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource, HomeCellButtonDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "senator", for: indexPath) as! HomeTableViewCell
-        
-    }
 
     // MARK: - Table view data source
 
@@ -45,17 +40,18 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource, HomeCe
     
     func callSegue(from button: CellButton) {
         guard let indexPath = button.positionInTable else { return }
+        let selectedSenator = self.senators[indexPath.row]
         
         switch button.tag {
         case 0:
             print("0")
-           self.viewSenator(indexPath)
+           self.viewSenator(selectedSenator)
         case 1:
             print("1")
-           self.callSenator(indexPath)
+           self.callSenator(selectedSenator)
         case 2:
             print("2")
-           self.visitSenatorsWebsite(indexPath)
+           self.visitSenatorsWebsite(selectedSenator)
         default:
             return
         }
@@ -63,19 +59,16 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource, HomeCe
     
     // MARK: Button Actions
 
-    func callSenator(_ indexPath: IndexPath) {
-        self.selectedSenator = self.senators[indexPath.row]
-        print(selectedSenator?.lastName ?? "no name")
-        print(selectedSenator?.phone ?? "no phone")
+    func callSenator(_ senator: Senator) {
+        print(senator.lastName)
+        print(senator.phone)
     }
     
-    func visitSenatorsWebsite(_ indexPath: IndexPath) {
-        self.selectedSenator = self.senators[indexPath.row]
-        print(selectedSenator?.website ?? "no site")
+    func visitSenatorsWebsite(_ senator: Senator) {
+        print(senator.website ?? "no site")
     }
     
-    func viewSenator(_ indexPath: IndexPath) {
-        self.selectedSenator = self.senators[indexPath.row]
-        performSegue(withIdentifier: Constants.sequeToSenatorVC, sender: self)
+    func viewSenator(_ senator: Senator) {
+        performSegue(withIdentifier: Constants.sequeToSenatorVC, sender: senator)
     }
 }

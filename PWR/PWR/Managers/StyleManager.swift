@@ -57,7 +57,7 @@ class StyleManager: ThemeUIKitClasses {
         let proxyActivityIndicator = UIActivityIndicatorView.appearance()
         let proxyWebView = UIWebView.appearance()
         let proxyTableView = UITableView.appearance()
-        let proxyTableCell = UITableViewCell.appearance()
+     //   let proxyTableCell = UITableViewCell.appearance()
         let proxySectionHeader = UITableViewHeaderFooterView.appearance()
         let proxyCollectionView = UICollectionView.appearance()
      //   let proxyCollectionViewCell = UICollectionViewCell.appearance()
