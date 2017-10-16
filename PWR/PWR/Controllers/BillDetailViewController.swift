@@ -19,7 +19,6 @@ class BillDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        bill = Bill(name: "Gwar", number: "", lastAction: "")
    }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -33,11 +33,14 @@
                                 <color key="backgroundColor" red="0.94901960780000005" green="0.94509803920000002" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pgi-Ft-Tsc" customClass="BannerView" customModule="PWR" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="414" height="199"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="MOk-Bm-9Jj"/>
+                                </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Xg-H1-oE8">
-                                <rect key="frame" x="0.0" y="264" width="414" height="423"/>
+                                <rect key="frame" x="0.0" y="265" width="414" height="422"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.87058823529999996" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -61,7 +64,6 @@
                             <constraint firstItem="Pgi-Ft-Tsc" firstAttribute="top" secondItem="7Vo-XS-jBh" secondAttribute="top" id="Ow5-cu-XRb"/>
                             <constraint firstItem="Pgi-Ft-Tsc" firstAttribute="width" secondItem="FkA-8s-Smm" secondAttribute="width" id="P7q-cZ-LrP"/>
                             <constraint firstItem="7Vo-XS-jBh" firstAttribute="bottom" secondItem="3Xg-H1-oE8" secondAttribute="bottom" id="QSj-0V-OXL"/>
-                            <constraint firstItem="Pgi-Ft-Tsc" firstAttribute="height" secondItem="FkA-8s-Smm" secondAttribute="height" multiplier="0.27" id="Qhy-Vz-1PZ"/>
                             <constraint firstItem="3Xg-H1-oE8" firstAttribute="top" secondItem="Pgi-Ft-Tsc" secondAttribute="bottom" constant="1" id="ugV-zN-nVA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7Vo-XS-jBh"/>
@@ -92,7 +94,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Republican in Senate since 1995" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9DT-2S-KYu">
-                                <rect key="frame" x="0.0" y="182.66666666666669" width="414" height="50.000000000000028"/>
+                                <rect key="frame" x="0.0" y="200" width="414" height="50"/>
                                 <color key="backgroundColor" red="0.14901960780000001" green="0.41568627450000001" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="0bo-WJ-3mi"/>
@@ -102,8 +104,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uQp-u8-fCv">
-                                <rect key="frame" x="0.0" y="232.66666666666671" width="414" height="390.33333333333326"/>
-                                <color key="backgroundColor" red="0.94901960780000005" green="0.94509803920000002" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="250" width="414" height="373"/>
+                                <color key="backgroundColor" red="0.87058823529999996" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.99989503619999998" green="1" blue="0.999871552" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.87058823529999996" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -139,11 +142,14 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ok6-gd-XJ7" customClass="BannerView" customModule="PWR" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="182.66666666666666"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="sOD-ye-ShG"/>
+                                </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1e-7D-GFL">
-                                <rect key="frame" x="103" y="91.333333333333343" width="207" height="30"/>
+                                <rect key="frame" x="103" y="108.66666666666666" width="207" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="LKl-Ea-ijL"/>
@@ -166,7 +172,6 @@
                             <constraint firstItem="ok6-gd-XJ7" firstAttribute="width" secondItem="qid-SS-CS2" secondAttribute="width" id="kG7-AG-FWd"/>
                             <constraint firstItem="ok6-gd-XJ7" firstAttribute="top" secondItem="g6i-sA-x6i" secondAttribute="top" id="pxK-8K-dSl"/>
                             <constraint firstItem="uQp-u8-fCv" firstAttribute="top" secondItem="9DT-2S-KYu" secondAttribute="bottom" id="qDf-YI-NpH"/>
-                            <constraint firstItem="ok6-gd-XJ7" firstAttribute="height" secondItem="qid-SS-CS2" secondAttribute="height" multiplier="0.27" constant="1.2799999999999727" id="yU4-3r-daH"/>
                             <constraint firstItem="ok6-gd-XJ7" firstAttribute="centerX" secondItem="g6i-sA-x6i" secondAttribute="centerX" id="yys-fC-jV7"/>
                             <constraint firstItem="L1e-7D-GFL" firstAttribute="width" secondItem="ok6-gd-XJ7" secondAttribute="width" multiplier="0.5" id="zaf-zL-xR1"/>
                         </constraints>
@@ -279,7 +284,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bwk-ti-hsD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3363.7681159420295" y="-608.1521739130435"/>
+            <point key="canvasLocation" x="3264" y="-316"/>
         </scene>
         <!--Co Sponsership View Controller-->
         <scene sceneID="8CI-iN-YQX">
@@ -368,11 +373,12 @@
                         <outlet property="bannerView" destination="UG9-pK-atK" id="jsA-oD-CsF"/>
                         <outlet property="nameLabel" destination="qi9-UB-0Cl" id="Mg4-8Q-mg9"/>
                         <outlet property="tableView" destination="TP5-o4-Dc8" id="dZe-w6-MY6"/>
+                        <segue destination="DBq-Hc-8tb" kind="show" identifier="goToBillDetailVC" id="hvr-bc-OKW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q0K-4c-syT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3346.376811594203" y="116.57608695652175"/>
+            <point key="canvasLocation" x="3264" y="673"/>
         </scene>
         <!--Bill Detail View Controller-->
         <scene sceneID="Ytp-di-Igp">
@@ -416,7 +422,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="heF-9c-iAH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2485.507246376812" y="-608.1521739130435"/>
+            <point key="canvasLocation" x="4064" y="117"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="aVn-Ts-V4F">
@@ -651,4 +657,7 @@
     <resources>
         <image name="Oval" width="140" height="140"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="NVb-TJ-3gb"/>
+    </inferredMetricsTieBreakers>
 </document>

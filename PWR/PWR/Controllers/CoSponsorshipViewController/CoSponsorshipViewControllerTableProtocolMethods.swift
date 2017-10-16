@@ -22,7 +22,7 @@ extension CoSponsershipViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: Constants.segueToBillDetailVC, sender: self)
+        performSegue(withIdentifier: Constants.segueToBillDetailVC, sender: self.cellItems[indexPath.row])
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
