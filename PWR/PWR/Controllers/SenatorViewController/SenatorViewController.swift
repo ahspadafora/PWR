@@ -27,14 +27,14 @@ class SenatorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = self
         
         // dummy data
         
         self.commitees = ["A","B","C","D"]
         let law = Bill(name: "A", number: "", lastAction: "")
-        self.cosponsorships = [law, law, law]
+        self.cosponsorships = [law, law, law, law]
         self.votingRecord = [(bill: law, votedInFavor: true), (bill: law, votedInFavor: false)]
     }
     
@@ -47,7 +47,7 @@ class SenatorViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier,
-        self.allowedSegues.contains(identifier) else { return }
+        allowedSegues.contains(identifier) else { return }
         
         switch identifier {
         case Constants.segueToCommitteeVC:
@@ -63,8 +63,10 @@ class SenatorViewController: UIViewController {
             destinationVC.senatorName = "\(self.senator.firstName) \(self.senator.lastName)"
             destinationVC.stateName = self.usersState.title
         case Constants.segueToBillDetailVC:
-            guard let destinationVC = segue.destination as? BillDetailViewController,
-               let bill = sender as? Bill else { return }
+            guard let identifier = segue.identifier,
+                identifier == Constants.segueToBillDetailVC,
+                let destinationVC = segue.destination as? BillDetailViewController,
+                let bill = sender as? Bill else { return }
             
             destinationVC.bill = bill
         default:

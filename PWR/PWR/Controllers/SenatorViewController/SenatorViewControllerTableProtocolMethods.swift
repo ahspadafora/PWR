@@ -65,6 +65,8 @@ extension SenatorViewController: UITableViewDelegate, UITableViewDataSource {
             } else if indexPath.row == 3 {
                 cellText = "See more..."
             }
+            
+            if !cell.isUserInteractionEnabled { cell.isUserInteractionEnabled = true }
         case 2:
             guard let votedOnABill = votingRecord else {
                 cellText = "No bills voted on yet"
@@ -73,6 +75,7 @@ extension SenatorViewController: UITableViewDelegate, UITableViewDataSource {
             }
             
             cellText = votedOnABill[indexPath.row].bill.name
+            if !cell.isUserInteractionEnabled { cell.isUserInteractionEnabled = true }
             
             if votedOnABill[indexPath.row].votedInFavor {
                 cell.detailTextLabel?.text = "YES"
@@ -94,20 +97,16 @@ extension SenatorViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "votingOrCommitee", for: indexPath)
-        
-        guard cell.textLabel?.text != "See more..." else {
-            performSegue(withIdentifier: Constants.segueToBillDetailVC, sender: self)
-            return
-        }
-        
+        print(indexPath.section)
         switch indexPath.section {
         case 0:
             performSegue(withIdentifier: Constants.segueToCommitteeVC, sender: self)
         case 1:
             performSegue(withIdentifier: Constants.segueToCoSponsorshipVC, sender: self)
         case 2:
-            performSegue(withIdentifier: Constants.segueToBillDetailVC, sender: self.votingRecord?[indexPath.row].0)
+            let record = self.votingRecord![indexPath.row]
+            // self.cellItems[indexPath.row]
+            performSegue(withIdentifier: Constants.segueToBillDetailVC, sender: record.bill)
         default:
             return
         }
