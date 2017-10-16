@@ -27,15 +27,16 @@ class SenatorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
-        
         // dummy data
         
         self.commitees = ["A","B","C","D"]
         let law = Bill(name: "A", number: "", lastAction: "")
         self.cosponsorships = [law, law, law, law]
         self.votingRecord = [(bill: law, votedInFavor: true), (bill: law, votedInFavor: false)]
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
