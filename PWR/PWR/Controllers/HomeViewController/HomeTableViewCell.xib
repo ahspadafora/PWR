@@ -21,10 +21,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="198" id="KGk-i7-Jjw" customClass="HomeTableViewCell" customModule="PWR" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="198"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="197.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Party label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZA-fC-yUW">
@@ -37,7 +37,7 @@
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Unz-kM-UNB">
+                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Unz-kM-UNB" customClass="CellButton" customModule="PWR" customModuleProvider="target">
                         <rect key="frame" x="152" y="40.5" width="223" height="40"/>
                         <color key="backgroundColor" red="0.87058823529999996" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" name="Avenir-BlackOblique" family="Avenir" pointSize="20"/>
@@ -45,7 +45,7 @@
                             <color key="titleColor" red="0.99989503619999998" green="1" blue="0.999871552" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                     </button>
-                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iIE-9u-xZ6">
+                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iIE-9u-xZ6" customClass="CellButton" customModule="PWR" customModuleProvider="target">
                         <rect key="frame" x="152" y="92.5" width="223" height="40"/>
                         <color key="backgroundColor" red="0.87058823529999996" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" name="Avenir-BlackOblique" family="Avenir" pointSize="20"/>
@@ -79,7 +79,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rG5-cm-FCP">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rG5-cm-FCP" customClass="CellButton" customModule="PWR" customModuleProvider="target">
                         <rect key="frame" x="8" y="8.5" width="124" height="124"/>
                     </button>
                 </subviews>
@@ -115,9 +115,12 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="callButton" destination="Unz-kM-UNB" id="JQW-QW-zwD"/>
                 <outlet property="name" destination="lUK-2u-GcC" id="D99-CL-mBS"/>
                 <outlet property="party" destination="NZA-fC-yUW" id="rsV-Pm-YTA"/>
                 <outlet property="pic" destination="gnU-Ac-zSF" id="VrU-e3-5MU"/>
+                <outlet property="senatorButton" destination="rG5-cm-FCP" id="rZv-at-SHp"/>
+                <outlet property="webButton" destination="iIE-9u-xZ6" id="8BN-TZ-8Si"/>
             </connections>
             <point key="canvasLocation" x="59.5" y="81"/>
         </tableViewCell>

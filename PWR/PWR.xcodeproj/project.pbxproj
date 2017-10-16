@@ -48,9 +48,13 @@
 		0549B0A91F8E0A0F002ABF2F /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B0A81F8E0A0F002ABF2F /* Bill.swift */; };
 		0549B0AB1F8F0D4C002ABF2F /* SenatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B0AA1F8F0D4C002ABF2F /* SenatorViewController.swift */; };
 		0549B0B11F8F49DE002ABF2F /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B0B01F8F49DE002ABF2F /* BannerView.swift */; };
+		055109C01F942C87000153AC /* CellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055109BF1F942C87000153AC /* CellButton.swift */; };
 		0576E0901F915130005F2C8D /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0576E08E1F915130005F2C8D /* HomeTableViewCell.swift */; };
 		0576E0911F915130005F2C8D /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0576E08F1F915130005F2C8D /* HomeTableViewCell.xib */; };
 		0576E0931F9169CF005F2C8D /* HomeViewControllerTableDelegateMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0576E0921F9169CF005F2C8D /* HomeViewControllerTableDelegateMethods.swift */; };
+		05870E361F93366D009F4CFA /* SenatorViewControllerTableProtocolMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05870E351F93366D009F4CFA /* SenatorViewControllerTableProtocolMethods.swift */; };
+		05870E391F93371B009F4CFA /* CoSponsorshipViewControllerTableProtocolMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05870E381F93371B009F4CFA /* CoSponsorshipViewControllerTableProtocolMethods.swift */; };
+		05870E3C1F933787009F4CFA /* CommitteeViewControllerTableProtocolMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05870E3B1F933787009F4CFA /* CommitteeViewControllerTableProtocolMethods.swift */; };
 		058AB93E1F89B6B9008DEC39 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058AB93D1F89B6B9008DEC39 /* Endpoints.swift */; };
 		058AB9401F89B72A008DEC39 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058AB93F1F89B72A008DEC39 /* APIManager.swift */; };
 		144504089E94398A352F5699 /* Pods_PWRTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 871D0A1760DD9397618FD842 /* Pods_PWRTests.framework */; };
@@ -124,9 +128,13 @@
 		0549B0A81F8E0A0F002ABF2F /* Bill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 		0549B0AA1F8F0D4C002ABF2F /* SenatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenatorViewController.swift; sourceTree = "<group>"; };
 		0549B0B01F8F49DE002ABF2F /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		055109BF1F942C87000153AC /* CellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellButton.swift; sourceTree = "<group>"; };
 		0576E08E1F915130005F2C8D /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		0576E08F1F915130005F2C8D /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		0576E0921F9169CF005F2C8D /* HomeViewControllerTableDelegateMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTableDelegateMethods.swift; sourceTree = "<group>"; };
+		05870E351F93366D009F4CFA /* SenatorViewControllerTableProtocolMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenatorViewControllerTableProtocolMethods.swift; sourceTree = "<group>"; };
+		05870E381F93371B009F4CFA /* CoSponsorshipViewControllerTableProtocolMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoSponsorshipViewControllerTableProtocolMethods.swift; sourceTree = "<group>"; };
+		05870E3B1F933787009F4CFA /* CommitteeViewControllerTableProtocolMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitteeViewControllerTableProtocolMethods.swift; sourceTree = "<group>"; };
 		058AB93D1F89B6B9008DEC39 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		058AB93F1F89B72A008DEC39 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		22820BB6157660E8D282345E /* Pods_PWRUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PWRUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,6 +183,7 @@
 		040BE11A1F85891200B672F8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				055109BF1F942C87000153AC /* CellButton.swift */,
 				040BE1181F85888000B672F8 /* SearchBarCollectionReusableView.swift */,
 				0549B0B01F8F49DE002ABF2F /* BannerView.swift */,
 				04BA613B1F876B820079BF9A /* Storyboards */,
@@ -229,9 +238,9 @@
 				04BA61421F8845860079BF9A /* SettingsViewController.swift */,
 				0576E0941F916B12005F2C8D /* HomeViewController */,
 				04BA61361F8764E00079BF9A /* StateCollectionViewController */,
-				0549B0AA1F8F0D4C002ABF2F /* SenatorViewController.swift */,
-				042155B01F90B7E7003B1EA0 /* CoSponsershipViewController.swift */,
-				042155B21F90B7FD003B1EA0 /* CommiteeViewController.swift */,
+				05870E371F93368F009F4CFA /* SenatorViewController */,
+				05870E3A1F93373C009F4CFA /* CoSponsorshipViewController */,
+				05870E3D1F93379D009F4CFA /* CommitteeViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -355,6 +364,33 @@
 				0576E08F1F915130005F2C8D /* HomeTableViewCell.xib */,
 			);
 			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		05870E371F93368F009F4CFA /* SenatorViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0549B0AA1F8F0D4C002ABF2F /* SenatorViewController.swift */,
+				05870E351F93366D009F4CFA /* SenatorViewControllerTableProtocolMethods.swift */,
+			);
+			path = SenatorViewController;
+			sourceTree = "<group>";
+		};
+		05870E3A1F93373C009F4CFA /* CoSponsorshipViewController */ = {
+			isa = PBXGroup;
+			children = (
+				042155B01F90B7E7003B1EA0 /* CoSponsershipViewController.swift */,
+				05870E381F93371B009F4CFA /* CoSponsorshipViewControllerTableProtocolMethods.swift */,
+			);
+			path = CoSponsorshipViewController;
+			sourceTree = "<group>";
+		};
+		05870E3D1F93379D009F4CFA /* CommitteeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				042155B21F90B7FD003B1EA0 /* CommiteeViewController.swift */,
+				05870E3B1F933787009F4CFA /* CommitteeViewControllerTableProtocolMethods.swift */,
+			);
+			path = CommitteeViewController;
 			sourceTree = "<group>";
 		};
 		848A13F6081638AA195C6215 /* Pods */ = {
@@ -685,6 +721,7 @@
 				042667A51F848E0C0063FFE3 /* Senator.swift in Sources */,
 				04BA614C1F8856F50079BF9A /* UserDefaultsManager.swift in Sources */,
 				04E8F11A1F847F62002C299A /* StateCollectionViewController.swift in Sources */,
+				05870E3C1F933787009F4CFA /* CommitteeViewControllerTableProtocolMethods.swift in Sources */,
 				04BA61471F8846C30079BF9A /* LoginViewController.swift in Sources */,
 				04BA61381F87656E0079BF9A /* StateCollectionViewDelegateMethods.swift in Sources */,
 				040BE12A1F87096100B672F8 /* StateGetter.swift in Sources */,
@@ -693,7 +730,10 @@
 				04E8F1181F847F62002C299A /* AppDelegate.swift in Sources */,
 				040BE1201F85C25800B672F8 /* State.swift in Sources */,
 				04BA61431F8845860079BF9A /* SettingsViewController.swift in Sources */,
+				05870E391F93371B009F4CFA /* CoSponsorshipViewControllerTableProtocolMethods.swift in Sources */,
 				058AB9401F89B72A008DEC39 /* APIManager.swift in Sources */,
+				05870E361F93366D009F4CFA /* SenatorViewControllerTableProtocolMethods.swift in Sources */,
+				055109C01F942C87000153AC /* CellButton.swift in Sources */,
 				04BA61501F88D07C0079BF9A /* FirebaseAuthManager.swift in Sources */,
 				04BA613F1F876BCF0079BF9A /* HomeViewController.swift in Sources */,
 				058AB93E1F89B6B9008DEC39 /* Endpoints.swift in Sources */,
