@@ -33,6 +33,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource, HomeCe
 
         // Configure the cell...
         cell.delegate = self
+        cell.configureButtons(with: indexPath)
         cell.name.text = "Sen. \(self.senators[indexPath.row].lastName)"
         cell.pic.image = #imageLiteral(resourceName: "California")
         cell.party.text = "Party: \(self.senators[indexPath.row].party)"
@@ -42,19 +43,39 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource, HomeCe
     
     // MARK: - Cell Delegate Method
     
-    func callSegue(from button: UIButton) {
+    func callSegue(from button: CellButton) {
+        guard let indexPath = button.positionInTable else { return }
+        
         switch button.tag {
         case 0:
             print("0")
-           // self.viewSenator(indexPath)
+           self.viewSenator(indexPath)
         case 1:
             print("1")
-           // self.callSenator(indexPath)
+           self.callSenator(indexPath)
         case 2:
             print("2")
-           // self.visitSenatorsWebsite(indexPath)
+           self.visitSenatorsWebsite(indexPath)
         default:
             return
         }
+    }
+    
+    // MARK: Button Actions
+
+    func callSenator(_ indexPath: IndexPath) {
+        self.selectedSenator = self.senators[indexPath.row]
+        print(selectedSenator?.lastName ?? "no name")
+        print(selectedSenator?.phone ?? "no phone")
+    }
+    
+    func visitSenatorsWebsite(_ indexPath: IndexPath) {
+        self.selectedSenator = self.senators[indexPath.row]
+        print(selectedSenator?.website ?? "no site")
+    }
+    
+    func viewSenator(_ indexPath: IndexPath) {
+        self.selectedSenator = self.senators[indexPath.row]
+        performSegue(withIdentifier: Constants.sequeToSenatorVC, sender: self)
     }
 }

@@ -11,7 +11,7 @@ import UIKit
 // working off of advice here: https://stackoverflow.com/questions/26880526/performing-a-segue-from-a-button-within-a-custom-uitableviewcell
 
 protocol HomeCellButtonDelegate {
-    func callSegue(from button: UIButton)
+    func callSegue(from button: CellButton)
 }
 
 class HomeTableViewCell: UITableViewCell {
@@ -22,9 +22,9 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var party: UILabel!
     
     // end-user interactive
-    @IBOutlet weak var senatorButton: UIButton!
-    @IBOutlet weak var callButton: UIButton!
-    @IBOutlet weak var webButton: UIButton!
+    @IBOutlet weak var senatorButton: CellButton!
+    @IBOutlet weak var callButton: CellButton!
+    @IBOutlet weak var webButton: CellButton!
 
     // properties
     
@@ -47,10 +47,16 @@ class HomeTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func cellButtonWasTapped(sender: UIButton) {
+    func configureButtons(with indexPath: IndexPath) {
+        _ = [
+            self.senatorButton,
+            self.callButton,
+            self.webButton
+        ].map { $0.positionInTable = indexPath }
+    }
+    
+    func cellButtonWasTapped(sender: CellButton) {
         guard let setDelegate = self.delegate else { return }
-        
-        
         
         setDelegate.callSegue(from: sender)
     }

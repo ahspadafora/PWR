@@ -58,23 +58,6 @@ class HomeViewController: UIViewController, StatePickerDelegate {
         self.usersState = state
     }
     
-    // MARK: -  Button action functions
-    func callSenator(_ indexPath: IndexPath) {
-        self.selectedSenator = self.senators[indexPath.row]
-        print(selectedSenator?.lastName ?? "no name")
-        print(selectedSenator?.phone ?? "no phone")
-    }
-    
-    func visitSenatorsWebsite(_ indexPath: IndexPath) {
-        self.selectedSenator = self.senators[indexPath.row]
-        print(selectedSenator?.website ?? "no site")
-    }
-    
-    func viewSenator(_ indexPath: IndexPath) {
-        self.selectedSenator = self.senators[indexPath.row]
-        performSegue(withIdentifier: Constants.sequeToSenatorVC, sender: self)
-    }
-    
     // MARK: - Helper Functions
     
     private func setUpStateLabels(state: State){
