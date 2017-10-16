@@ -279,7 +279,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bwk-ti-hsD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3363.7681159420295" y="-608.1521739130435"/>
+            <point key="canvasLocation" x="3264" y="-316"/>
         </scene>
         <!--Co Sponsership View Controller-->
         <scene sceneID="8CI-iN-YQX">
@@ -368,11 +368,12 @@
                         <outlet property="bannerView" destination="UG9-pK-atK" id="jsA-oD-CsF"/>
                         <outlet property="nameLabel" destination="qi9-UB-0Cl" id="Mg4-8Q-mg9"/>
                         <outlet property="tableView" destination="TP5-o4-Dc8" id="dZe-w6-MY6"/>
+                        <segue destination="DBq-Hc-8tb" kind="show" identifier="goToBillDetailVC" id="hvr-bc-OKW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q0K-4c-syT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3346.376811594203" y="116.57608695652175"/>
+            <point key="canvasLocation" x="3264" y="673"/>
         </scene>
         <!--Bill Detail View Controller-->
         <scene sceneID="Ytp-di-Igp">
@@ -416,7 +417,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="heF-9c-iAH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2485.507246376812" y="-608.1521739130435"/>
+            <point key="canvasLocation" x="4064" y="117"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="aVn-Ts-V4F">
@@ -651,4 +652,7 @@
     <resources>
         <image name="Oval" width="140" height="140"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="hvr-bc-OKW"/>
+    </inferredMetricsTieBreakers>
 </document>

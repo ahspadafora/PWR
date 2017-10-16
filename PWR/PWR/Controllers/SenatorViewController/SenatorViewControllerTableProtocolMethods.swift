@@ -107,14 +107,10 @@ extension SenatorViewController: UITableViewDelegate, UITableViewDataSource {
         case 1:
             performSegue(withIdentifier: Constants.segueToCoSponsorshipVC, sender: self)
         case 2:
-            performSegue(withIdentifier: Constants.segueToBillDetailVC, sender: self)
+            performSegue(withIdentifier: Constants.segueToBillDetailVC, sender: self.votingRecord?[indexPath.row].0)
         default:
             return
         }
-    }
-    
-    func sendBillOver(_ indexPath: IndexPath) {
-        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

@@ -16,19 +16,19 @@ class CommiteeViewController: UIViewController {
     
     // Properties
     
-    var senator: Senator!
-    var usersState: State!
+    var senatorName: String!
+    var stateName: String!
     var cellItems: [String]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        bannerView.label.text = self.usersState.title
-        nameLabel.text = "\(self.senator.firstName) \(self.senator.lastName)"
+        self.bannerView.label.text = self.stateName
+        self.nameLabel.text = self.senatorName
     }
 }

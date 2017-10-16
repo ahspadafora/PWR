@@ -16,26 +16,28 @@ class CoSponsershipViewController: UIViewController {
     
     // Properties
     
-    var senator: Senator!
-    var usersState: State!
+    var senatorName: String!
+    var stateName: String!
     var cellItems: [Bill]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        bannerView.label.text = self.usersState.title
-        nameLabel.text = "\(self.senator.firstName) \(self.senator.lastName)"
+        self.bannerView.label.text = self.stateName
+        self.nameLabel.text = self.senatorName
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let identifier = segue.identifier else { return }
-        guard identifier == Constants.segueToBillDetailVC else { return }
+        guard let identifier = segue.identifier,
+            identifier == Constants.segueToBillDetailVC,
+            let destinationVC = segue.destination as? BillDetailViewController,
+            let bill = sender as? Bill else { return }
         
-        // code that hands over the bill in the selected cell to the bill detail vc
+        destinationVC.bill = bill
     }
 }
