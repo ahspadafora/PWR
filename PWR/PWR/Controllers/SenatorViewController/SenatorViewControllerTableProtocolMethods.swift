@@ -92,6 +92,9 @@ extension SenatorViewController: UITableViewDelegate, UITableViewDataSource {
         if cell.textLabel?.text == "See more..." {
             cell.textLabel?.textColor = UIColor.PWRred
             cell.textLabel?.font = UIFont(name: "Avenir-LightOblique", size: 20)
+        } else {
+            cell.textLabel?.textColor = UIColor.black
+            cell.textLabel?.font = UIFont(name: "Avenir-Roman", size: 20)
         }
         
         return cell
