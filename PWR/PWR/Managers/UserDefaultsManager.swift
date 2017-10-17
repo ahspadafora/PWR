@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 class UserDefaultManager{
     static let userDefaults = UserDefaults.standard

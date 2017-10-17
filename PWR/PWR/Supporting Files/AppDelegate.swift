@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, backendConfig {
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
+        
         //UserDefaultManager.clearUserDefaults()
         if UserDefaultManager.userIsSignedIn {
             goToHomeVC()
