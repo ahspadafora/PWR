@@ -8,9 +8,9 @@
 
 import UIKit
 
-struct State {
+/*struct State {
     var abbreviation: String
     var title: String
     var senators: [Senator]
     var pic: UIImage
-}
+}*/

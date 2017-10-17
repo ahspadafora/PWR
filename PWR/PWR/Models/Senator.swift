@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Senator {
+/*struct Senator {
     var firstName: String
     var lastName: String
     var party: String
@@ -33,7 +33,7 @@ extension Senator {
         self.init(firstName: fName, lastName: lName, party: party, state: state, address: address, phone: phone, website: website, memberID: id)
     }
     
-}
+}*/
 
 //<member>
 //<member_full>Barrasso (R-WY)</member_full>

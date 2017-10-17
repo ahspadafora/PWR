@@ -8,12 +8,14 @@
 
 import UIKit
 import FBSDKCoreKit
+import CoreData
 
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, backendConfig {
 
     var window: UIWindow?
+    lazy var coreDataStack = CoreDataStack(modelName: "PWR")
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         FBSDKAppEvents.activateApp()
@@ -25,7 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, backendConfig {
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
-        
         //UserDefaultManager.clearUserDefaults()
         if UserDefaultManager.userIsSignedIn {
             goToHomeVC()
@@ -33,6 +34,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, backendConfig {
             goToLoginVC()
         }
         return true
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        coreDataStack.saveContext()
+    }
+    func applicationWillTerminate(_ application: UIApplication) {
+        coreDataStack.saveContext()
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
