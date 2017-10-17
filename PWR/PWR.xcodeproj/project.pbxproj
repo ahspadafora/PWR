@@ -16,7 +16,6 @@
 		042155AF1F90B75E003B1EA0 /* BillDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042155AE1F90B75E003B1EA0 /* BillDetailViewController.swift */; };
 		042155B11F90B7E7003B1EA0 /* CoSponsershipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042155B01F90B7E7003B1EA0 /* CoSponsershipViewController.swift */; };
 		042155B31F90B7FD003B1EA0 /* CommiteeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042155B21F90B7FD003B1EA0 /* CommiteeViewController.swift */; };
-		042155B51F90B95E003B1EA0 /* StatesSenatorsTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042155B41F90B95E003B1EA0 /* StatesSenatorsTableViewDelegate.swift */; };
 		042667A31F848D930063FFE3 /* senators.xml in Resources */ = {isa = PBXBuildFile; fileRef = 041EA40A1F84807200423C22 /* senators.xml */; };
 		042667A51F848E0C0063FFE3 /* Senator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042667A41F848E0C0063FFE3 /* Senator.swift */; };
 		042667A91F8494FF0063FFE3 /* ParserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042667A81F8494FF0063FFE3 /* ParserDelegate.swift */; };
@@ -36,6 +35,7 @@
 		04BA61591F88D9060079BF9A /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BA61531F88D8410079BF9A /* FBSDKLoginKit.framework */; };
 		04BA615A1F88DF6E0079BF9A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04BA614E1F88CE680079BF9A /* GoogleService-Info.plist */; };
 		04BA619B1F8C80840079BF9A /* FBLoginButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA619A1F8C80840079BF9A /* FBLoginButtonDelegate.swift */; };
+		04E0488A1F95DE56002D12E5 /* AdditionalInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04E048891F95DE56002D12E5 /* AdditionalInfo.plist */; };
 		04E8F1181F847F62002C299A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8F1171F847F62002C299A /* AppDelegate.swift */; };
 		04E8F11A1F847F62002C299A /* StateCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8F1191F847F62002C299A /* StateCollectionViewController.swift */; };
 		04E8F11F1F847F62002C299A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E8F11E1F847F62002C299A /* Assets.xcassets */; };
@@ -90,7 +90,6 @@
 		042155AE1F90B75E003B1EA0 /* BillDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailViewController.swift; sourceTree = "<group>"; };
 		042155B01F90B7E7003B1EA0 /* CoSponsershipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoSponsershipViewController.swift; sourceTree = "<group>"; };
 		042155B21F90B7FD003B1EA0 /* CommiteeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommiteeViewController.swift; sourceTree = "<group>"; };
-		042155B41F90B95E003B1EA0 /* StatesSenatorsTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatesSenatorsTableViewDelegate.swift; sourceTree = "<group>"; };
 		042667A41F848E0C0063FFE3 /* Senator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Senator.swift; sourceTree = "<group>"; };
 		042667A81F8494FF0063FFE3 /* ParserDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserDelegate.swift; sourceTree = "<group>"; };
 		04BA61341F8762D30079BF9A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -110,6 +109,7 @@
 		04BA61551F88D85B0079BF9A /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		04BA615B1F88E0C40079BF9A /* PWR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PWR.entitlements; sourceTree = "<group>"; };
 		04BA619A1F8C80840079BF9A /* FBLoginButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginButtonDelegate.swift; sourceTree = "<group>"; };
+		04E048891F95DE56002D12E5 /* AdditionalInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = AdditionalInfo.plist; path = "Supporting Files/AdditionalInfo.plist"; sourceTree = "<group>"; };
 		04E8F1141F847F62002C299A /* PWR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PWR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E8F1171F847F62002C299A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04E8F1191F847F62002C299A /* StateCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCollectionViewController.swift; sourceTree = "<group>"; };
@@ -196,7 +196,6 @@
 			children = (
 				04BA619A1F8C80840079BF9A /* FBLoginButtonDelegate.swift */,
 				042667A81F8494FF0063FFE3 /* ParserDelegate.swift */,
-				042155B41F90B95E003B1EA0 /* StatesSenatorsTableViewDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -323,6 +322,7 @@
 		04E8F1161F847F62002C299A /* PWR */ = {
 			isa = PBXGroup;
 			children = (
+				04E048891F95DE56002D12E5 /* AdditionalInfo.plist */,
 				04BA615B1F88E0C40079BF9A /* PWR.entitlements */,
 				04BA61511F88D08B0079BF9A /* Managers */,
 				04BA614A1F884F4C0079BF9A /* Protocols */,
@@ -547,6 +547,7 @@
 				04BA613D1F876BB10079BF9A /* Home.storyboard in Resources */,
 				0576E0911F915130005F2C8D /* HomeTableViewCell.xib in Resources */,
 				04BA61451F8846AE0079BF9A /* LoginStoryboard.storyboard in Resources */,
+				04E0488A1F95DE56002D12E5 /* AdditionalInfo.plist in Resources */,
 				042667A31F848D930063FFE3 /* senators.xml in Resources */,
 				04E8F1221F847F62002C299A /* LaunchScreen.storyboard in Resources */,
 				04E8F11F1F847F62002C299A /* Assets.xcassets in Resources */,
@@ -713,7 +714,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				042155B51F90B95E003B1EA0 /* StatesSenatorsTableViewDelegate.swift in Sources */,
 				0549B0B11F8F49DE002ABF2F /* BannerView.swift in Sources */,
 				040BE11E1F85918C00B672F8 /* StateCollectionViewCell.swift in Sources */,
 				0549B0A71F8E09A8002ABF2F /* BillGetter.swift in Sources */,

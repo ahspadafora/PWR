@@ -34,6 +34,11 @@ class HomeViewController: UIViewController, StatePickerDelegate {
             self.senators = self.usersState.senators
             setUpStateLabels(state: self.usersState)
         }
+        
+        guard let billG = BillGetter().getBills() else {
+            print("couldn't get bills")
+            return
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -58,7 +63,6 @@ class HomeViewController: UIViewController, StatePickerDelegate {
     }
     
     // MARK: - Helper Functions
-    
     private func setUpStateLabels(state: State){
         self.stateBannerView.label.text = state.title
         self.stateBannerView.pic.image = state.pic

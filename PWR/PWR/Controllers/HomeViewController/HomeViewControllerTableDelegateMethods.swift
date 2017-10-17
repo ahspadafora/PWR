@@ -13,12 +13,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource, HomeCe
     // MARK: - Table view data source
 
      func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return 2
     }
 
