@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
 class LoginViewController: UIViewController, StatePickerDelegate, FBUserLoggedInDelegate {
     
     var fbButtonDelegate: FBLoginButtonDelegate!
+    var stateFetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,8 @@ class LoginViewController: UIViewController, StatePickerDelegate, FBUserLoggedIn
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.segueFromLoginToStateVC {
             guard let destinationVC = segue.destination as? StateCollectionViewController else { return }
+            guard let fetchedResultsController = self.stateFetchedResultsController else { return }
+            destinationVC.stateFetchedResultsController = fetchedResultsController
             destinationVC.statePickerDelegate = HomeViewController()
         }
     }

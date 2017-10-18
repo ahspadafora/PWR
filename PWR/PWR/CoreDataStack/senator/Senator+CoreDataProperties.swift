@@ -13,7 +13,7 @@ import CoreData
 
 extension Senator {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Senator> {
+    @nonobjc public class func createFetchRequest() -> NSFetchRequest<Senator> {
         return NSFetchRequest<Senator>(entityName: "Senator")
     }
 

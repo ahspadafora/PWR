@@ -13,7 +13,7 @@ import CoreData
 
 extension State {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<State> {
+    @nonobjc public class func createFetchRequest() -> NSFetchRequest<State> {
         return NSFetchRequest<State>(entityName: "State")
     }
 

@@ -21,8 +21,8 @@ class UserDefaultManager{
     static var storedState: St? {
         get {
             guard let dict = userDefaults.dictionary(forKey: "userStateDict"),
-            let uid = self.storedUserId,
-            let storedStateAbbreviation = dict[uid] as? String else { return nil }
+                let uid = self.storedUserId,
+                let storedStateAbbreviation = dict[uid] as? String else { return nil }
             let states = StateGetter().states
             return states.first {$0.abbreviation == storedStateAbbreviation }
         }

@@ -16,22 +16,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, backendConfig {
 
     var window: UIWindow?
     lazy var coreDataStack = CoreDataStack(modelName: "CoreDataModel")
+    let networkManager = NetworkManager()
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         FBSDKAppEvents.activateApp()
     }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        networkManager.removeSenatorsAndRepsFromCoreData()
         configureBackend()
         UIApplication.shared.statusBarStyle = .default
         StyleManager.instance.applyStylingAppwide()
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
-        //coreDataStack.managedContext
-        let state = State(context: coreDataStack.managedContext)
-        state.abbreviation = "Dummy Abbreviation"
-        state.fullname = "Dummy Name"
-        coreDataStack.managedContext.insert(state)
         
+        networkManager.dumpCoreData()
+        networkManager.applicationDocumentsDirectory()
+                
         //UserDefaultManager.clearUserDefaults()
         if UserDefaultManager.userIsSignedIn {
             goToHomeVC()
@@ -42,10 +44,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, backendConfig {
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
-        coreDataStack.saveContext()
+        networkManager.coreDataStack.saveContext()
     }
     func applicationWillTerminate(_ application: UIApplication) {
-        coreDataStack.saveContext()
+        networkManager.coreDataStack.saveContext()
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
@@ -54,18 +56,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, backendConfig {
         return FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: sourceApplication, annotation: annotation)
     }
     
-    
-    
     func goToLoginVC(){
         let storyboard = UIStoryboard(name: "LoginStoryboard", bundle: nil)
-        let loginVC = storyboard.instantiateInitialViewController()
+        guard let loginVC = storyboard.instantiateInitialViewController() as? LoginViewController else { return }
+        
         self.window?.rootViewController = loginVC
+        loginVC.stateFetchedResultsController = networkManager.getStateFetchedResultsController()
         self.window?.makeKeyAndVisible()
     }
     
     func goToHomeVC(){
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
-        let homeVC = storyboard.instantiateInitialViewController()
+        guard let homeVC = storyboard.instantiateInitialViewController() as? UITabBarController else { return }
+        
         self.window?.rootViewController = homeVC
         self.window?.makeKeyAndVisible()
     }

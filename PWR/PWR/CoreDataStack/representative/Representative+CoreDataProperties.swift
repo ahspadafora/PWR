@@ -13,7 +13,7 @@ import CoreData
 
 extension Representative {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Representative> {
+    @nonobjc public class func createFetchRequest() -> NSFetchRequest<Representative> {
         return NSFetchRequest<Representative>(entityName: "Representative")
     }
 

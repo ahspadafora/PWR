@@ -10,6 +10,10 @@ import Foundation
 
 struct Endpoints {
     static let abortionBills = URL(string: "https://api.propublica.org/congress/v1/bills/subjects/abortion.json")
+    
+    static func getMemberEndPoint(chamber: Chamber) -> URL? {
+        return URL(string: "https://api.propublica.org/congress/v1/115/\(chamber.rawValue)/members.json")
+    }
 }
 
 struct HR36Endpoints {

@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
 class StateCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     // MARK: - Properties
+    var stateFetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
     var states: [St] = StateGetter().states
     var filteredStates: [St] = [] {
         didSet {
@@ -23,6 +25,18 @@ class StateCollectionViewController: UICollectionViewController, UICollectionVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if self.stateFetchedResultsController != nil {
+            do {
+                try self.stateFetchedResultsController!.performFetch()
+                print("fetchedresultscontroller.fetchedObjects.count = \(self.stateFetchedResultsController?.fetchedObjects?.count)")
+                guard let results = self.stateFetchedResultsController!.fetchedObjects else { return }
+                guard let firstResult: State = results[0] as? State else { return }
+                print(firstResult.senators?.allObjects)
+            }
+            catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        }
         self.collectionView?.delegate = self
         self.collectionView?.dataSource = self
     }
