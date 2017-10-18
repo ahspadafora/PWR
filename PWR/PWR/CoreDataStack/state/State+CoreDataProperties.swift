@@ -1,8 +1,9 @@
 //
 //  State+CoreDataProperties.swift
-//  
+//  PWR
 //
-//  Created by Amber Spadafora on 10/17/17.
+//  Created by Amber Spadafora on 10/18/17.
+//  Copyright © 2017 Amber Spadafora. All rights reserved.
 //
 //
 
@@ -16,8 +17,8 @@ extension State {
         return NSFetchRequest<State>(entityName: "State")
     }
 
-    @NSManaged public var abbreviation: String?
     @NSManaged public var fullname: String?
+    @NSManaged public var abbreviation: String?
     @NSManaged public var senators: NSSet?
     @NSManaged public var representatives: NSSet?
 
@@ -44,10 +45,10 @@ extension State {
 extension State {
 
     @objc(addRepresentativesObject:)
-    @NSManaged public func addToRepresentatives(_ value: State)
+    @NSManaged public func addToRepresentatives(_ value: Representative)
 
     @objc(removeRepresentativesObject:)
-    @NSManaged public func removeFromRepresentatives(_ value: State)
+    @NSManaged public func removeFromRepresentatives(_ value: Representative)
 
     @objc(addRepresentatives:)
     @NSManaged public func addToRepresentatives(_ values: NSSet)

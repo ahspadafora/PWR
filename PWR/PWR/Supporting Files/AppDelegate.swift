@@ -15,7 +15,7 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate, backendConfig {
 
     var window: UIWindow?
-    lazy var coreDataStack = CoreDataStack(modelName: "PWR")
+    lazy var coreDataStack = CoreDataStack(modelName: "CoreDataModel")
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         FBSDKAppEvents.activateApp()
@@ -24,8 +24,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, backendConfig {
         configureBackend()
         UIApplication.shared.statusBarStyle = .default
         StyleManager.instance.applyStylingAppwide()
-        
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        //coreDataStack.managedContext
+        let state = State(context: coreDataStack.managedContext)
+        state.abbreviation = "Dummy Abbreviation"
+        state.fullname = "Dummy Name"
+        coreDataStack.managedContext.insert(state)
         
         //UserDefaultManager.clearUserDefaults()
         if UserDefaultManager.userIsSignedIn {

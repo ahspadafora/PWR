@@ -18,7 +18,7 @@ class UserDefaultManager{
         }
     }
     
-    static var storedState: State? {
+    static var storedState: St? {
         get {
             guard let dict = userDefaults.dictionary(forKey: "userStateDict"),
             let uid = self.storedUserId,

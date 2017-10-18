@@ -9,7 +9,7 @@
 import UIKit
 
 struct StateGetter {
-    var states: [State] {
+    var states: [St] {
         if let states = getStates() {
             return states.sorted { $0.title < $1.title }
         } else {
@@ -17,16 +17,16 @@ struct StateGetter {
         }
     }
     
-    private func getStates() -> [State]? {
+    private func getStates() -> [St]? {
         if let url = SenatorGetter().getSenatorXMLUrl() {
             let senatorMap = SenatorGetter().getSenators(url: url)
             let statesDict = States.stateDictionary // [abbreviation: fullName]
-            var states:[State] = []
+            var states:[St] = []
             for (key, value) in statesDict {
                 let senators = senatorMap[key] ?? []
                 let map = UIImage(named: value) ?? UIImage(imageLiteralResourceName: "Oval")
-                let state = State(abbreviation: key, title: value, senators: senators, pic: map)
-                states.append(state)
+                let st = St(abbreviation: key, title: value, senators: senators, pic: map)
+                states.append(st)
             }
             return states
         } else {

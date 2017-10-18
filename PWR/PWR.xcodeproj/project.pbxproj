@@ -33,6 +33,15 @@
 		04BA61591F88D9060079BF9A /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BA61531F88D8410079BF9A /* FBSDKLoginKit.framework */; };
 		04BA615A1F88DF6E0079BF9A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04BA614E1F88CE680079BF9A /* GoogleService-Info.plist */; };
 		04BA619B1F8C80840079BF9A /* FBLoginButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA619A1F8C80840079BF9A /* FBLoginButtonDelegate.swift */; };
+		04C8ACD81F97208700F5AC40 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040BE11F1F85C25800B672F8 /* State.swift */; };
+		04C8ACD91F97208B00F5AC40 /* Senator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042667A41F848E0C0063FFE3 /* Senator.swift */; };
+		04C8ACDC1F9731BE00F5AC40 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04C8ACDA1F9731BE00F5AC40 /* CoreDataModel.xcdatamodeld */; };
+		04C8ACE31F97357400F5AC40 /* Senator+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8ACDD1F97357400F5AC40 /* Senator+CoreDataClass.swift */; };
+		04C8ACE41F97357400F5AC40 /* Senator+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8ACDE1F97357400F5AC40 /* Senator+CoreDataProperties.swift */; };
+		04C8ACE51F97357400F5AC40 /* State+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8ACDF1F97357400F5AC40 /* State+CoreDataClass.swift */; };
+		04C8ACE61F97357400F5AC40 /* State+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8ACE01F97357400F5AC40 /* State+CoreDataProperties.swift */; };
+		04C8ACE71F97357400F5AC40 /* Representative+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8ACE11F97357400F5AC40 /* Representative+CoreDataClass.swift */; };
+		04C8ACE81F97357400F5AC40 /* Representative+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8ACE21F97357400F5AC40 /* Representative+CoreDataProperties.swift */; };
 		04E0488A1F95DE56002D12E5 /* AdditionalInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04E048891F95DE56002D12E5 /* AdditionalInfo.plist */; };
 		04E8F1181F847F62002C299A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8F1171F847F62002C299A /* AppDelegate.swift */; };
 		04E8F11A1F847F62002C299A /* StateCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8F1191F847F62002C299A /* StateCollectionViewController.swift */; };
@@ -41,12 +50,6 @@
 		04E8F12D1F847F62002C299A /* PWRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8F12C1F847F62002C299A /* PWRTests.swift */; };
 		04E8F1381F847F62002C299A /* PWRUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8F1371F847F62002C299A /* PWRUITests.swift */; };
 		04FF47AB1F96C1C0000BDFF1 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF47AA1F96C1C0000BDFF1 /* CoreDataStack.swift */; };
-		04FF47B71F96CA98000BDFF1 /* State+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF47B11F96CA96000BDFF1 /* State+CoreDataProperties.swift */; };
-		04FF47B81F96CA98000BDFF1 /* Senator+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF47B21F96CA96000BDFF1 /* Senator+CoreDataProperties.swift */; };
-		04FF47B91F96CA98000BDFF1 /* Representative+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF47B31F96CA97000BDFF1 /* Representative+CoreDataProperties.swift */; };
-		04FF47BA1F96CA98000BDFF1 /* State+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF47B41F96CA97000BDFF1 /* State+CoreDataClass.swift */; };
-		04FF47BB1F96CA98000BDFF1 /* Senator+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF47B51F96CA98000BDFF1 /* Senator+CoreDataClass.swift */; };
-		04FF47BC1F96CA98000BDFF1 /* Representative+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF47B61F96CA98000BDFF1 /* Representative+CoreDataClass.swift */; };
 		0549B09D1F8DC6D2002ABF2F /* UIColor+PWRcolors .swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B09C1F8DC6D2002ABF2F /* UIColor+PWRcolors .swift */; };
 		0549B09F1F8DC9C7002ABF2F /* StyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B09E1F8DC9C7002ABF2F /* StyleManager.swift */; };
 		0549B0A71F8E09A8002ABF2F /* BillGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B0A61F8E09A8002ABF2F /* BillGetter.swift */; };
@@ -114,6 +117,13 @@
 		04BA61551F88D85B0079BF9A /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		04BA615B1F88E0C40079BF9A /* PWR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PWR.entitlements; sourceTree = "<group>"; };
 		04BA619A1F8C80840079BF9A /* FBLoginButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginButtonDelegate.swift; sourceTree = "<group>"; };
+		04C8ACDB1F9731BE00F5AC40 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		04C8ACDD1F97357400F5AC40 /* Senator+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Senator+CoreDataClass.swift"; sourceTree = "<group>"; };
+		04C8ACDE1F97357400F5AC40 /* Senator+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Senator+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		04C8ACDF1F97357400F5AC40 /* State+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "State+CoreDataClass.swift"; sourceTree = "<group>"; };
+		04C8ACE01F97357400F5AC40 /* State+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "State+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		04C8ACE11F97357400F5AC40 /* Representative+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Representative+CoreDataClass.swift"; sourceTree = "<group>"; };
+		04C8ACE21F97357400F5AC40 /* Representative+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Representative+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		04E048891F95DE56002D12E5 /* AdditionalInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = AdditionalInfo.plist; path = "Supporting Files/AdditionalInfo.plist"; sourceTree = "<group>"; };
 		04E8F1141F847F62002C299A /* PWR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PWR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E8F1171F847F62002C299A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -128,13 +138,6 @@
 		04E8F1371F847F62002C299A /* PWRUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWRUITests.swift; sourceTree = "<group>"; };
 		04E8F1391F847F62002C299A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04FF47AA1F96C1C0000BDFF1 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		04FF47AF1F96C3C9000BDFF1 /* PWR.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PWR.xcdatamodel; sourceTree = "<group>"; };
-		04FF47B11F96CA96000BDFF1 /* State+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "State+CoreDataProperties.swift"; path = "/Users/mac/Documents/PWR/PWR/PWR/CoreDataStack/New Group/State+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
-		04FF47B21F96CA96000BDFF1 /* Senator+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Senator+CoreDataProperties.swift"; path = "/Users/mac/Documents/PWR/PWR/PWR/CoreDataStack/New Group/Senator+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
-		04FF47B31F96CA97000BDFF1 /* Representative+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Representative+CoreDataProperties.swift"; path = "/Users/mac/Documents/PWR/PWR/PWR/CoreDataStack/New Group/Representative+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
-		04FF47B41F96CA97000BDFF1 /* State+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "State+CoreDataClass.swift"; path = "/Users/mac/Documents/PWR/PWR/PWR/CoreDataStack/New Group/State+CoreDataClass.swift"; sourceTree = "<absolute>"; };
-		04FF47B51F96CA98000BDFF1 /* Senator+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Senator+CoreDataClass.swift"; path = "/Users/mac/Documents/PWR/PWR/PWR/CoreDataStack/New Group/Senator+CoreDataClass.swift"; sourceTree = "<absolute>"; };
-		04FF47B61F96CA98000BDFF1 /* Representative+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Representative+CoreDataClass.swift"; path = "/Users/mac/Documents/PWR/PWR/PWR/CoreDataStack/New Group/Representative+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		0549B09C1F8DC6D2002ABF2F /* UIColor+PWRcolors .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+PWRcolors .swift"; sourceTree = "<group>"; };
 		0549B09E1F8DC9C7002ABF2F /* StyleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleManager.swift; sourceTree = "<group>"; };
 		0549B0A61F8E09A8002ABF2F /* BillGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillGetter.swift; sourceTree = "<group>"; };
@@ -375,8 +378,8 @@
 				04FF47BF1F96CB00000BDFF1 /* state */,
 				04FF47BD1F96CAEE000BDFF1 /* representative */,
 				04FF47BE1F96CAF8000BDFF1 /* senator */,
-				04FF47B01F96C3C9000BDFF1 /* PWR.xcdatamodeld */,
 				04FF47AA1F96C1C0000BDFF1 /* CoreDataStack.swift */,
+				04C8ACDA1F9731BE00F5AC40 /* CoreDataModel.xcdatamodeld */,
 			);
 			path = CoreDataStack;
 			sourceTree = "<group>";
@@ -384,8 +387,8 @@
 		04FF47BD1F96CAEE000BDFF1 /* representative */ = {
 			isa = PBXGroup;
 			children = (
-				04FF47B61F96CA98000BDFF1 /* Representative+CoreDataClass.swift */,
-				04FF47B31F96CA97000BDFF1 /* Representative+CoreDataProperties.swift */,
+				04C8ACE11F97357400F5AC40 /* Representative+CoreDataClass.swift */,
+				04C8ACE21F97357400F5AC40 /* Representative+CoreDataProperties.swift */,
 			);
 			path = representative;
 			sourceTree = "<group>";
@@ -393,8 +396,8 @@
 		04FF47BE1F96CAF8000BDFF1 /* senator */ = {
 			isa = PBXGroup;
 			children = (
-				04FF47B51F96CA98000BDFF1 /* Senator+CoreDataClass.swift */,
-				04FF47B21F96CA96000BDFF1 /* Senator+CoreDataProperties.swift */,
+				04C8ACDD1F97357400F5AC40 /* Senator+CoreDataClass.swift */,
+				04C8ACDE1F97357400F5AC40 /* Senator+CoreDataProperties.swift */,
 			);
 			path = senator;
 			sourceTree = "<group>";
@@ -402,8 +405,8 @@
 		04FF47BF1F96CB00000BDFF1 /* state */ = {
 			isa = PBXGroup;
 			children = (
-				04FF47B41F96CA97000BDFF1 /* State+CoreDataClass.swift */,
-				04FF47B11F96CA96000BDFF1 /* State+CoreDataProperties.swift */,
+				04C8ACDF1F97357400F5AC40 /* State+CoreDataClass.swift */,
+				04C8ACE01F97357400F5AC40 /* State+CoreDataProperties.swift */,
 			);
 			path = state;
 			sourceTree = "<group>";
@@ -767,39 +770,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04C8ACDC1F9731BE00F5AC40 /* CoreDataModel.xcdatamodeld in Sources */,
 				0549B0B11F8F49DE002ABF2F /* BannerView.swift in Sources */,
 				040BE11E1F85918C00B672F8 /* StateCollectionViewCell.swift in Sources */,
 				0549B0A71F8E09A8002ABF2F /* BillGetter.swift in Sources */,
+				04C8ACE71F97357400F5AC40 /* Representative+CoreDataClass.swift in Sources */,
+				04C8ACD91F97208B00F5AC40 /* Senator.swift in Sources */,
 				042155B31F90B7FD003B1EA0 /* CommiteeViewController.swift in Sources */,
-				04FF47BC1F96CA98000BDFF1 /* Representative+CoreDataClass.swift in Sources */,
 				04BA614C1F8856F50079BF9A /* UserDefaultsManager.swift in Sources */,
+				04C8ACD81F97208700F5AC40 /* State.swift in Sources */,
 				04E8F11A1F847F62002C299A /* StateCollectionViewController.swift in Sources */,
 				05870E3C1F933787009F4CFA /* CommitteeViewControllerTableProtocolMethods.swift in Sources */,
 				04BA61471F8846C30079BF9A /* LoginViewController.swift in Sources */,
 				04BA61381F87656E0079BF9A /* StateCollectionViewDelegateMethods.swift in Sources */,
 				040BE12A1F87096100B672F8 /* StateGetter.swift in Sources */,
 				040BE11C1F85911800B672F8 /* States.swift in Sources */,
-				04FF47BB1F96CA98000BDFF1 /* Senator+CoreDataClass.swift in Sources */,
 				04BA61351F8762D30079BF9A /* Constants.swift in Sources */,
 				04E8F1181F847F62002C299A /* AppDelegate.swift in Sources */,
-				04FF47B71F96CA98000BDFF1 /* State+CoreDataProperties.swift in Sources */,
 				04BA61431F8845860079BF9A /* SettingsViewController.swift in Sources */,
 				04FF47AB1F96C1C0000BDFF1 /* CoreDataStack.swift in Sources */,
 				05870E391F93371B009F4CFA /* CoSponsorshipViewControllerTableProtocolMethods.swift in Sources */,
 				058AB9401F89B72A008DEC39 /* APIManager.swift in Sources */,
+				04C8ACE41F97357400F5AC40 /* Senator+CoreDataProperties.swift in Sources */,
 				05870E361F93366D009F4CFA /* SenatorViewControllerTableProtocolMethods.swift in Sources */,
 				055109C01F942C87000153AC /* CellButton.swift in Sources */,
-				04FF47B91F96CA98000BDFF1 /* Representative+CoreDataProperties.swift in Sources */,
 				04BA61501F88D07C0079BF9A /* FirebaseAuthManager.swift in Sources */,
 				04BA613F1F876BCF0079BF9A /* HomeViewController.swift in Sources */,
-				04FF47B81F96CA98000BDFF1 /* Senator+CoreDataProperties.swift in Sources */,
+				04C8ACE31F97357400F5AC40 /* Senator+CoreDataClass.swift in Sources */,
 				058AB93E1F89B6B9008DEC39 /* Endpoints.swift in Sources */,
 				042155AF1F90B75E003B1EA0 /* BillDetailViewController.swift in Sources */,
-				04FF47BA1F96CA98000BDFF1 /* State+CoreDataClass.swift in Sources */,
+				04C8ACE51F97357400F5AC40 /* State+CoreDataClass.swift in Sources */,
 				040BE1261F86DF6000B672F8 /* SenatorGetter.swift in Sources */,
 				0549B0A91F8E0A0F002ABF2F /* Bill.swift in Sources */,
 				0549B0AB1F8F0D4C002ABF2F /* SenatorViewController.swift in Sources */,
 				042667A91F8494FF0063FFE3 /* ParserDelegate.swift in Sources */,
+				04C8ACE81F97357400F5AC40 /* Representative+CoreDataProperties.swift in Sources */,
 				0576E0931F9169CF005F2C8D /* HomeViewControllerTableDelegateMethods.swift in Sources */,
 				04BA61491F884F3E0079BF9A /* StatePickerDelegate.swift in Sources */,
 				0576E0901F915130005F2C8D /* HomeTableViewCell.swift in Sources */,
@@ -808,6 +813,7 @@
 				04BA619B1F8C80840079BF9A /* FBLoginButtonDelegate.swift in Sources */,
 				040BE1191F85888000B672F8 /* SearchBarCollectionReusableView.swift in Sources */,
 				0549B09D1F8DC6D2002ABF2F /* UIColor+PWRcolors .swift in Sources */,
+				04C8ACE61F97357400F5AC40 /* State+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1091,14 +1097,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		04FF47B01F96C3C9000BDFF1 /* PWR.xcdatamodeld */ = {
+		04C8ACDA1F9731BE00F5AC40 /* CoreDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				04FF47AF1F96C3C9000BDFF1 /* PWR.xcdatamodel */,
+				04C8ACDB1F9731BE00F5AC40 /* CoreDataModel.xcdatamodel */,
 			);
-			currentVersion = 04FF47AF1F96C3C9000BDFF1 /* PWR.xcdatamodel */;
-			path = PWR.xcdatamodeld;
+			currentVersion = 04C8ACDB1F9731BE00F5AC40 /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
 			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};

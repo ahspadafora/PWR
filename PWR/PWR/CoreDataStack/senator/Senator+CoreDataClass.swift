@@ -1,8 +1,9 @@
 //
 //  Senator+CoreDataClass.swift
-//  
+//  PWR
 //
-//  Created by Amber Spadafora on 10/17/17.
+//  Created by Amber Spadafora on 10/18/17.
+//  Copyright © 2017 Amber Spadafora. All rights reserved.
 //
 //
 

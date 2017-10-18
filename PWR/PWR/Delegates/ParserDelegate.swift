@@ -14,7 +14,7 @@ class ParserDelegate: NSObject, XMLParserDelegate {
     private var currentElement = String()
     private var object: [String: String] = [:]
     private var objArray: [[String: String]] = []
-    var senators: [Senator] = []
+    var senators: [Sen] = []
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         if elementName != "member" {
@@ -41,7 +41,7 @@ class ParserDelegate: NSObject, XMLParserDelegate {
     func parserDidEndDocument(_ parser: XMLParser) {
         print("finished parsing documnet")
         print(self.objArray.count)
-        self.senators = objArray.flatMap{Senator.init(dict: $0)}
+        self.senators = objArray.flatMap{Sen.init(dict: $0)}
     }
 }
 

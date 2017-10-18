@@ -14,7 +14,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var settingsTable: UITableView!
     @IBOutlet weak var logOutButton: UIButton!
-    var usersState: State!
+    var usersState: St!
     
     override func viewDidLoad() {
         super.viewDidLoad()

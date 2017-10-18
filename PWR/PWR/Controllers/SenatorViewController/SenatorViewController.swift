@@ -16,8 +16,8 @@ class SenatorViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // properties
-    var senator: Senator!
-    var usersState: State!
+    var senator: Sen!
+    var usersState: St!
     var allowedSegues = [Constants.segueToCoSponsorshipVC, Constants.segueToCommitteeVC, Constants.segueToBillDetailVC]
     
     var votingRecord: [(bill: Bill, votedInFavor: Bool)]?

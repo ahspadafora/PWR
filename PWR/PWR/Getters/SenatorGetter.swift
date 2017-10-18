@@ -19,13 +19,13 @@ class SenatorGetter {
         }
     }
     
-    func getSenators(url: URL) -> ([String: [Senator]]){
+    func getSenators(url: URL) -> ([String: [Sen]]){
         let parser = XMLParser(contentsOf: url)
         let parserDelegate = ParserDelegate()
         parser?.delegate = parserDelegate
         parser?.parse()
-        let senators: [Senator] = parserDelegate.senators
-        var stateSenatorDictionary: [String: [Senator]] = [:]
+        let senators: [Sen] = parserDelegate.senators
+        var stateSenatorDictionary: [String: [Sen]] = [:]
         for senator in senators {
             if let _ = stateSenatorDictionary[senator.state] {
                 stateSenatorDictionary[senator.state]?.append(senator)

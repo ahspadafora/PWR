@@ -15,8 +15,8 @@ class HomeViewController: UIViewController, StatePickerDelegate {
     @IBOutlet weak var senatorTable: UITableView!
     
     // MARK: - Properties
-    var usersState: State!
-    var senators: [Senator] = []
+    var usersState: St!
+    var senators: [Sen] = []
     
     // MARK: - Override Methods
     override func viewDidLoad() {
@@ -47,7 +47,7 @@ class HomeViewController: UIViewController, StatePickerDelegate {
             destinationVC.statePickerDelegate = self
         } else if segue.identifier == Constants.sequeToSenatorVC {
             guard let destinationVC = segue.destination as? SenatorViewController,
-                let selectedSenator = sender as? Senator else { return }
+                let selectedSenator = sender as? Sen else { return }
                 destinationVC.senator = selectedSenator
                 destinationVC.usersState = self.usersState
         }
@@ -63,7 +63,7 @@ class HomeViewController: UIViewController, StatePickerDelegate {
     }
     
     // MARK: - Helper Functions
-    private func setUpStateLabels(state: State){
+    private func setUpStateLabels(state: St){
         self.stateBannerView.label.text = state.title
         self.stateBannerView.pic.image = state.pic
     }

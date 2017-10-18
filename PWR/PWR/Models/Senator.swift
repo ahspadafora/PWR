@@ -8,7 +8,7 @@
 
 import Foundation
 
-/*struct Senator {
+struct Sen {
     var firstName: String
     var lastName: String
     var party: String
@@ -18,7 +18,7 @@ import Foundation
     var website: URL?
     var memberID: String
 }
-extension Senator {
+extension Sen {
     init?(dict: [String: String]) {
         guard let fName = dict["first_name"] else { return nil }
         guard let lName = dict["last_name"] else { return nil }
@@ -33,7 +33,7 @@ extension Senator {
         self.init(firstName: fName, lastName: lName, party: party, state: state, address: address, phone: phone, website: website, memberID: id)
     }
     
-}*/
+}
 
 //<member>
 //<member_full>Barrasso (R-WY)</member_full>

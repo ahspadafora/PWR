@@ -57,16 +57,16 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource, HomeCe
     
     // MARK: Button Actions
 
-    func callSenator(_ senator: Senator) {
+    func callSenator(_ senator: Sen) {
         print(senator.lastName)
         print(senator.phone)
     }
     
-    func visitSenatorsWebsite(_ senator: Senator) {
+    func visitSenatorsWebsite(_ senator: Sen) {
         print(senator.website ?? "no site")
     }
     
-    func viewSenator(_ senator: Senator) {
+    func viewSenator(_ senator: Sen) {
         performSegue(withIdentifier: Constants.sequeToSenatorVC, sender: senator)
     }
 }

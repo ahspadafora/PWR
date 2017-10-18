@@ -11,13 +11,13 @@ import UIKit
 class StateCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     // MARK: - Properties
-    var states: [State] = StateGetter().states
-    var filteredStates: [State] = [] {
+    var states: [St] = StateGetter().states
+    var filteredStates: [St] = [] {
         didSet {
             self.collectionView?.reloadSections(IndexSet(integer: 1))
         }
     }
-    var selectedState: State!
+    var selectedState: St!
     var isFiltering = false
     var statePickerDelegate: StatePickerDelegate?
     
