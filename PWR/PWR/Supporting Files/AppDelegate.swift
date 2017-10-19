@@ -15,8 +15,6 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate, backendConfig {
 
     var window: UIWindow?
-    lazy var coreDataStack = CoreDataStack(modelName: "CoreDataModel")
-    let networkManager = NetworkManager()
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         FBSDKAppEvents.activateApp()
@@ -24,15 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, backendConfig {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        
         configureBackend()
         UIApplication.shared.statusBarStyle = .default
         StyleManager.instance.applyStylingAppwide()
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
-        
-        networkManager.dumpCoreData()
-        networkManager.applicationDocumentsDirectory()
+        NetworkManager.shared.dumpCoreData()
+        NetworkManager.shared.applicationDocumentsDirectory()
                 
         //UserDefaultManager.clearUserDefaults()
         if UserDefaultManager.userIsSignedIn {
@@ -44,10 +40,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, backendConfig {
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
-        networkManager.coreDataStack.saveContext()
+        NetworkManager.shared.coreDataStack.saveContext()
     }
     func applicationWillTerminate(_ application: UIApplication) {
-        networkManager.coreDataStack.saveContext()
+        NetworkManager.shared.coreDataStack.saveContext()
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
@@ -59,9 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, backendConfig {
     func goToLoginVC(){
         let storyboard = UIStoryboard(name: "LoginStoryboard", bundle: nil)
         guard let loginVC = storyboard.instantiateInitialViewController() as? LoginViewController else { return }
-        
         self.window?.rootViewController = loginVC
-        loginVC.stateFetchedResultsController = networkManager.getStateFetchedResultsController()
         self.window?.makeKeyAndVisible()
     }
     

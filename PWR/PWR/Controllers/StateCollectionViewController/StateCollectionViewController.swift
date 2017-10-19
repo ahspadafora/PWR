@@ -9,11 +9,12 @@
 import UIKit
 import CoreData
 
-class StateCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class StateCollectionViewController: UICollectionViewController {
     
     // MARK: - Properties
     var stateFetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
     var coredataStates: [State] = []
+    
     
     var states: [St] = StateGetter().states
     var filteredStates: [St] = [] {
@@ -22,33 +23,27 @@ class StateCollectionViewController: UICollectionViewController, UICollectionVie
         }
     }
     var selectedState: St!
-    var isFiltering = false
     var statePickerDelegate: StatePickerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if self.stateFetchedResultsController != nil {
-            do {
-                try self.stateFetchedResultsController!.performFetch()
-//                print("fetchedresultscontroller.fetchedObjects.count = \(self.stateFetchedResultsController?.fetchedObjects?.count)")
-//                guard let results = self.stateFetchedResultsController!.fetchedObjects else { return }
-//                guard let firstResult: State = results[0] as? State else { return }
-//                print(firstResult.senators?.allObjects)
-            }
-            catch let error as NSError {
-                print(error.localizedDescription)
-            }
+        self.stateFetchedResultsController = NetworkManager.shared.getStateFetchedResultsController()
+        do {
+            try self.stateFetchedResultsController!.performFetch()
         }
+        catch let error as NSError {
+            print(error.localizedDescription)
+        }
+        
         self.collectionView?.delegate = self
         self.collectionView?.dataSource = self
     }
 }
 
 
-extension StateCollectionViewController {
+extension StateCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let offSets: Double = 40.0
-        
         let widthMinusOffsets = (UIScreen.main.bounds.width) - CGFloat(offSets)
         let cellSize = CGSize(width: widthMinusOffsets/2, height: widthMinusOffsets/2)
         return cellSize
@@ -78,32 +73,50 @@ extension StateCollectionViewController {
 extension StateCollectionViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        isFiltering = (searchText.characters.count != 0)
-        self.filterStatesForSearchText(searchText.lowercased())
+        if searchText.characters.count != 0 {
+            self.filterStatesForSearchText(searchText.lowercased())
+        }
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        self.isFiltering = false
+        guard let stateFetchResultsController = self.stateFetchedResultsController else { return }
+        stateFetchResultsController.fetchRequest.predicate = nil
+        
+        do {
+            try stateFetchResultsController.performFetch()
+            self.collectionView?.reloadSections(IndexSet(integer: 1))
+        } catch let error as NSError {
+            print("error during fetch request search bar button cancelled: \(error.localizedDescription)")
+        }
         searchBar.resignFirstResponder()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchText = searchBar.text else { return }
+        if searchText.characters.count > 0 {
+            self.filterStatesForSearchText(searchText)
+        }
         searchBar.resignFirstResponder()
     }
     
     func filterStatesForSearchText(_ searchText: String) {
-        self.filteredStates = self.states.filter{$0.title.lowercased().hasPrefix(searchText.lowercased()) || $0.abbreviation.lowercased().hasPrefix(searchText.lowercased())}
+        let namePredicit: NSPredicate = NSPredicate(format: "(fullname beginswith[c] %@) || (abbreviation beginswith[c] %@)", searchText, searchText)
+        guard let fetchController = self.stateFetchedResultsController else { return }
+        fetchController.fetchRequest.predicate = namePredicit
+        do {
+            try fetchController.performFetch()
+            print(fetchController.fetchedObjects?.count)
+            self.collectionView?.reloadSections(IndexSet(integer: 1))
+        } catch let error as NSError {
+            print("\(error.localizedDescription)")
+        }
+        
     }
 }
 
 extension StateCollectionViewController: NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        guard let fetchedObjs = controller.fetchedObjects else { return }
-        for obj in fetchedObjs {
-            guard let state = obj as? State else { return }
-            self.coredataStates.append(state)
-        }
-        print(coredataStates.count)
+        self.collectionView?.reloadSections(IndexSet(integer: 1))
     }
     
 }

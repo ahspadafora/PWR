@@ -48,23 +48,23 @@ class UserDefaultManager{
     }
     
     // CORE DATA VERSION - TO BE IMPLEMENTED
-    static func setUsersState(objectId: URL){
+    static func setUsersState(stateName: String){
         if let uid = self.storedUserId {
-            let usersStateDict: [String: URL] = [uid: objectId]
+            let usersStateDict: [String: String] = [uid: stateName]
             userDefaults.set(usersStateDict, forKey: "usersStoredStateDict")
             userDefaults.synchronize()
         }
     }
     // CORE DATA VERSION - TO BE IMPLEMENTED
-    static var usersStoredState: URL? {
+    static var getUsersStoredState: String? {
         get {
             guard let dict = userDefaults.dictionary(forKey: "usersStoredStateDict"),
                 let uid = self.storedUserId,
-                let objectId = dict[uid] as? URL else {
-                    print("couldn't cast objectID to URL")
+                let stateName = dict[uid] as? String else {
+                    print("no state name associated with user \(self.storedUserId)")
                     return nil
                 }
-            return objectId // returns the objectId for the storedState
+            return stateName // returns the name for the storedState
         }
     }
     

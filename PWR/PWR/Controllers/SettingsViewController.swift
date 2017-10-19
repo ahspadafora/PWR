@@ -14,13 +14,9 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var settingsTable: UITableView!
     @IBOutlet weak var logOutButton: UIButton!
-    var usersState: St!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.usersState = UserDefaultManager.storedState
-        
         settingsTable.delegate = self
         settingsTable.dataSource = self
         logOutButton.contentHorizontalAlignment = .left
@@ -41,7 +37,8 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
         switch indexPath.section {
         case 0:
-            currentSetting = self.usersState.title
+            guard let stateString = UserDefaultManager.getUsersStoredState else { return cell }
+            currentSetting = stateString
         case 1:
             currentSetting = "Daily" // to-do: bool - check if they have set up push  notifications
         default:

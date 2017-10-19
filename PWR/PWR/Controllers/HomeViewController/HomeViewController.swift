@@ -18,30 +18,39 @@ class HomeViewController: UIViewController, StatePickerDelegate {
     // MARK: - Properties
     var usersState: St!
     var senators: [Sen] = []
+    var s: [Senator] = []
+    
+    var state: State? {
+        didSet {
+            print("Users state has been set to \(state?.fullname)")
+            if state != nil {
+                setUpLabels(state: state!)
+            }
+            guard let validSenators = state?.senators else { return }
+            for senator in validSenators {
+                guard let validSenator = senator as? Senator else {
+                    print("could get senator")
+                    return
+                }
+                s.append(validSenator)
+            }
+            self.senatorTable.reloadData()
+        }
+    }
     
     var stateFetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
     
     // MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // test to see stateFetchedResultsController was received from appDelegate (or login)
-        if stateFetchedResultsController != nil {
-            print("State Fetched Results Controller != nil")
-        }
+        fetchUsersState()
         
         senatorTable.delegate = self
         senatorTable.dataSource = self
         
         let senatorCell = UINib(nibName: "HomeTableViewCell", bundle: .main)
-        
         senatorTable.register(senatorCell, forCellReuseIdentifier: "senator")
-        
-        if let state = UserDefaultManager.storedState {
-            self.usersState = state
-            self.senators = self.usersState.senators
-            setUpStateLabels(state: self.usersState)
-        }
+
         
         guard let billG = BillGetter().getBills() else {
             print("couldn't get bills")
@@ -53,11 +62,8 @@ class HomeViewController: UIViewController, StatePickerDelegate {
         if segue.identifier == Constants.segueToSearchController {
             guard let destinationVC = segue.destination as? StateCollectionViewController else { return }
             destinationVC.statePickerDelegate = self
-            // pass an instance of a fetchedResultsController
-            destinationVC.stateFetchedResultsController = self.stateFetchedResultsController
         } else if segue.identifier == Constants.sequeToSenatorVC {
             guard let destinationVC = segue.destination as? SenatorViewController,
-                
                 let selectedSenator = sender as? Sen else { return }
                 destinationVC.senator = selectedSenator
                 destinationVC.usersState = self.usersState
@@ -66,16 +72,25 @@ class HomeViewController: UIViewController, StatePickerDelegate {
     
     // MARK: - StatePickerDelegateMethod
     func userDidSelectState() {
-        guard let state = UserDefaultManager.storedState else {
-            self.stateBannerView.label.text = "You have not chosen a state"
-            return
-        }
-        self.usersState = state
+        fetchUsersState()
     }
     
-    // MARK: - Helper Functions
-    private func setUpStateLabels(state: St){
-        self.stateBannerView.label.text = state.title
-        self.stateBannerView.pic.image = state.pic
+    private func setUpLabels(state: State){
+        self.stateBannerView.label.text = state.fullname
+        self.stateBannerView.pic.image = UIImage(imageLiteralResourceName: state.fullname)
+    }
+    
+    private func fetchUsersState(){
+        guard let storedStateForUser = UserDefaultManager.getUsersStoredState else { return }
+        self.stateFetchedResultsController = NetworkManager.shared.getStateFetchedResultsController()
+        self.stateFetchedResultsController!.fetchRequest.predicate = NSPredicate(format: "fullname == %@", storedStateForUser)
+        do {
+            try self.stateFetchedResultsController!.performFetch()
+            guard let results = self.stateFetchedResultsController?.fetchedObjects else { return }
+            guard let usersState = results.first as? State else { return }
+            self.state = usersState
+        } catch let error as NSError {
+            print(error)
+        }
     }
 }

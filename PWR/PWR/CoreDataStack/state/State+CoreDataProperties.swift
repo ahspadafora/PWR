@@ -17,8 +17,8 @@ extension State {
         return NSFetchRequest<State>(entityName: "State")
     }
 
-    @NSManaged public var fullname: String?
-    @NSManaged public var abbreviation: String?
+    @NSManaged public var fullname: String
+    @NSManaged public var abbreviation: String
     @NSManaged public var senators: NSSet?
     @NSManaged public var representatives: NSSet?
 

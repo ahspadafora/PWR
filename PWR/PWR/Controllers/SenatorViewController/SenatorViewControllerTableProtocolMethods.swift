@@ -9,24 +9,15 @@
 import UIKit
 
 extension SenatorViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
             guard let sitsOnCommitee = self.commitees else { return 1 }
-            
-            if sitsOnCommitee.count <= 3 {
-                return sitsOnCommitee.count
-            } else {
-                return 4
-            }
+            return (sitsOnCommitee.count <= 3 ? sitsOnCommitee.count : 4)
         case 1:
             guard let cosponsoredABill = self.cosponsorships else { return 1 }
-            
-            if cosponsoredABill.count <= 3 {
-                return cosponsoredABill.count
-            } else {
-                return 4
-            }
+            return (cosponsoredABill.count <= 3 ? cosponsoredABill.count : 4)
         case 2:
             return self.votingRecord?.count ?? 1
         default:
@@ -35,8 +26,8 @@ extension SenatorViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "votingOrCommitee", for: indexPath)
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: "votingOrCommitee", for: indexPath)
         var cellText: String = ""
         
         switch indexPath.section {
@@ -114,7 +105,6 @@ extension SenatorViewController: UITableViewDelegate, UITableViewDataSource {
             }
         case 2:
             guard let record = self.votingRecord?[indexPath.row] else { return }
-            
             performSegue(withIdentifier: Constants.segueToBillDetailVC, sender: record.bill)
         default:
             return

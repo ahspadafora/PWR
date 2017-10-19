@@ -11,13 +11,12 @@ import UIKit
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource, HomeCellButtonDelegate {
 
     // MARK: - Table view data source
-
      func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return self.s.count
     }
 
     
@@ -26,11 +25,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource, HomeCe
 
         // Configure the cell...
         cell.delegate = self
-        cell.configureButtons(with: indexPath)
-        cell.name.text = "Sen. \(self.senators[indexPath.row].lastName)"
-        cell.pic.image = #imageLiteral(resourceName: "California")
-        cell.party.text = "Party: \(self.senators[indexPath.row].party)"
-
+        //cell.configureButtons(with: indexPath)
+//        cell.name.text = "Sen. \(self.senators[indexPath.row].lastName)"
+//        cell.pic.image = #imageLiteral(resourceName: "California")
+//        cell.party.text = "Party: \(self.senators[indexPath.row].party)"
+        
+        let senatorName = self.s[indexPath.row].lastName
+        let senatorParty = self.s[indexPath.row].party
+        cell.name.text = senatorName
+        
         return cell
     }
     
@@ -43,13 +46,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource, HomeCe
         switch button.tag {
         case 0:
             print("0")
-           self.viewSenator(selectedSenator)
+           //self.viewSenator(selectedSenator)
         case 1:
             print("1")
-           self.callSenator(selectedSenator)
+           //self.callSenator(selectedSenator)
         case 2:
             print("2")
-           self.visitSenatorsWebsite(selectedSenator)
+           //self.visitSenatorsWebsite(selectedSenator)
         default:
             return
         }

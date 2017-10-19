@@ -30,9 +30,12 @@ enum proPublicaKeys: String {
 
 
 class NetworkManager {
-    init(){
+    
+    static let shared = NetworkManager()
+    private init(){
         self.addAPIDataToCoredata()
     }
+    
     lazy var coreDataStack = CoreDataStack(modelName: "CoreDataModel")
     
     private func addAPIDataToCoredata(){

@@ -9,17 +9,16 @@
 import UIKit
 
 extension StateCollectionViewController {
+    
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 1 {
-            if isFiltering {
-                return filteredStates.count
-            } else {
-                return states.count
-            }
+            guard let stateFetchedResultsController = self.stateFetchedResultsController,
+                let fetchedObjects = stateFetchedResultsController.fetchedObjects else { return 0 }
+            return fetchedObjects.count
         } else {
             return 0
         }
@@ -28,19 +27,16 @@ extension StateCollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 1 {
             let cell = self.collectionView?.dequeueReusableCell(withReuseIdentifier: "state", for: indexPath) as! StateCollectionViewCell
-            switch isFiltering {
-            case true:
-                let tintedImage = self.filteredStates[indexPath.row].pic.withRenderingMode(.alwaysTemplate)
-                cell.stateLabel.text = self.filteredStates[indexPath.row].title
-                cell.pictureView.image = tintedImage
-            case false:
-                let tintedImage = self.states[indexPath.row].pic.withRenderingMode(.alwaysTemplate)
-                cell.stateLabel.text = self.states[indexPath.row].title
-                cell.pictureView.image = tintedImage
-            }
+
+            guard let stateResults = self.stateFetchedResultsController else { return cell }
             
+            // our collection view has only one section with coreData so our fetchedResultsController has only one section
+            let ipForCell = IndexPath(row: indexPath.row, section: 0)
+            guard let stateForCell = stateResults.object(at: ipForCell) as? State else { return cell }
+            let imageForCell = UIImage(imageLiteralResourceName: stateForCell.fullname).withRenderingMode(.alwaysTemplate)
             cell.pictureView.tintColor = UIColor.white
-            
+            cell.pictureView.image = imageForCell
+            cell.stateLabel.text = stateForCell.fullname
             return cell
         }
         return UICollectionViewCell()
@@ -48,13 +44,9 @@ extension StateCollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.view.endEditing(true)
-        switch isFiltering {
-        case true:
-            self.selectedState = self.filteredStates[indexPath.row]
-        default:
-            self.selectedState = self.states[indexPath.row]
-        }
-        UserDefaultManager.setStoredState(abbreviation: self.selectedState.abbreviation)
+        let ip = IndexPath(row: indexPath.row, section: 0)
+        guard let stateObj = self.stateFetchedResultsController?.object(at: ip) as? State else { return }
+        UserDefaultManager.setUsersState(stateName: stateObj.fullname)
         self.statePickerDelegate?.userDidSelectState()
         performSegue(withIdentifier: Constants.segueFromStateCollectionVCtoHomeVC, sender: self)
     }

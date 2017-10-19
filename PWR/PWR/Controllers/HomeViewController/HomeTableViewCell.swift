@@ -27,8 +27,8 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var webButton: CellButton!
 
     // properties
-    
     var delegate: HomeCellButtonDelegate!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
