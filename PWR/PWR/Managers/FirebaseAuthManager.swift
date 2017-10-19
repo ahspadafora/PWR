@@ -20,6 +20,7 @@ extension backendConfig {
 }
 
 class FirebaseAuthManager {
+    
     // to do - in appdelegate, check this property to determine whether or not to show login
     static let isLoggedIn = Auth.auth().currentUser != .none
     

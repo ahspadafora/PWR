@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13240" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Representative" representedClassName="Representative" syncable="YES">
+        <attribute name="contactUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="party" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="state" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="State" inverseName="representatives" inverseEntity="State" syncable="YES"/>
     </entity>
     <entity name="Senator" representedClassName="Senator" syncable="YES">
+        <attribute name="contactUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="party" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="state" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="State" inverseName="senators" inverseEntity="State" syncable="YES"/>
     </entity>
@@ -19,8 +25,8 @@
         <relationship name="senators" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Senator" inverseName="state" inverseEntity="Senator" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Representative" positionX="63" positionY="36" width="128" height="105"/>
-        <element name="Senator" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Representative" positionX="63" positionY="36" width="128" height="150"/>
+        <element name="Senator" positionX="-63" positionY="-18" width="128" height="150"/>
         <element name="State" positionX="151" positionY="-9" width="128" height="105"/>
     </elements>
 </model>

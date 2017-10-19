@@ -13,6 +13,8 @@ class StateCollectionViewController: UICollectionViewController, UICollectionVie
     
     // MARK: - Properties
     var stateFetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
+    var coredataStates: [State] = []
+    
     var states: [St] = StateGetter().states
     var filteredStates: [St] = [] {
         didSet {
@@ -28,10 +30,10 @@ class StateCollectionViewController: UICollectionViewController, UICollectionVie
         if self.stateFetchedResultsController != nil {
             do {
                 try self.stateFetchedResultsController!.performFetch()
-                print("fetchedresultscontroller.fetchedObjects.count = \(self.stateFetchedResultsController?.fetchedObjects?.count)")
-                guard let results = self.stateFetchedResultsController!.fetchedObjects else { return }
-                guard let firstResult: State = results[0] as? State else { return }
-                print(firstResult.senators?.allObjects)
+//                print("fetchedresultscontroller.fetchedObjects.count = \(self.stateFetchedResultsController?.fetchedObjects?.count)")
+//                guard let results = self.stateFetchedResultsController!.fetchedObjects else { return }
+//                guard let firstResult: State = results[0] as? State else { return }
+//                print(firstResult.senators?.allObjects)
             }
             catch let error as NSError {
                 print(error.localizedDescription)
@@ -92,6 +94,18 @@ extension StateCollectionViewController: UISearchBarDelegate {
     func filterStatesForSearchText(_ searchText: String) {
         self.filteredStates = self.states.filter{$0.title.lowercased().hasPrefix(searchText.lowercased()) || $0.abbreviation.lowercased().hasPrefix(searchText.lowercased())}
     }
+}
+
+extension StateCollectionViewController: NSFetchedResultsControllerDelegate {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        guard let fetchedObjs = controller.fetchedObjects else { return }
+        for obj in fetchedObjs {
+            guard let state = obj as? State else { return }
+            self.coredataStates.append(state)
+        }
+        print(coredataStates.count)
+    }
+    
 }
 
 

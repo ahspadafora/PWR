@@ -18,6 +18,13 @@ enum proPublicaKeys: String {
     case firstname = "first_name"
     case lastname = "last_name"
     case st = "state"
+    case phone = "phone"
+    
+    case id = "id"
+    case party = "party" // senate party key
+    
+    case cContactUrl = "url" // congress contact url
+    case sContactUrl = "contact_form"
 }
 
 
@@ -37,7 +44,8 @@ class NetworkManager {
             let senators = try self.coreDataStack.managedContext.fetch(senatorRequest)
             let reps = try self.coreDataStack.managedContext.fetch(repRequest)
             if states.count == 0 || senators.count == 0 || reps.count == 0 {
-                self.coreDataStack.managedContext.reset()
+                self.removeState()
+                self.removeSenatorsAndRepsFromCoreData()
                 self.addStatesToCoreData()
                 self.fetchChamberMembers(chamber: .house)
                 self.fetchChamberMembers(chamber: .senate)
@@ -75,7 +83,6 @@ class NetworkManager {
     }
     
     private func fetchChamberMembers(chamber: Chamber) {
-        
         guard let validEndpoint = Endpoints.getMemberEndPoint(chamber: chamber) else { return }
         APIManager.instance.getData(on: validEndpoint) { (data) in
             do {
@@ -122,22 +129,43 @@ class NetworkManager {
         guard let fname = dict[proPublicaKeys.firstname.rawValue] as? String else { return }
         guard let lname = dict[proPublicaKeys.lastname.rawValue] as? String else { return }
         guard let stateAbbreviation = dict[proPublicaKeys.st.rawValue] as? String else { return }
-        
+        guard let phone = dict[proPublicaKeys.phone.rawValue] as? String else { return }
+        let contactUrl = dict[proPublicaKeys.cContactUrl.rawValue] as? String
+        guard let party = dict[proPublicaKeys.party.rawValue] as? String else { return }
+        guard let id = dict[proPublicaKeys.id.rawValue] as? String else { return }
+            
         rep.firstName = fname
         rep.lastName = lname
         rep.state = getStateForMember(stateAbbreviation: stateAbbreviation)
-        //rep.state?.addToRepresentatives(rep)
+        rep.phoneNumber = phone
+        rep.contactUrl = contactUrl
+        rep.party = party
+        rep.id = id
+        
+        guard let state = rep.state else { return }
+        state.addToRepresentatives(rep)
+        print("State: \(state.fullname) State representatives: \(state.representatives?.count)")
     }
     
     private func configureSenator(_ senator: Senator, dict: [String: AnyObject]) {
         guard let fname = dict[proPublicaKeys.firstname.rawValue] as? String else { return }
         guard let lname = dict[proPublicaKeys.lastname.rawValue] as? String else { return }
         guard let stateAbbreviation = dict[proPublicaKeys.st.rawValue] as? String else { return }
+        guard let phone = dict[proPublicaKeys.phone.rawValue] as? String else { return }
+        guard let id = dict[proPublicaKeys.id.rawValue] as? String else { return }
+        guard let party = dict[proPublicaKeys.party.rawValue] as? String else { return }
+        guard let contactUrl = dict[proPublicaKeys.sContactUrl.rawValue] as? String else { return }
         
         senator.firstName = fname
         senator.lastName = lname
         senator.state = getStateForMember(stateAbbreviation: stateAbbreviation)
-        //senator.state?.addToSenators(senator)
+        senator.phoneNumber = phone
+        senator.id = id
+        senator.party = party
+        senator.contactUrl = contactUrl
+        guard let state = senator.state else { return }
+        state.addToSenators(senator)
+        print("State: \(state.fullname) State senators: \(state.senators?.count)")
     }
     
     private func getStateForMember(stateAbbreviation: String) -> State? {
@@ -158,6 +186,7 @@ class NetworkManager {
     }
     
     private func addStatesToCoreData(){
+        self.removeState()
         for (stateAbbrev, stateName) in States.stateDictionary {
             let state = State(context: self.coreDataStack.managedContext)
             state.abbreviation = stateAbbrev
@@ -180,6 +209,17 @@ class NetworkManager {
         } catch let error as NSError {
             print(error)
         }
+    }
+    
+    func removeState(){
+        let stateRequest = State.createFetchRequest()
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: stateRequest as! NSFetchRequest<NSFetchRequestResult>)
+        do {
+            try self.coreDataStack.managedContext.execute(deleteRequest)
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+        
     }
 }
 

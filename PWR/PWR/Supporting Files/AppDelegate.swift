@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, backendConfig {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        networkManager.removeSenatorsAndRepsFromCoreData()
+        
         configureBackend()
         UIApplication.shared.statusBarStyle = .default
         StyleManager.instance.applyStylingAppwide()
@@ -67,9 +67,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, backendConfig {
     
     func goToHomeVC(){
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
-        guard let homeVC = storyboard.instantiateInitialViewController() as? UITabBarController else { return }
-        
-        self.window?.rootViewController = homeVC
+        guard let tabBarVC = storyboard.instantiateInitialViewController() else { return }
+        self.window?.rootViewController = tabBarVC
         self.window?.makeKeyAndVisible()
     }
 }

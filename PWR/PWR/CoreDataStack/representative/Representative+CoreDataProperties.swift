@@ -20,6 +20,9 @@ extension Representative {
     @NSManaged public var firstName: String?
     @NSManaged public var lastName: String?
     @NSManaged public var phoneNumber: String?
+    @NSManaged public var id: String?
+    @NSManaged public var party: String?
+    @NSManaged public var contactUrl: String?
     @NSManaged public var state: State?
 
 }

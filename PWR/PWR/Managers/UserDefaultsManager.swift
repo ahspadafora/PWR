@@ -31,7 +31,7 @@ class UserDefaultManager{
     static var userIsSignedIn: Bool {
         get {
             return userDefaults.value(forKey: "isLoggedIn") as? Bool ?? false
-            }
+        }
     }
     
     static func clearUserDefaults(){
@@ -47,10 +47,32 @@ class UserDefaultManager{
         }
     }
     
+    // CORE DATA VERSION - TO BE IMPLEMENTED
+    static func setUsersState(objectId: URL){
+        if let uid = self.storedUserId {
+            let usersStateDict: [String: URL] = [uid: objectId]
+            userDefaults.set(usersStateDict, forKey: "usersStoredStateDict")
+            userDefaults.synchronize()
+        }
+    }
+    // CORE DATA VERSION - TO BE IMPLEMENTED
+    static var usersStoredState: URL? {
+        get {
+            guard let dict = userDefaults.dictionary(forKey: "usersStoredStateDict"),
+                let uid = self.storedUserId,
+                let objectId = dict[uid] as? URL else {
+                    print("couldn't cast objectID to URL")
+                    return nil
+                }
+            return objectId // returns the objectId for the storedState
+        }
+    }
+    
     static func setisLoggedInTo(bool: Bool) {
         userDefaults.set(bool, forKey: "isLoggedIn")
     }
     
+    // stored uid is the user's firebaseUID
     static func setUserId(uid: String){
         userDefaults.set(uid, forKey: "userId")
     }
