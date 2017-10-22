@@ -27,8 +27,6 @@ enum proPublicaKeys: String {
     case sContactUrl = "contact_form"
 }
 
-
-
 class NetworkManager {
     
     static let shared = NetworkManager()
@@ -47,9 +45,8 @@ class NetworkManager {
             let senators = try self.coreDataStack.managedContext.fetch(senatorRequest)
             let reps = try self.coreDataStack.managedContext.fetch(repRequest)
             if states.count == 0 || senators.count == 0 || reps.count == 0 {
-                self.removeState()
-                self.removeSenatorsAndRepsFromCoreData()
                 self.addStatesToCoreData()
+                self.removeSenatorsAndRepsFromCoreData()
                 self.fetchChamberMembers(chamber: .house)
                 self.fetchChamberMembers(chamber: .senate)
             }
@@ -92,7 +89,6 @@ class NetworkManager {
                 guard let data = data else { return }
                 guard let jsonData = try JSONSerialization.jsonObject(with: data, options: []) as? [String: AnyObject] else { return }
                 self.memberJsonToCoreData(jsonData: jsonData)
-                //print(jsonData)
             }
             catch let error as NSError {
                 print("Error getting data from senator endpoint, \(error.localizedDescription)")
@@ -147,7 +143,6 @@ class NetworkManager {
         
         guard let state = rep.state else { return }
         state.addToRepresentatives(rep)
-        print("State: \(state.fullname) State representatives: \(state.representatives?.count)")
     }
     
     private func configureSenator(_ senator: Senator, dict: [String: AnyObject]) {
@@ -168,7 +163,6 @@ class NetworkManager {
         senator.contactUrl = contactUrl
         guard let state = senator.state else { return }
         state.addToSenators(senator)
-        print("State: \(state.fullname) State senators: \(state.senators?.count)")
     }
     
     private func getStateForMember(stateAbbreviation: String) -> State? {
