@@ -26,6 +26,12 @@ enum proPublicaKeys: String {
     case cContactUrl = "url" // congress contact url
     case sContactUrl = "contact_form"
 }
+// prints url path for coreData file incase we need to inspect our sql database
+func applicationDocumentsDirectory() {
+    if let url = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask).last {
+        print(url.absoluteString)
+    }
+}
 
 class NetworkManager {
     
@@ -45,19 +51,14 @@ class NetworkManager {
             let senators = try self.coreDataStack.managedContext.fetch(senatorRequest)
             let reps = try self.coreDataStack.managedContext.fetch(repRequest)
             if states.count == 0 || senators.count == 0 || reps.count == 0 {
-                self.addStatesToCoreData()
+                self.removeStatesFromCoreData()
                 self.removeSenatorsAndRepsFromCoreData()
-                self.fetchChamberMembers(chamber: .house)
-                self.fetchChamberMembers(chamber: .senate)
+                self.addStatesToCoreData()
+                self.addChamberMembersToCoreData(chamber: .house)
+                self.addChamberMembersToCoreData(chamber: .senate)
             }
         } catch let error as NSError {
             print(error.localizedDescription)
-        }
-    }
-    
-    func applicationDocumentsDirectory() {
-        if let url = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask).last {
-            print(url.absoluteString)
         }
     }
     
@@ -69,20 +70,7 @@ class NetworkManager {
         return controller
     }
     
-    func dumpCoreData(){
-        let stateRqst = State.createFetchRequest()
-        do {
-            let states = try self.coreDataStack.managedContext.fetch(stateRqst)
-            if states.count > 0 {
-                print("These are the senators for \(states[0].fullname): \(states[0].senators?.allObjects)")
-            }
-        }
-        catch let error as NSError {
-            print(error.localizedDescription)
-        }
-    }
-    
-    private func fetchChamberMembers(chamber: Chamber) {
+    private func addChamberMembersToCoreData(chamber: Chamber) {
         guard let validEndpoint = Endpoints.getMemberEndPoint(chamber: chamber) else { return }
         APIManager.instance.getData(on: validEndpoint) { (data) in
             do {
@@ -183,7 +171,6 @@ class NetworkManager {
     }
     
     private func addStatesToCoreData(){
-        self.removeState()
         for (stateAbbrev, stateName) in States.stateDictionary {
             let state = State(context: self.coreDataStack.managedContext)
             state.abbreviation = stateAbbrev
@@ -192,14 +179,14 @@ class NetworkManager {
         self.coreDataStack.saveContext()
     }
 
-    func removeSenatorsAndRepsFromCoreData(){
+    private func removeSenatorsAndRepsFromCoreData(){
         // create the delete request for the specified entity
         let senatorFetchRequest = Senator.createFetchRequest()
         let repFetchRequest = Representative.createFetchRequest()
         let senDeleteRequest = NSBatchDeleteRequest(fetchRequest: senatorFetchRequest as! NSFetchRequest<NSFetchRequestResult>)
         let repDeleteRequest = NSBatchDeleteRequest(fetchRequest: repFetchRequest as! NSFetchRequest<NSFetchRequestResult>)
         
-        // perform the delete
+        // perform the delete request
         do {
             try self.coreDataStack.managedContext.execute(senDeleteRequest)
             try self.coreDataStack.managedContext.execute(repDeleteRequest)
@@ -208,7 +195,7 @@ class NetworkManager {
         }
     }
     
-    func removeState(){
+    private func removeStatesFromCoreData(){
         let stateRequest = State.createFetchRequest()
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: stateRequest as! NSFetchRequest<NSFetchRequestResult>)
         do {

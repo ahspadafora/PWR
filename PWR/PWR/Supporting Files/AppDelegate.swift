@@ -27,8 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, backendConfig {
         StyleManager.instance.applyStylingAppwide()
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
-        NetworkManager.shared.dumpCoreData()
-        NetworkManager.shared.applicationDocumentsDirectory()
                 
         //UserDefaultManager.clearUserDefaults()
         if UserDefaultManager.userIsSignedIn {
