@@ -16,7 +16,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource, HomeCe
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.s.count
+        return self.senators.count
     }
 
     
@@ -25,15 +25,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource, HomeCe
 
         // Configure the cell...
         cell.delegate = self
-        //cell.configureButtons(with: indexPath)
-//        cell.name.text = "Sen. \(self.senators[indexPath.row].lastName)"
-//        cell.pic.image = #imageLiteral(resourceName: "California")
-//        cell.party.text = "Party: \(self.senators[indexPath.row].party)"
-        
-        let senatorName = self.s[indexPath.row].lastName
-        let senatorParty = self.s[indexPath.row].party
-        cell.name.text = senatorName
-        
+        cell.configureButtons(with: indexPath)
+        cell.senator = senators[indexPath.row]
         return cell
     }
     
@@ -46,13 +39,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource, HomeCe
         switch button.tag {
         case 0:
             print("0")
-           //self.viewSenator(selectedSenator)
+            self.viewSenator(selectedSenator)
         case 1:
             print("1")
-           //self.callSenator(selectedSenator)
+            self.callSenator(selectedSenator)
         case 2:
             print("2")
-           //self.visitSenatorsWebsite(selectedSenator)
+            self.visitSenatorsWebsite(selectedSenator)
         default:
             return
         }
@@ -60,16 +53,16 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource, HomeCe
     
     // MARK: Button Actions
 
-    func callSenator(_ senator: Sen) {
+    func callSenator(_ senator: Senator) {
         print(senator.lastName)
-        print(senator.phone)
+        print(senator.phoneNumber)
     }
     
-    func visitSenatorsWebsite(_ senator: Sen) {
-        print(senator.website ?? "no site")
+    func visitSenatorsWebsite(_ senator: Senator) {
+        print(senator.contactUrl ?? "no site")
     }
     
-    func viewSenator(_ senator: Sen) {
+    func viewSenator(_ senator: Senator) {
         performSegue(withIdentifier: Constants.sequeToSenatorVC, sender: senator)
     }
 }

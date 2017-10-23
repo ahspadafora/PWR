@@ -18,6 +18,10 @@ class SenatorViewController: UIViewController {
     // properties
     var senator: Sen!
     var usersState: St!
+    
+    var senatorCD: Senator?
+    var senatorsState: State?
+    
     var allowedSegues = [Constants.segueToCoSponsorshipVC, Constants.segueToCommitteeVC, Constants.segueToBillDetailVC]
     
     var votingRecord: [(bill: Bill, votedInFavor: Bool)]?
@@ -27,7 +31,10 @@ class SenatorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // dummy data
+        guard let firstname = senatorCD?.firstName, let lastname = senatorCD?.lastName, let state = self.senatorsState else { return }
+        self.bannerView.label.text = state.fullname
+        self.nameLabel.text = "\(firstname) \(lastname)"
+        
         
         self.commitees = ["A","B","C","D"]
         let law = Bill(name: "A", number: "", lastAction: "")
@@ -37,11 +44,6 @@ class SenatorViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.bannerView.label.text = usersState.title
-        self.nameLabel.text = "\(senator.firstName) \(senator.lastName)"
     }
     
     // MARK: - Navigation
@@ -55,15 +57,19 @@ class SenatorViewController: UIViewController {
             guard let destinationVC = segue.destination as? CommiteeViewController else { return }
             
             destinationVC.cellItems = self.commitees
-            destinationVC.senatorName = "\(self.senator.firstName) \(self.senator.lastName)"
-            destinationVC.stateName = self.usersState.title
+            //destinationVC.senatorName = "\(self.senator.firstName) \(self.senator.lastName)"
+            //destinationVC.stateName = self.usersState.title
+            
         case Constants.segueToCoSponsorshipVC:
+            
             guard let destinationVC = segue.destination as? CoSponsershipViewController else { return }
             
             destinationVC.cellItems = self.cosponsorships
-            destinationVC.senatorName = "\(self.senator.firstName) \(self.senator.lastName)"
-            destinationVC.stateName = self.usersState.title
+            //destinationVC.senatorName = "\(self.senator.firstName) \(self.senator.lastName)"
+            //destinationVC.stateName = self.usersState.title
+            
         case Constants.segueToBillDetailVC:
+            
             guard let identifier = segue.identifier,
                 identifier == Constants.segueToBillDetailVC,
                 let destinationVC = segue.destination as? BillDetailViewController,

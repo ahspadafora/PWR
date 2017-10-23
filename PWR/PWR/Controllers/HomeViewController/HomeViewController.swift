@@ -16,9 +16,7 @@ class HomeViewController: UIViewController, StatePickerDelegate {
     @IBOutlet weak var senatorTable: UITableView!
     
     // MARK: - Properties
-    var usersState: St!
-    var senators: [Sen] = []
-    var s: [Senator] = []
+    var senators: [Senator] = []
     
     var state: State? {
         didSet {
@@ -32,7 +30,7 @@ class HomeViewController: UIViewController, StatePickerDelegate {
                     print("could get senator")
                     return
                 }
-                s.append(validSenator)
+                senators.append(validSenator)
             }
             self.senatorTable.reloadData()
         }
@@ -43,7 +41,7 @@ class HomeViewController: UIViewController, StatePickerDelegate {
     // MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchUsersState()
+        fetchUsersStateFromCoreData()
         
         senatorTable.delegate = self
         senatorTable.dataSource = self
@@ -64,15 +62,10 @@ class HomeViewController: UIViewController, StatePickerDelegate {
             destinationVC.statePickerDelegate = self
         } else if segue.identifier == Constants.sequeToSenatorVC {
             guard let destinationVC = segue.destination as? SenatorViewController,
-                let selectedSenator = sender as? Sen else { return }
-                destinationVC.senator = selectedSenator
-                destinationVC.usersState = self.usersState
+                let selectedSenator = sender as? Senator, let usersState = self.state else { return }
+                destinationVC.senatorCD = selectedSenator
+                destinationVC.senatorsState = usersState
         }
-    }
-    
-    // MARK: - StatePickerDelegateMethod
-    func userDidSelectState() {
-        fetchUsersState()
     }
     
     private func setUpLabels(state: State){
@@ -80,7 +73,12 @@ class HomeViewController: UIViewController, StatePickerDelegate {
         self.stateBannerView.pic.image = UIImage(imageLiteralResourceName: state.fullname)
     }
     
-    private func fetchUsersState(){
+    // MARK: - StatePickerDelegateMethod
+    func userDidSelectState() {
+        fetchUsersStateFromCoreData()
+    }
+    
+    private func fetchUsersStateFromCoreData(){
         guard let storedStateForUser = UserDefaultManager.getUsersStoredState else { return }
         self.stateFetchedResultsController = NetworkManager.shared.getStateFetchedResultsController()
         self.stateFetchedResultsController!.fetchRequest.predicate = NSPredicate(format: "fullname == %@", storedStateForUser)

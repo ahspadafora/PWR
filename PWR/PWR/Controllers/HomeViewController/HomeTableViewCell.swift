@@ -28,6 +28,12 @@ class HomeTableViewCell: UITableViewCell {
 
     // properties
     var delegate: HomeCellButtonDelegate!
+    var senator: Senator? {
+        didSet{
+            guard let senator = senator else { return }
+            configureSenatorCell(senator: senator)
+        }
+    }
     
     
     override func awakeFromNib() {
@@ -53,6 +59,15 @@ class HomeTableViewCell: UITableViewCell {
             self.callButton,
             self.webButton
         ].map { $0.positionInTable = indexPath }
+    }
+    
+    func configureSenatorCell(senator: Senator){
+        guard let firstname = senator.firstName, let lastname = senator.lastName, let party = senator.party, let state = senator.state else { return }
+        let stateImg = UIImage(imageLiteralResourceName: state.fullname)
+        
+        self.name.text = "Sen. \(lastname)"
+        self.pic.image = stateImg
+        self.party.text = "Party: \(party)"
     }
     
     func cellButtonWasTapped(sender: CellButton) {
