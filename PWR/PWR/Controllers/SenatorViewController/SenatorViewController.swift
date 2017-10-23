@@ -16,9 +16,6 @@ class SenatorViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // properties
-    var senator: Sen!
-    var usersState: St!
-    
     var senatorCD: Senator?
     var senatorsState: State?
     
@@ -51,22 +48,22 @@ class SenatorViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier,
         allowedSegues.contains(identifier) else { return }
+        guard let state = self.senatorsState, let firstname = senatorCD?.firstName, let lastname = senatorCD?.lastName else { return }
         
         switch identifier {
         case Constants.segueToCommitteeVC:
             guard let destinationVC = segue.destination as? CommiteeViewController else { return }
             
             destinationVC.cellItems = self.commitees
-            //destinationVC.senatorName = "\(self.senator.firstName) \(self.senator.lastName)"
-            //destinationVC.stateName = self.usersState.title
+            destinationVC.senatorName = "\(firstname) \(lastname)"
+            destinationVC.stateName = state.fullname
             
         case Constants.segueToCoSponsorshipVC:
             
             guard let destinationVC = segue.destination as? CoSponsershipViewController else { return }
-            
             destinationVC.cellItems = self.cosponsorships
-            //destinationVC.senatorName = "\(self.senator.firstName) \(self.senator.lastName)"
-            //destinationVC.stateName = self.usersState.title
+            destinationVC.senatorName = "\(firstname) \(lastname)"
+            destinationVC.stateName = state.fullname
             
         case Constants.segueToBillDetailVC:
             
