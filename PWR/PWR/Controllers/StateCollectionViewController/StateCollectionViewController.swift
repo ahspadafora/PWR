@@ -14,15 +14,6 @@ class StateCollectionViewController: UICollectionViewController {
     // MARK: - Properties
     var stateFetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
     var coredataStates: [State] = []
-    
-    
-    var states: [St] = StateGetter().states
-    var filteredStates: [St] = [] {
-        didSet {
-            self.collectionView?.reloadSections(IndexSet(integer: 1))
-        }
-    }
-    var selectedState: St!
     var statePickerDelegate: StatePickerDelegate?
     
     override func viewDidLoad() {

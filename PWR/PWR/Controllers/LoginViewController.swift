@@ -47,7 +47,7 @@ class LoginViewController: UIViewController, StatePickerDelegate, FBUserLoggedIn
     }
     
     func userLoggedIn(sender: FBLoginButtonDelegate) {
-        if let _ = UserDefaultManager.storedState {
+        if let _ = UserDefaultManager.getUsersStoredState {
             goToHome()
         } else {
             goToStatePicker()
